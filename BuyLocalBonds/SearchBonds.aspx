@@ -40,7 +40,8 @@
             <td class="style2">
                 </td>
             <td class="style2">
-                <asp:Button ID="Search" runat="server" Text="Button" onclick="Search_Click" />
+                <asp:Button ID="Search" runat="server" Text="Button" onclick="Search_Click" 
+                    Height="22px" />
             </td>
         </tr>
         <tr>

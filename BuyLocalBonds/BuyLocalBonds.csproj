@@ -57,6 +57,7 @@
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="SearchBonds.aspx" />
+    <Content Include="SelectBond.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -124,6 +125,13 @@
     </Compile>
     <Compile Include="SearchBonds.aspx.designer.cs">
       <DependentUpon>SearchBonds.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectBond.aspx.cs">
+      <DependentUpon>SelectBond.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SelectBond.aspx.designer.cs">
+      <DependentUpon>SelectBond.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
