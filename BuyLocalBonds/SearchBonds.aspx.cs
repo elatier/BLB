@@ -6,15 +6,16 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Text.RegularExpressions;
+using BuyLocalBonds.BackEnd;
 
 namespace BuyLocalBonds
 {
     public partial class SearchBonds : System.Web.UI.Page
     {
-        SQLBean bean;
+        BEnd bend;
         protected void Page_Load(object sender, EventArgs e)
         {
-           bean = new SQLBean();
+           bend = new BEnd();
         }
 
         protected void Search_Click(object sender, EventArgs e)
@@ -27,11 +28,11 @@ namespace BuyLocalBonds
                 Regex rgx = new Regex(pattern, RegexOptions.IgnoreCase);
                 if (!rgx.IsMatch(CUSIP.Text)) {
                     CUSIP.Text="";
-                    ds = bean.GetBonds(Convert.ToDouble(PriceLow.Text), Convert.ToDouble(PriceHigh.Text));
+                    ds = bend.GetBonds(Convert.ToDouble(PriceLow.Text), Convert.ToDouble(PriceHigh.Text));
                 }
                 else
                 {
-                    ds = bean.GetBonds(CUSIP.Text, Convert.ToDouble(PriceLow.Text), Convert.ToDouble(PriceHigh.Text));
+                    ds = bend.GetBonds(CUSIP.Text, Convert.ToDouble(PriceLow.Text), Convert.ToDouble(PriceHigh.Text));
                 }
                 GvBondResults.DataSource = ds.Tables[0];
                 GvBondResults.DataBind();

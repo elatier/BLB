@@ -6,7 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 
 
-namespace BuyLocalBonds
+namespace BuyLocalBonds.BackEnd
 {
     public class SQLBean
     {
