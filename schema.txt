@@ -18,8 +18,7 @@ use BLBData
 go
 CREATE TABLE AVAILABLE_BONDS
 (
-available_bond_id integer PRIMARY KEY,
-cusip nchar(9) not null, 
+cusip nchar(9) PRIMARY KEY, 
 quantity_available integer not null,
 FOREIGN KEY (cusip) REFERENCES BONDS(cusip)
 )
