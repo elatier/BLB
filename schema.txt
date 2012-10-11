@@ -1,3 +1,21 @@
+DROP TABLE AVAILABLE_BONDS
+DROP TABLE OWNED_BONDS
+DROP TABLE TRADER_GROUPS
+DROP TABLE TRANSACTIONS
+DROP TABLE BONDS
+DROP TABLE CLIENT
+DROP TABLE TRADER
+DROP TABLE COUNTRY_INFO
+
+use BLBData
+go
+CREATE TABLE COUNTRY_INFO
+(
+country_code nchar(5) PRIMARY KEY,
+settlement_time int not null,
+calender nchar(1000) not null,
+)
+
 use BLBData
 go
 CREATE TABLE BONDS
@@ -7,11 +25,12 @@ name nvarchar(255) not null,
 price money not null,
 par_value money not null,
 maturity_date date not null,
-yield_to_maturity smallint not null,
-current_yield smallint not null,
+yield_to_maturity float not null,
+current_yield float not null,
 coupon money not null,
 rating nchar(5) not null,
-country_code nchar(5) not null
+country_code nchar(5) not null,
+FOREIGN KEY (country_code) REFERENCES COUNTRY_INFO(country_code)
 )
 
 use BLBData
@@ -76,3 +95,6 @@ trader_id integer not null,
 FOREIGN KEY (client_id) REFERENCES CLIENT(client_id),
 FOREIGN KEY (trader_id) REFERENCES TRADER(trader_id)
 )
+
+
+
