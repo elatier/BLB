@@ -44,7 +44,6 @@ cusip nchar(9),
 quantity_owned integer not null,
 FOREIGN KEY (client_id) REFERENCES CLIENT(client_id),
 FOREIGN KEY (cusip) REFERENCES BONDS(cusip)
-CONSTRAINT pk_OWNED_BONDS PRIMARY KEY (client_id,cusip)
 )
 
 use BLBData
