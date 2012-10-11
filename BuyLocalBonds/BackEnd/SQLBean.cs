@@ -16,7 +16,7 @@ namespace BuyLocalBonds.BackEnd
         {
             conn = new SqlConnection("Server=.;Database=BLBData;Integrated Security=SSPI;");             
         }
-        public DataSet SearchBonds(string name, string cusip, double price_low, double price_high,
+        public DataSet SearchBondsQuery(string name, string cusip, double price_low, double price_high,
             double par_value_low, double par_value_high, string maturity_date_low, string maturity_date_high,
             double yield_to_maturity_low, double yield_to_maturity_high, double current_yield_low, double current_yield_high,
             double coupon_low, double coupon_high, double rating_low, double rating_high)
