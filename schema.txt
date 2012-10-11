@@ -1,0 +1,79 @@
+use BLBData
+go
+CREATE TABLE BONDS
+(
+cusip nchar(9) PRIMARY KEY,
+name nvarchar(255) not null,
+price money not null,
+par_value money not null,
+maturity_date date not null,
+yield_to_maturity smallint not null,
+current_yield smallint not null,
+coupon money not null,
+rating nchar(5) not null,
+country_code nchar(5) not null
+)
+
+use BLBData
+go
+CREATE TABLE AVAILABLE_BONDS
+(
+available_bond_id integer PRIMARY KEY,
+cusip nchar(9) not null, 
+quantity_available integer not null,
+FOREIGN KEY (cusip) REFERENCES BONDS(cusip)
+)
+
+use BLBData
+go
+CREATE TABLE CLIENT
+(
+client_id integer PRIMARY KEY,
+client_name nchar(255) not null, 
+address nchar(255) not null,
+company nchar(255) not null,
+contact_no nchar(15) not null,
+)
+
+use BLBData
+go
+CREATE TABLE OWNED_BONDS
+(
+client_id integer,
+cusip nchar(9),
+quantity_owned integer not null,
+FOREIGN KEY (client_id) REFERENCES CLIENT(client_id),
+FOREIGN KEY (cusip) REFERENCES BONDS(cusip)
+)
+
+use BLBData
+go
+CREATE TABLE TRANSACTIONS
+(
+trasaction_id integer PRIMARY KEY,
+date_time datetime not null,
+client_id integer not null,
+cusip nchar(9) not null,
+quantity int not null,
+FOREIGN KEY (client_id) REFERENCES CLIENT(client_id),
+FOREIGN KEY (cusip) REFERENCES BONDS(cusip)
+)
+
+use BLBData
+go
+CREATE TABLE TRADER
+(
+trader_id integer PRIMARY KEY,
+trader_name nchar(255) not null,
+)
+
+use BLBData
+go
+CREATE TABLE TRADER_GROUPS
+(
+trader_group_id integer PRIMARY KEY,
+client_id integer not null,
+trader_id integer not null,
+FOREIGN KEY (client_id) REFERENCES CLIENT(client_id),
+FOREIGN KEY (trader_id) REFERENCES TRADER(trader_id)
+)
