@@ -5,10 +5,46 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        .style1
+        {
+            width: 128px;
+        }
+        .style2
+        {
+            height: 23px;
+        }
+        .style3
+        {
+            width: 128px;
+            height: 23px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
     Buy Local Bonds: Bond Search<table class="style1">
+        <tr>
+            <td class="style2">
+                </td>
+            <td class="style2">
+                </td>
+            <td class="style2">
+                </td>
+            <td class="style3">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                CUSIP</td>
+            <td>
+                <asp:TextBox ID="CUSIP" runat="server" ></asp:TextBox>
+                </td>
+            <td>
+                &nbsp;</td>
+            <td class="style1">
+                &nbsp;</td>
+        </tr>
         <tr>
             <td class="style2">
                 Price: Low</td>
@@ -17,31 +53,9 @@
                 </td>
             <td class="style2">
                 high</td>
-            <td class="style2">
+            <td class="style1">
                 <asp:TextBox ID="PriceHigh" runat="server" 
                     ></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                CUPID</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style2">
-                </td>
-            <td class="style2">
-                </td>
-            <td class="style2">
-                </td>
-            <td class="style2">
-                <asp:Button ID="Search" runat="server" Text="Button" onclick="Search_Click" 
-                    Height="22px" />
             </td>
         </tr>
         <tr>
@@ -53,8 +67,10 @@
             </td>
             <td>
                 &nbsp;</td>
-            <td>
-                &nbsp;</td>
+            <td class="style1">
+                <asp:Button ID="Search" runat="server" Text="Button" onclick="Search_Click" 
+                    Height="22px" />
+            </td>
         </tr>
     </table>
     </form>

@@ -22,6 +22,15 @@ namespace BuyLocalBonds {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// CUSIP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CUSIP;
+        
+        /// <summary>
         /// PriceLow control.
         /// </summary>
         /// <remarks>
@@ -40,15 +49,6 @@ namespace BuyLocalBonds {
         protected global::System.Web.UI.WebControls.TextBox PriceHigh;
         
         /// <summary>
-        /// Search control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Search;
-        
-        /// <summary>
         /// GvBondResults control.
         /// </summary>
         /// <remarks>
@@ -56,5 +56,14 @@ namespace BuyLocalBonds {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GvBondResults;
+        
+        /// <summary>
+        /// Search control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Search;
     }
 }
