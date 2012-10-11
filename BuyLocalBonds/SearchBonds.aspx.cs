@@ -28,11 +28,11 @@ namespace BuyLocalBonds
                 Regex rgx = new Regex(pattern, RegexOptions.IgnoreCase);
                 if (!rgx.IsMatch(CUSIP.Text)) {
                     CUSIP.Text="";
-                    ds = bend.GetBonds(Convert.ToDouble(PriceLow.Text), Convert.ToDouble(PriceHigh.Text));
+                    ds = bend.SearchBonds(null, Convert.ToDouble(PriceLow.Text), Convert.ToDouble(PriceHigh.Text));
                 }
                 else
                 {
-                    ds = bend.GetBonds(CUSIP.Text, Convert.ToDouble(PriceLow.Text), Convert.ToDouble(PriceHigh.Text));
+                    ds = bend.SearchBonds(CUSIP.Text, Convert.ToDouble(PriceLow.Text), Convert.ToDouble(PriceHigh.Text));
                 }
                 GvBondResults.DataSource = ds.Tables[0];
                 GvBondResults.DataBind();
