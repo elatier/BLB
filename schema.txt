@@ -1,8 +1,8 @@
 DROP TABLE AVAILABLE_BONDS
 DROP TABLE OWNED_BONDS
-DROP TABLE TRADER_GROUPS
 DROP TABLE TRANSACTIONS
 DROP TABLE BONDS
+DROP TABLE TRADER_GROUPS
 DROP TABLE CLIENT
 DROP TABLE TRADER
 DROP TABLE COUNTRY_INFO
@@ -96,5 +96,29 @@ FOREIGN KEY (client_id) REFERENCES CLIENT(client_id),
 FOREIGN KEY (trader_id) REFERENCES TRADER(trader_id)
 )
 
+
+INSERT INTO COUNTRY_INFO (country_code, settlement_time, calender) VALUES ('USA', 3, 'URL1')
+INSERT INTO COUNTRY_INFO (country_code, settlement_time, calender) VALUES ('SIN', 2, 'URL2')
+INSERT INTO COUNTRY_INFO (country_code, settlement_time, calender) VALUES ('AUS', 3, 'URL2')
+
+
+INSERT INTO BONDS (cusip, name, price, par_value, maturity_date, yield_to_maturity, current_yield, coupon, rating, country_code) VALUES (123456789, 'American Government Bond', 22, 33, '2013-05-11', 11, 12, 5, 'AAA', 'USA')
+INSERT INTO BONDS (cusip, name, price, par_value, maturity_date, yield_to_maturity, current_yield, coupon, rating, country_code) VALUES (111111111, 'Australian Government Bond', 55, 55, '2013-06-15', 22, 80, 5, 'AAB', 'AUS')
+INSERT INTO BONDS (cusip, name, price, par_value, maturity_date, yield_to_maturity, current_yield, coupon, rating, country_code) VALUES (999999999, 'Singapaore Government Bond', 22, 33, '2013-05-11', 11, 12, 5, 'AAA', 'SIN')
+
+
+INSERT INTO AVAILABLE_BONDS (cusip, quantity_available) VALUES (123456789, 500)
+INSERT INTO AVAILABLE_BONDS (cusip, quantity_available) VALUES (111111111, 250)
+INSERT INTO AVAILABLE_BONDS (cusip, quantity_available) VALUES (999999999, 1000)
+
+INSERT INTO CLIENT (client_id, client_name, address, company, contact_no) VALUES (1,'Robert Fujiwara', '34 Long Lane', 'Unemployed', '0434928152')
+INSERT INTO CLIENT (client_id, client_name, address, company, contact_no) VALUES (2,'Aomi', '34 Long Lane', 'Unemployed', '08124928152')
+
+INSERT INTO TRADER (trader_id, trader_name) VALUES (1,'A. DAVIS')
+INSERT INTO TRADER (trader_id, trader_name) VALUES (2,'B. JOHNS')
+
+INSERT INTO TRADER_GROUPS (trader_group_id, client_id, trader_id) VALUES (1,1,1)
+INSERT INTO TRADER_GROUPS (trader_group_id, client_id, trader_id) VALUES (1,2,1)
+INSERT INTO TRADER_GROUPS (trader_group_id, client_id, trader_id) VALUES (1,1,2)
 
 
