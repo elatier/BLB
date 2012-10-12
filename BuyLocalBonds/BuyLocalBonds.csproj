@@ -110,6 +110,7 @@
     </Compile>
     <Compile Include="BackEnd\BEnd.cs" />
     <Compile Include="BackEnd\Bond.cs" />
+    <Compile Include="BackEnd\Utilities.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

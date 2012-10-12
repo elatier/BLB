@@ -18,6 +18,7 @@ namespace BuyLocalBonds.BackEnd
         }
         public DataSet SearchBondsQuery(Bond b)
         {
+
             string sql = "SELECT [cusip]" +
                           ",[name]" +
                           ",[price]" +
@@ -29,22 +30,22 @@ namespace BuyLocalBonds.BackEnd
                           ",[rating]" +
                           ",[country_code]" +
                       " FROM [BONDS] WHERE 1=1" + //sanity check fail
-                      //((b.Name!=null) ? " AND name = @name" : "" )+
-                      //((b.Cusip!=null) ? " AND CUSIP = @cusip" : "")+
-                      ((b.Price_low!=Double.NaN) ? " AND price >= @price_low" : "")+
-                      ((b.Price_high != Double.NaN) ? " AND price <= @price_high" : "")
-                      //((par_value_low != Double.NaN) ? " AND par_value >= @par_value_low" : "") +
-                      //((par_value_high != Double.NaN) ? " AND par_value <= @par_value_high" : "") +
-                      //((maturity_date_low != null) ? " AND maturity_date <= @maturity_date_low" : "") +
-                      //((maturity_date_high != null) ? " AND maturity_date >= @maturity_date_high" : "") +
-                      //((yield_to_maturity_low != Double.NaN) ? " AND yield_to_maturity >= @yield_to_maturity_low" : "") +
-                      //((yield_to_maturity_high != Double.NaN) ? " AND yield_to_maturity <= @yield_to_maturity_high" : "") +
-                      //((current_yield_low != Double.NaN) ? " AND current_yield >= @current_yield_low" : "") +
-                      //((current_yield_high != Double.NaN) ? " AND current_yield <= @current_yield_high" : "") +
-                      //((coupon_low != Double.NaN) ? " AND coupon >= @coupon_low" : "") +
-                      //((coupon_high != Double.NaN) ? " AND coupon <= @coupon_high" : "") +
-                      //((rating_low != Double.NaN) ? " AND rating >= @rating_low" : "") +
-                      //((rating_high != Double.NaN) ? " AND rating <= @rating_high" : "") 
+                ((b.Name!=null) ? " AND name = @name" : "" )+
+                ((b.Cusip!=null) ? " AND CUSIP = @cusip" : "")+
+                      " AND price >= @price_low" +
+                      " AND price <= @price_high" +
+                      " AND par_value >= @par_value_low" +
+                      " AND par_value <= @par_value_high" +
+                      " AND maturity_date >= @maturity_date_low" +
+                      " AND maturity_date <= @maturity_date_high" +
+                      " AND yield_to_maturity >= @yield_to_maturity_low" +
+                      " AND yield_to_maturity <= @yield_to_maturity_high" +
+                      " AND current_yield >= @current_yield_low" +
+                      " AND current_yield <= @current_yield_high" +
+                      " AND coupon >= @coupon_low" +
+                      " AND coupon <= @coupon_high" //+
+                      //" AND rating >= @rating_low" +
+                      //" AND rating <= @rating_high"
                       ;
 
 
@@ -55,21 +56,22 @@ namespace BuyLocalBonds.BackEnd
 
             if (b.Name != null) cmdBond.Parameters.AddWithValue("@name", b.Name);
             if (b.Cusip != null) cmdBond.Parameters.AddWithValue("@cusip", b.Cusip);
-            if (b.Price_low != Double.NaN) cmdBond.Parameters.AddWithValue("@price_low", b.Price_low);
-            if (b.Price_high != Double.NaN) cmdBond.Parameters.AddWithValue("@price_high", b.Price_high);
-            //if (par_value_low != Double.NaN) cmdBond.Parameters.AddWithValue("@par_value_low", par_value_low);
-            //if (par_value_high != Double.NaN) cmdBond.Parameters.AddWithValue("@par_value_high", par_value_high);
-            //if (yield_to_maturity_low != Double.NaN) cmdBond.Parameters.AddWithValue("@yield_to_maturity_low", yield_to_maturity_low);
-            //if (yield_to_maturity_high != Double.NaN) cmdBond.Parameters.AddWithValue("@yield_to_maturity_high", yield_to_maturity_high);
-            //if (current_yield_low != Double.NaN) cmdBond.Parameters.AddWithValue("@current_yield_low", current_yield_low);
-            //if (current_yield_high != Double.NaN) cmdBond.Parameters.AddWithValue("@current_yield_high", current_yield_high);
-            //if (coupon_low != Double.NaN) cmdBond.Parameters.AddWithValue("@coupon_low", coupon_low);
-            //if (coupon_high != Double.NaN) cmdBond.Parameters.AddWithValue("@coupon_high", coupon_high);
-            //if (rating_low != Double.NaN) cmdBond.Parameters.AddWithValue("@rating_low", rating_low);
-            //if (rating_high != Double.NaN) cmdBond.Parameters.AddWithValue("@rating_high", rating_high);
+            cmdBond.Parameters.AddWithValue("@price_low", b.Price_low);
+            cmdBond.Parameters.AddWithValue("@price_high", b.Price_high);
+            cmdBond.Parameters.AddWithValue("@par_value_low", b.Par_value_low);
+            cmdBond.Parameters.AddWithValue("@par_value_high", b.Par_value_high);
+            cmdBond.Parameters.AddWithValue("@maturity_date_low", b.Maturity_date_low);
+            cmdBond.Parameters.AddWithValue("@maturity_date_high", b.Maturity_date_high);
+            cmdBond.Parameters.AddWithValue("@yield_to_maturity_low", b.Yield_to_maturity_low);
+            cmdBond.Parameters.AddWithValue("@yield_to_maturity_high", b.Yield_to_maturity_high);
+            cmdBond.Parameters.AddWithValue("@current_yield_low", b.Current_yield_low);
+            cmdBond.Parameters.AddWithValue("@current_yield_high", b.Current_yield_high);
+            cmdBond.Parameters.AddWithValue("@coupon_low", b.Coupon_low);
+            cmdBond.Parameters.AddWithValue("@coupon_high", b.Coupon_high);
+            //cmdBond.Parameters.AddWithValue("@rating_low", b.Rating_low);
+            //cmdBond.Parameters.AddWithValue("@rating_high", b.Rating_high);
 
             SqlDataAdapter da = new SqlDataAdapter(cmdBond);
-
             DataSet ds = new DataSet();
             da.Fill(ds, "Bonds");
             //conn.Close();

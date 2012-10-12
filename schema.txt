@@ -27,7 +27,7 @@ par_value money not null,
 maturity_date date not null,
 yield_to_maturity float not null,
 current_yield float not null,
-coupon money not null,
+coupon float not null,
 rating nchar(5) not null,
 country_code nchar(5) not null,
 FOREIGN KEY (country_code) REFERENCES COUNTRY_INFO(country_code)

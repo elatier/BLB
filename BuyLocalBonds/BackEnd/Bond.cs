@@ -21,8 +21,8 @@ namespace BuyLocalBonds.BackEnd
         public double Current_yield_high { get; set; }
         public double Coupon_low { get; set; }
         public double Coupon_high { get; set; }
-        public double Rating_low { get; set; }
-        public double Rating_high { get; set; }
+        public String Rating_low { get; set; }
+        public String Rating_high { get; set; }
 
         public Bond()
         {
@@ -32,16 +32,16 @@ namespace BuyLocalBonds.BackEnd
             Price_high = Double.MaxValue;
             Par_value_low = 0;
             Par_value_high = Double.MaxValue;
-            Maturity_date_low = DateTime.MinValue;
-            Maturity_date_high = DateTime.MaxValue;
+            Maturity_date_low =  new DateTime(1800,01,01);
+            Maturity_date_high = new DateTime(3000,01,01);
             Yield_to_maturity_low = Double.MinValue;
             Yield_to_maturity_high = Double.MaxValue;
             Current_yield_low = Double.MinValue;
             Current_yield_high = Double.MaxValue;
             Coupon_low = Double.MinValue;
             Coupon_high = Double.MaxValue;
-            Rating_low = Double.MinValue;
-            Rating_high = Double.MaxValue;
+            Rating_low = String.Empty;
+            Rating_high = String.Empty;
         }
 
     }

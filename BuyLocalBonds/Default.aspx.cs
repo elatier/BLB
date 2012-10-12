@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using BuyLocalBonds.BackEnd;
+using System.Text.RegularExpressions;
 
 namespace BuyLocalBonds
 {
@@ -23,10 +24,12 @@ namespace BuyLocalBonds
             BEnd bend = new BEnd();
             Bond b = new Bond();
 
-            b.Name = Name.Text;
-            b.Cusip = CUSIP.Text;
-            if (PriceLow.Text!="") b.Price_low = Convert.ToDouble(PriceLow.Text);
-            if (PriceHigh.Text!= "") b.Price_high = Convert.ToDouble(PriceHigh.Text); ;
+            //Regex numRegex = new Regex("/^\\d+\\.?\\d*$/");
+
+            //b.Name = Name.Text;
+            //b.Cusip = CUSIP.Text;
+            b.Price_low = Utilities.ToDouble(b.Price_low,PriceLow.Text);
+            b.Price_high = Utilities.ToDouble(b.Price_high, PriceHigh.Text);
 
             DataSet ds = bend.SearchBonds(b);
             BondGrid.DataSource = ds.Tables[0];
