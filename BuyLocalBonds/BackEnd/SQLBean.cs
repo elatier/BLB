@@ -29,8 +29,8 @@ namespace BuyLocalBonds.BackEnd
                           ",[rating]" +
                           ",[country_code]" +
                       " FROM [BONDS] WHERE 1=1" + //sanity check fail
-                      ((b.Name!=null) ? " AND name = @name" : "" )+
-                      ((b.Cusip!=null) ? " AND CUSIP = @cusip" : "")+
+                      //((b.Name!=null) ? " AND name = @name" : "" )+
+                      //((b.Cusip!=null) ? " AND CUSIP = @cusip" : "")+
                       ((b.Price_low!=Double.NaN) ? " AND price >= @price_low" : "")+
                       ((b.Price_high != Double.NaN) ? " AND price <= @price_high" : "")
                       //((par_value_low != Double.NaN) ? " AND par_value >= @par_value_low" : "") +

@@ -10,6 +10,10 @@
     <form id="form1" runat="server">
     <div>
     
+        <asp:GridView ID="BondGrid" runat="server" 
+            onselectedindexchanged="BondGrid_SelectedIndexChanged">
+        </asp:GridView>
+    
     </div>
     </form>
 </body>

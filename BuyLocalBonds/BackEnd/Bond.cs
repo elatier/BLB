@@ -13,8 +13,8 @@ namespace BuyLocalBonds.BackEnd
         public double Price_high { get; set; }
         public double Par_value_low { get; set; }
         public double Par_value_high { get; set; }
-        public string Maturity_date_low { get; set; }
-        public string Maturity_date_high { get; set; }
+        public DateTime Maturity_date_low { get; set; }
+        public DateTime Maturity_date_high { get; set; }
         public double Yield_to_maturity_low { get; set; }
         public double Yield_to_maturity_high { get; set; }
         public double Current_yield_low { get; set; }
@@ -28,20 +28,20 @@ namespace BuyLocalBonds.BackEnd
         {
             Name = null;
             Cusip = null;
-            Price_low = Double.NaN;
-            Price_high = Double.NaN;
-            Par_value_low = Double.NaN;
-            Par_value_high = Double.NaN;
-            Maturity_date_low = null;
-            Maturity_date_high = null;
-            Yield_to_maturity_low = Double.NaN;
-            Yield_to_maturity_high = Double.NaN;
-            Current_yield_low = Double.NaN;
-            Current_yield_high = Double.NaN;
-            Coupon_low = Double.NaN;
-            Coupon_high = Double.NaN;
-            Rating_low = Double.NaN;
-            Rating_high = Double.NaN;
+            Price_low = 0;
+            Price_high = Double.MaxValue;
+            Par_value_low = 0;
+            Par_value_high = Double.MaxValue;
+            Maturity_date_low = DateTime.MinValue;
+            Maturity_date_high = DateTime.MaxValue;
+            Yield_to_maturity_low = Double.MinValue;
+            Yield_to_maturity_high = Double.MaxValue;
+            Current_yield_low = Double.MinValue;
+            Current_yield_high = Double.MaxValue;
+            Coupon_low = Double.MinValue;
+            Coupon_high = Double.MaxValue;
+            Rating_low = Double.MinValue;
+            Rating_high = Double.MaxValue;
         }
 
     }
