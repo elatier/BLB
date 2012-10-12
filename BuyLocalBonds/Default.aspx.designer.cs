@@ -58,15 +58,6 @@ namespace BuyLocalBonds {
         protected global::System.Web.UI.WebControls.TextBox Name;
         
         /// <summary>
-        /// Label3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
-        
-        /// <summary>
         /// Label12 control.
         /// </summary>
         /// <remarks>
@@ -76,13 +67,22 @@ namespace BuyLocalBonds {
         protected global::System.Web.UI.WebControls.Label Label12;
         
         /// <summary>
-        /// TextBox3 control.
+        /// RatingLow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox RatingLow;
+        
+        /// <summary>
+        /// ParValue_v8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator ParValue_v8;
         
         /// <summary>
         /// Label21 control.
@@ -94,13 +94,22 @@ namespace BuyLocalBonds {
         protected global::System.Web.UI.WebControls.Label Label21;
         
         /// <summary>
-        /// TextBox12 control.
+        /// RatingHigh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox12;
+        protected global::System.Web.UI.WebControls.TextBox RatingHigh;
+        
+        /// <summary>
+        /// ParValue_v9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator ParValue_v9;
         
         /// <summary>
         /// Label4 control.
@@ -121,13 +130,22 @@ namespace BuyLocalBonds {
         protected global::System.Web.UI.WebControls.Label Label13;
         
         /// <summary>
-        /// TextBox4 control.
+        /// CouponLow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox CouponLow;
+        
+        /// <summary>
+        /// ParValue_v6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator ParValue_v6;
         
         /// <summary>
         /// Label22 control.
@@ -139,13 +157,22 @@ namespace BuyLocalBonds {
         protected global::System.Web.UI.WebControls.Label Label22;
         
         /// <summary>
-        /// TextBox13 control.
+        /// CouponHigh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox13;
+        protected global::System.Web.UI.WebControls.TextBox CouponHigh;
+        
+        /// <summary>
+        /// ParValue_v7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator ParValue_v7;
         
         /// <summary>
         /// Label5 control.
@@ -166,13 +193,22 @@ namespace BuyLocalBonds {
         protected global::System.Web.UI.WebControls.Label Label14;
         
         /// <summary>
-        /// TextBox5 control.
+        /// CurrentYieldLow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.TextBox CurrentYieldLow;
+        
+        /// <summary>
+        /// ParValue_v4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator ParValue_v4;
         
         /// <summary>
         /// Label23 control.
@@ -184,13 +220,22 @@ namespace BuyLocalBonds {
         protected global::System.Web.UI.WebControls.Label Label23;
         
         /// <summary>
-        /// TextBox14 control.
+        /// CurrentYieldHigh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox14;
+        protected global::System.Web.UI.WebControls.TextBox CurrentYieldHigh;
+        
+        /// <summary>
+        /// ParValue_v5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator ParValue_v5;
         
         /// <summary>
         /// SearchButton control.
@@ -229,13 +274,22 @@ namespace BuyLocalBonds {
         protected global::System.Web.UI.WebControls.Label Label15;
         
         /// <summary>
-        /// TextBox6 control.
+        /// YieldToMaturityLow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.TextBox YieldToMaturityLow;
+        
+        /// <summary>
+        /// ParValue_v3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator ParValue_v3;
         
         /// <summary>
         /// Label24 control.
@@ -247,13 +301,22 @@ namespace BuyLocalBonds {
         protected global::System.Web.UI.WebControls.Label Label24;
         
         /// <summary>
-        /// TextBox15 control.
+        /// YieldToMaturityHigh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox15;
+        protected global::System.Web.UI.WebControls.TextBox YieldToMaturityHigh;
+        
+        /// <summary>
+        /// ParValue_v2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator ParValue_v2;
         
         /// <summary>
         /// Label7 control.
@@ -274,13 +337,13 @@ namespace BuyLocalBonds {
         protected global::System.Web.UI.WebControls.Label Label16;
         
         /// <summary>
-        /// TextBox7 control.
+        /// MaturityDateLow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox7;
+        protected global::System.Web.UI.WebControls.TextBox MaturityDateLow;
         
         /// <summary>
         /// Label25 control.
@@ -292,13 +355,13 @@ namespace BuyLocalBonds {
         protected global::System.Web.UI.WebControls.Label Label25;
         
         /// <summary>
-        /// TextBox16 control.
+        /// MaturityDateHigh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox16;
+        protected global::System.Web.UI.WebControls.TextBox MaturityDateHigh;
         
         /// <summary>
         /// Label8 control.

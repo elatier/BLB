@@ -33,23 +33,23 @@
             width: 155px;
             height: 20px;
         }
-        .style9
-        {
-            width: 156px;
-        }
-        .style10
-        {
-            height: 20px;
-            width: 156px;
-        }
         .style11
         {
-            width: 96px;
+            width: 160px;
         }
         .style12
         {
             height: 20px;
-            width: 96px;
+            width: 160px;
+        }
+        .style14
+        {
+            height: 20px;
+            width: 145px;
+        }
+        .style15
+        {
+            width: 145px;
         }
     </style>
 </asp:Content>
@@ -67,7 +67,7 @@
                     &nbsp;</td>
                 <td class="style5">
                     &nbsp;</td>
-                <td class="style9">
+                <td class="style15">
                     &nbsp;</td>
                 <td>
                     &nbsp;</td>
@@ -93,7 +93,7 @@
                 <td class="style5">
                     <asp:TextBox ID="CUSIP" runat="server" ></asp:TextBox>
                 </td>
-                <td class="style10">
+                <td class="style14">
                     <asp:RegularExpressionValidator ID="CUSIP_Validator" runat="server" 
                         ControlToValidate="CUSIP" ErrorMessage="Invalid CUSIP" 
                         ValidationExpression="[0-9]{3}[a-zA-Z0-9]{6}"></asp:RegularExpressionValidator>
@@ -122,7 +122,7 @@
                 <td class="style5">
                     <asp:TextBox ID="Name" runat="server" ></asp:TextBox>
                 </td>
-                <td class="style9">
+                <td class="style15">
                     &nbsp;</td>
                 <td>
                     &nbsp;</td>
@@ -141,24 +141,29 @@
             </tr>
             <tr>
                 <td class="style2">
-                    <asp:Label ID="Label3" runat="server" Text="Rating:"></asp:Label>
-                </td>
+                    S&amp;P Rating:</td>
                 <td>
                     <asp:Label ID="Label12" runat="server" Text="low"></asp:Label>
                 </td>
                 <td class="style5">
-                    <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="RatingLow" runat="server" ></asp:TextBox>
                 </td>
-                <td class="style9">
-                    &nbsp;</td>
+                <td class="style15">
+                    <asp:RegularExpressionValidator ID="ParValue_v8" runat="server" 
+                        ControlToValidate="RatingLow" ErrorMessage="Invalid Rating Low" 
+                        SetFocusOnError="True" ValidationExpression="^(\-)?\d*(\.\d+)?$"></asp:RegularExpressionValidator>
+                </td>
                 <td>
                     <asp:Label ID="Label21" runat="server" Text="high"></asp:Label>
                     </td>
                 <td class="style7">
-                    <asp:TextBox ID="TextBox12" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="RatingHigh" runat="server"></asp:TextBox>
                 </td>
                 <td class="style11">
-                    &nbsp;</td>
+                    <asp:RegularExpressionValidator ID="ParValue_v9" runat="server" 
+                        ControlToValidate="CurrentYieldLow" ErrorMessage="Invalid Rating High" 
+                        SetFocusOnError="True" ValidationExpression="^(\-)?\d*(\.\d+)?$"></asp:RegularExpressionValidator>
+                </td>
                 <td>
                     &nbsp;</td>
                 <td>
@@ -176,18 +181,24 @@
                     <asp:Label ID="Label13" runat="server" Text="low"></asp:Label>
                 </td>
                 <td class="style5">
-                    <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="CouponLow" runat="server"></asp:TextBox>
                 </td>
-                <td class="style9">
-                    &nbsp;</td>
+                <td class="style15">
+                    <asp:RegularExpressionValidator ID="ParValue_v6" runat="server" 
+                        ControlToValidate="CouponLow" ErrorMessage="Invalid Coupon Low" 
+                        SetFocusOnError="True" ValidationExpression="^(\-)?\d*(\.\d+)?$"></asp:RegularExpressionValidator>
+                </td>
                 <td>
                     <asp:Label ID="Label22" runat="server" Text="high"></asp:Label>
                     </td>
                 <td class="style7">
-                    <asp:TextBox ID="TextBox13" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="CouponHigh" runat="server"></asp:TextBox>
                 </td>
                 <td class="style11">
-                    &nbsp;</td>
+                    <asp:RegularExpressionValidator ID="ParValue_v7" runat="server" 
+                        ControlToValidate="CouponHigh" ErrorMessage="Invalid Coupon High" 
+                        SetFocusOnError="True" ValidationExpression="^(\-)?\d*(\.\d+)?$"></asp:RegularExpressionValidator>
+                  </td>
                 <td>
                     &nbsp;</td>
                 <td>
@@ -205,29 +216,35 @@
                     <asp:Label ID="Label14" runat="server" Text="low"></asp:Label>
                 </td>
                 <td class="style5">
-                    <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="CurrentYieldLow" runat="server"></asp:TextBox>
                 </td>
-                <td class="style9">
-                    &nbsp;</td>
+                <td class="style15">
+                    <asp:RegularExpressionValidator ID="ParValue_v4" runat="server" 
+                        ControlToValidate="CurrentYieldLow" ErrorMessage="Invalid Low Current Yield " 
+                        SetFocusOnError="True" ValidationExpression="^(\-)?\d*(\.\d+)?$"></asp:RegularExpressionValidator>
+                </td>
                 <td>
                     <asp:Label ID="Label23" runat="server" Text="high"></asp:Label>
                     </td>
                 <td class="style7">
-                    <asp:TextBox ID="TextBox14" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="CurrentYieldHigh" runat="server"></asp:TextBox>
                 </td>
                 <td class="style11">
-                    &nbsp;</td>
+                    <asp:RegularExpressionValidator ID="ParValue_v5" runat="server" 
+                        ControlToValidate="CurrentYieldHigh" ErrorMessage="Invalid High Current Yield " 
+                        SetFocusOnError="True" ValidationExpression="^(\-)?\d*(\.\d+)?$"></asp:RegularExpressionValidator>
+                  </td>
                 <td>
                     <asp:Button ID="SearchButton" runat="server" Text="Search" 
                         onclick="SearchButton_Click" />
                 </td>
                 <td>
-                    &nbsp;</td>
+                    </td>
                 <td>
                     <asp:ValidationSummary ID="ValidationSummary1" runat="server" Height="16px" />
                 </td>
                 <td>
-                    &nbsp;</td>
+                    </td>
             </tr>
             <tr>
                 <td class="style2">
@@ -237,18 +254,24 @@
                     <asp:Label ID="Label15" runat="server" Text="low"></asp:Label>
                 </td>
                 <td class="style5">
-                    <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="YieldToMaturityLow" runat="server"></asp:TextBox>
                 </td>
-                <td class="style9">
-                    &nbsp;</td>
+                <td class="style15">
+                    <asp:RegularExpressionValidator ID="ParValue_v3" runat="server" 
+                        ControlToValidate="YieldToMaturityLow" ErrorMessage="Invalid Low Yield To Maturity " 
+                        SetFocusOnError="True" ValidationExpression="^(\-)?\d*(\.\d+)?$"></asp:RegularExpressionValidator>
+                </td>
                 <td>
                     <asp:Label ID="Label24" runat="server" Text="high"></asp:Label>
                     </td>
                 <td class="style7">
-                    <asp:TextBox ID="TextBox15" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="YieldToMaturityHigh" runat="server"></asp:TextBox>
                 </td>
                 <td class="style11">
-                    &nbsp;</td>
+                    <asp:RegularExpressionValidator ID="ParValue_v2" runat="server" 
+                        ControlToValidate="YieldToMaturityHigh" ErrorMessage="Invalid High Yield To Maturity " 
+                        SetFocusOnError="True" ValidationExpression="^(\-)?\d*(\.\d+)?$"></asp:RegularExpressionValidator>
+                  </td>
                 <td>
                     &nbsp;</td>
                 <td>
@@ -266,15 +289,15 @@
                     <asp:Label ID="Label16" runat="server" Text="low"></asp:Label>
                 </td>
                 <td class="style5">
-                    <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="MaturityDateLow" runat="server"></asp:TextBox>
                 </td>
-                <td class="style9">
+                <td class="style15">
                     &nbsp;</td>
                 <td>
                     <asp:Label ID="Label25" runat="server" Text="high"></asp:Label>
                     </td>
                 <td class="style7">
-                    <asp:TextBox ID="TextBox16" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="MaturityDateHigh" runat="server"></asp:TextBox>
                 </td>
                 <td class="style11">
                     &nbsp;</td>
@@ -297,7 +320,7 @@
                 <td class="style5">
                     <asp:TextBox ID="ParValueLow" runat="server"></asp:TextBox>
                 </td>
-                <td class="style9">
+                <td class="style15">
                     <asp:RegularExpressionValidator ID="ParValue_v0" runat="server" 
                         ControlToValidate="ParValueLow" ErrorMessage="Invalid Low Par Price" 
                         SetFocusOnError="True" ValidationExpression="^(\-)?\d*(\.\d+)?$"></asp:RegularExpressionValidator>
@@ -332,7 +355,7 @@
                 <td class="style5">
                     <asp:TextBox ID="PriceLow" runat="server" ></asp:TextBox>
                 </td>
-                <td class="style9">
+                <td class="style15">
                     <asp:RegularExpressionValidator ID="PriceLow_v" runat="server" 
                         ControlToValidate="PriceLow" ErrorMessage="Invalid Low Price" 
                         SetFocusOnError="True" ValidationExpression="^(\-)?\d*(\.\d+)?$"></asp:RegularExpressionValidator>
@@ -364,7 +387,7 @@
                     &nbsp;</td>
                 <td class="style5">
                     &nbsp;</td>
-                <td class="style9">
+                <td class="style15">
                     &nbsp;</td>
                 <td>
                     &nbsp;</td>
