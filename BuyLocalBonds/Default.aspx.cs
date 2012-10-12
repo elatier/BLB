@@ -30,6 +30,8 @@ namespace BuyLocalBonds
             b.Cusip = Util.Filter(CUSIP.Text);
             b.Price_low = Util.Parse(b.Price_low,PriceLow.Text);
             b.Price_high = Util.Parse(b.Price_high,PriceHigh.Text);
+            b.Par_value_low = Util.Parse(b.Par_value_low, ParValueLow.Text);
+            b.Par_value_high= Util.Parse(b.Par_value_high, ParValueHigh.Text);
 
             DataSet ds = bend.SearchBonds(b);
             BondGrid.DataSource = ds.Tables[0];

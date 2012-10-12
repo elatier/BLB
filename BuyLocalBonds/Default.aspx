@@ -42,11 +42,20 @@
             height: 20px;
             width: 156px;
         }
+        .style11
+        {
+            width: 96px;
+        }
+        .style12
+        {
+            height: 20px;
+            width: 96px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <h2>
-        Buy Local Bonds: Bond Search
+        Bond Search
     </h2>
     <div>
 
@@ -64,7 +73,7 @@
                     &nbsp;</td>
                 <td class="style7">
                     &nbsp;</td>
-                <td>
+                <td class="style11">
                     &nbsp;</td>
                 <td>
                     &nbsp;</td>
@@ -93,7 +102,7 @@
                     &nbsp;</td>
                 <td class="style8">
                     &nbsp;</td>
-                <td class="style4">
+                <td class="style12">
                     </td>
                 <td class="style4">
                     </td>
@@ -119,7 +128,7 @@
                     &nbsp;</td>
                 <td class="style7">
                     &nbsp;</td>
-                <td>
+                <td class="style11">
                     &nbsp;</td>
                 <td>
                     &nbsp;</td>
@@ -148,7 +157,7 @@
                 <td class="style7">
                     <asp:TextBox ID="TextBox12" runat="server"></asp:TextBox>
                 </td>
-                <td>
+                <td class="style11">
                     &nbsp;</td>
                 <td>
                     &nbsp;</td>
@@ -177,7 +186,7 @@
                 <td class="style7">
                     <asp:TextBox ID="TextBox13" runat="server"></asp:TextBox>
                 </td>
-                <td>
+                <td class="style11">
                     &nbsp;</td>
                 <td>
                     &nbsp;</td>
@@ -206,14 +215,17 @@
                 <td class="style7">
                     <asp:TextBox ID="TextBox14" runat="server"></asp:TextBox>
                 </td>
+                <td class="style11">
+                    &nbsp;</td>
+                <td>
+                    <asp:Button ID="SearchButton" runat="server" Text="Search" 
+                        onclick="SearchButton_Click" />
+                </td>
                 <td>
                     &nbsp;</td>
                 <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
+                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" Height="16px" />
+                </td>
                 <td>
                     &nbsp;</td>
             </tr>
@@ -235,7 +247,7 @@
                 <td class="style7">
                     <asp:TextBox ID="TextBox15" runat="server"></asp:TextBox>
                 </td>
-                <td>
+                <td class="style11">
                     &nbsp;</td>
                 <td>
                     &nbsp;</td>
@@ -264,7 +276,7 @@
                 <td class="style7">
                     <asp:TextBox ID="TextBox16" runat="server"></asp:TextBox>
                 </td>
-                <td>
+                <td class="style11">
                     &nbsp;</td>
                 <td>
                     &nbsp;</td>
@@ -283,18 +295,24 @@
                     <asp:Label ID="Label17" runat="server" Text="low"></asp:Label>
                 </td>
                 <td class="style5">
-                    <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="ParValueLow" runat="server"></asp:TextBox>
                 </td>
                 <td class="style9">
-                    &nbsp;</td>
+                    <asp:RegularExpressionValidator ID="ParValue_v0" runat="server" 
+                        ControlToValidate="ParValueLow" ErrorMessage="Invalid Low Par Price" 
+                        SetFocusOnError="True" ValidationExpression="^(\-)?\d*(\.\d+)?$"></asp:RegularExpressionValidator>
+                </td>
                 <td>
                     <asp:Label ID="Label26" runat="server" Text="high"></asp:Label>
                     </td>
                 <td class="style7">
-                    <asp:TextBox ID="TextBox17" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="ParValueHigh" runat="server"></asp:TextBox>
                 </td>
-                <td>
-                    &nbsp;</td>
+                <td class="style11">
+                    <asp:RegularExpressionValidator ID="ParValue_v1" runat="server" 
+                        ControlToValidate="ParValueHigh" ErrorMessage="Invalid High Par Price" 
+                        SetFocusOnError="True" ValidationExpression="^(\-)?\d*(\.\d+)?$"></asp:RegularExpressionValidator>
+                </td>
                 <td>
                     &nbsp;</td>
                 <td>
@@ -326,7 +344,7 @@
                     <asp:TextBox ID="PriceHigh" runat="server" 
                         ></asp:TextBox>
                 </td>
-                <td>
+                <td class="style11">
                     <asp:RegularExpressionValidator ID="PriceHigh_v" runat="server" 
                         ControlToValidate="PriceHigh" ErrorMessage="Invalid High Price" 
                         SetFocusOnError="True" ValidationExpression="^(\-)?\d*(\.\d+)?$"></asp:RegularExpressionValidator></td>
@@ -352,58 +370,7 @@
                     &nbsp;</td>
                 <td class="style7">
                     &nbsp;</td>
-                <td>
-                    <asp:Button ID="SearchButton" runat="server" Text="Search" 
-                        onclick="SearchButton_Click" />
-                </td>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-            </tr>
-            <tr>
-                <td class="style2">
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-                <td class="style5">
-                    &nbsp;</td>
-                <td class="style9">
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-                <td class="style7">
-                    &nbsp;</td>
-                <td>
-                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
-                </td>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-            </tr>
-            <tr>
-                <td class="style2">
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-                <td class="style5">
-                    &nbsp;</td>
-                <td class="style9">
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-                <td class="style7">
-                    &nbsp;</td>
-                <td>
+                <td class="style11">
                     &nbsp;</td>
                 <td>
                     &nbsp;</td>
@@ -419,10 +386,7 @@
         </asp:GridView>
     </div>
     <p>
-        To learn more about ASP.NET visit <a href="http://www.asp.net" title="ASP.NET Website">www.asp.net</a>.
-    </p>
+        &nbsp;&nbsp; &nbsp;</p>
     <p>
-        You can also find <a href="http://go.microsoft.com/fwlink/?LinkID=152368&amp;clcid=0x409"
-            title="MSDN ASP.NET Docs">documentation on ASP.NET at MSDN</a>.
-    </p>
+        &nbsp;</p>
 </asp:Content>
