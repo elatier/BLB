@@ -26,8 +26,8 @@ namespace BuyLocalBonds.BackEnd
 
         public Bond()
         {
-            Name = null;
-            Cusip = null;
+            Name = String.Empty;
+            Cusip = String.Empty;
             Price_low = 0;
             Price_high = Double.MaxValue;
             Par_value_low = 0;

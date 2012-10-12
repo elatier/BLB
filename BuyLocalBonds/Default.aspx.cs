@@ -26,10 +26,10 @@ namespace BuyLocalBonds
 
             //Regex numRegex = new Regex("/^\\d+\\.?\\d*$/");
 
-            //b.Name = Name.Text;
-            //b.Cusip = CUSIP.Text;
-            b.Price_low = Utilities.ToDouble(b.Price_low,PriceLow.Text);
-            b.Price_high = Utilities.ToDouble(b.Price_high, PriceHigh.Text);
+            b.Name = Util.Filter(Name.Text);
+            b.Cusip = Util.Filter(CUSIP.Text);
+            b.Price_low = Util.Parse(b.Price_low,PriceLow.Text);
+            b.Price_high = Util.Parse(b.Price_high,PriceHigh.Text);
 
             DataSet ds = bend.SearchBonds(b);
             BondGrid.DataSource = ds.Tables[0];
