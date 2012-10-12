@@ -289,7 +289,7 @@
                     <asp:Label ID="Label16" runat="server" Text="low"></asp:Label>
                 </td>
                 <td class="style5">
-                    <asp:TextBox ID="MaturityDateLow" runat="server"></asp:TextBox>
+                    <asp:Calendar ID="MaturityDateLow" runat="server"></asp:Calendar>
                 </td>
                 <td class="style15">
                     &nbsp;</td>
@@ -297,7 +297,7 @@
                     <asp:Label ID="Label25" runat="server" Text="high"></asp:Label>
                     </td>
                 <td class="style7">
-                    <asp:TextBox ID="MaturityDateHigh" runat="server"></asp:TextBox>
+                    <asp:Calendar ID="MaturityDateHigh" runat="server"></asp:Calendar>
                 </td>
                 <td class="style11">
                     &nbsp;</td>

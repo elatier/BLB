@@ -343,7 +343,7 @@ namespace BuyLocalBonds {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox MaturityDateLow;
+        protected global::System.Web.UI.WebControls.Calendar MaturityDateLow;
         
         /// <summary>
         /// Label25 control.
@@ -361,7 +361,7 @@ namespace BuyLocalBonds {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox MaturityDateHigh;
+        protected global::System.Web.UI.WebControls.Calendar MaturityDateHigh;
         
         /// <summary>
         /// Label8 control.
