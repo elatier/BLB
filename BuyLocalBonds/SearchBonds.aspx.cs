@@ -21,27 +21,21 @@ namespace BuyLocalBonds
         protected void Search_Click(object sender, EventArgs e)
         {
 
-            try
-            {
+            //try
+            //{
                 DataSet ds;
-                string pattern = "[0-9]{3}[a-zA-Z0-9]{6}";
-                Regex rgx = new Regex(pattern, RegexOptions.IgnoreCase);
-                if (!rgx.IsMatch(CUSIP.Text)) {
-                    CUSIP.Text="";
-                    ds = bend.SearchBonds(null, Convert.ToDouble(PriceLow.Text), Convert.ToDouble(PriceHigh.Text));
-                }
-                else
-                {
-                    ds = bend.SearchBonds(CUSIP.Text, Convert.ToDouble(PriceLow.Text), Convert.ToDouble(PriceHigh.Text));
-                }
+                Bond b = new Bond();
+                b.Price_low = Convert.ToDouble(PriceLow.Text);
+                b.Price_high = Convert.ToDouble(PriceHigh.Text);;
+                ds = bend.SearchBonds(b);
                 GvBondResults.DataSource = ds.Tables[0];
                 GvBondResults.DataBind();
-            }
-            catch (Exception)
-            {
+            //}
+            //catch (Exception Ex)
+            //{
+                //throw;
 
-
-            }
+            //}
         }
 
 

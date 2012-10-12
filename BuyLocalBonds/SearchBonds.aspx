@@ -32,7 +32,7 @@
             <td class="style2">
                 </td>
             <td class="style3">
-            </td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td>
@@ -41,28 +41,35 @@
                 <asp:TextBox ID="CUSIP" runat="server" ></asp:TextBox>
                 </td>
             <td>
-                &nbsp;</td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ControlToValidate="PriceLow" Display="Dynamic" 
+                    ErrorMessage="Price Low Required"></asp:RequiredFieldValidator>
+            </td>
             <td class="style1">
-                &nbsp;</td>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                    ControlToValidate="CUSIP" Display="Dynamic" ErrorMessage="CUSIP not correct" 
+                    ValidationExpression="[0-9]{3}[a-zA-Z0-9]{6}"></asp:RegularExpressionValidator>
+            </td>
         </tr>
         <tr>
             <td class="style2">
-                Price: Low</td>
+                <asp:Label ID="Label1" runat="server" Text="Low"></asp:Label>
+            </td>
             <td class="style2">
                 <asp:TextBox ID="PriceLow" runat="server"></asp:TextBox>
                 </td>
             <td class="style2">
-                high</td>
+                &nbsp;</td>
             <td class="style1">
-                <asp:TextBox ID="PriceHigh" runat="server" 
-                    ></asp:TextBox>
-            </td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td>
-                &nbsp;</td>
+                <asp:Label ID="Label2" runat="server" Text="High"></asp:Label>
+            </td>
             <td>
-                <asp:GridView ID="GvBondResults" runat="server" />
+                <asp:TextBox ID="PriceHigh" runat="server" 
+                    ></asp:TextBox>
 
             </td>
             <td>
@@ -73,6 +80,9 @@
             </td>
         </tr>
     </table>
+                <asp:GridView ID="GvBondResults" runat="server" />
+
+            <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
     </form>
 </body>
 </html>

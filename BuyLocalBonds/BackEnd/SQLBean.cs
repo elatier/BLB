@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace BuyLocalBonds.BackEnd
 {
-    public class SQLBean
+    internal class SQLBean
     {
     SqlConnection conn;
 
@@ -16,10 +16,7 @@ namespace BuyLocalBonds.BackEnd
         {
             conn = new SqlConnection("Server=.;Database=BLBData;Integrated Security=SSPI;");             
         }
-        public DataSet SearchBondsQuery(string name, string cusip, double price_low, double price_high,
-            double par_value_low, double par_value_high, string maturity_date_low, string maturity_date_high,
-            double yield_to_maturity_low, double yield_to_maturity_high, double current_yield_low, double current_yield_high,
-            double coupon_low, double coupon_high, double rating_low, double rating_high)
+        public DataSet SearchBondsQuery(Bond b)
         {
             string sql = "SELECT [cusip]" +
                           ",[name]" +
@@ -31,44 +28,51 @@ namespace BuyLocalBonds.BackEnd
                           ",[coupon]" +
                           ",[rating]" +
                           ",[country_code]" +
-                      " FROM [BLBData].[dbo].[BONDS] WHERE 1=1" + //sanity check fail
-                      ((name!=null) ? " AND name = @name" : "" )+
-                      ((cusip!=null) ? " AND CUSIP = @cusip" : "")+
-                      " AND price >= @price_low"+
-                      " AND price <= @price_high" +
-                      " AND par_value BETWEEN @par_value_low AND @par_value_high" +
-                      " AND maturity_date BETWEEN @maturity_date_low AND @maturity_date_low_high" +
-                      " AND yield_to_maturity BETWEEN @yield_to_maturity_low AND @yield_to_maturity_high" +
-                      " AND current_yield BETWEEN @current_yield_low AND @current_yield_high" +
-                      " AND coupon BETWEEN @coupon_low AND @coupon_high" +
-                      " AND rating BETWEEN @rating_low AND @rating_high" +
-                      " GO";
+                      " FROM [BONDS] WHERE 1=1" + //sanity check fail
+                      ((b.Name!=null) ? " AND name = @name" : "" )+
+                      ((b.Cusip!=null) ? " AND CUSIP = @cusip" : "")+
+                      ((b.Price_low!=Double.NaN) ? " AND price >= @price_low" : "")+
+                      ((b.Price_high != Double.NaN) ? " AND price <= @price_high" : "")
+                      //((par_value_low != Double.NaN) ? " AND par_value >= @par_value_low" : "") +
+                      //((par_value_high != Double.NaN) ? " AND par_value <= @par_value_high" : "") +
+                      //((maturity_date_low != null) ? " AND maturity_date <= @maturity_date_low" : "") +
+                      //((maturity_date_high != null) ? " AND maturity_date >= @maturity_date_high" : "") +
+                      //((yield_to_maturity_low != Double.NaN) ? " AND yield_to_maturity >= @yield_to_maturity_low" : "") +
+                      //((yield_to_maturity_high != Double.NaN) ? " AND yield_to_maturity <= @yield_to_maturity_high" : "") +
+                      //((current_yield_low != Double.NaN) ? " AND current_yield >= @current_yield_low" : "") +
+                      //((current_yield_high != Double.NaN) ? " AND current_yield <= @current_yield_high" : "") +
+                      //((coupon_low != Double.NaN) ? " AND coupon >= @coupon_low" : "") +
+                      //((coupon_high != Double.NaN) ? " AND coupon <= @coupon_high" : "") +
+                      //((rating_low != Double.NaN) ? " AND rating >= @rating_low" : "") +
+                      //((rating_high != Double.NaN) ? " AND rating <= @rating_high" : "") 
+                      ;
+
 
             SqlCommand cmdBond = new SqlCommand(sql, conn);
 
            // SqlParameter myParam = new SqlParameter(
             //    "@Param1", SqlDbType.VarChar, 11);
 
-            cmdBond.Parameters.AddWithValue("@name", name);
-            cmdBond.Parameters.AddWithValue("@cusip", cusip);
-            cmdBond.Parameters.AddWithValue("@price_low", price_low);
-            cmdBond.Parameters.AddWithValue("@price_high", price_high);
-            cmdBond.Parameters.AddWithValue("@par_value_low", par_value_low);
-            cmdBond.Parameters.AddWithValue("@par_value_high", par_value_high);
-            cmdBond.Parameters.AddWithValue("@yield_to_maturity_low", yield_to_maturity_low);
-            cmdBond.Parameters.AddWithValue("@yield_to_maturity_high", yield_to_maturity_high);
-            cmdBond.Parameters.AddWithValue("@current_yield_low", current_yield_low);
-            cmdBond.Parameters.AddWithValue("@current_yield_high", current_yield_high);
-            cmdBond.Parameters.AddWithValue("@coupon_low", coupon_low);
-            cmdBond.Parameters.AddWithValue("@coupon_high", coupon_high);
-            cmdBond.Parameters.AddWithValue("@rating_low", rating_low);
-            cmdBond.Parameters.AddWithValue("@rating_high", rating_high);
+            if (b.Name != null) cmdBond.Parameters.AddWithValue("@name", b.Name);
+            if (b.Cusip != null) cmdBond.Parameters.AddWithValue("@cusip", b.Cusip);
+            if (b.Price_low != Double.NaN) cmdBond.Parameters.AddWithValue("@price_low", b.Price_low);
+            if (b.Price_high != Double.NaN) cmdBond.Parameters.AddWithValue("@price_high", b.Price_high);
+            //if (par_value_low != Double.NaN) cmdBond.Parameters.AddWithValue("@par_value_low", par_value_low);
+            //if (par_value_high != Double.NaN) cmdBond.Parameters.AddWithValue("@par_value_high", par_value_high);
+            //if (yield_to_maturity_low != Double.NaN) cmdBond.Parameters.AddWithValue("@yield_to_maturity_low", yield_to_maturity_low);
+            //if (yield_to_maturity_high != Double.NaN) cmdBond.Parameters.AddWithValue("@yield_to_maturity_high", yield_to_maturity_high);
+            //if (current_yield_low != Double.NaN) cmdBond.Parameters.AddWithValue("@current_yield_low", current_yield_low);
+            //if (current_yield_high != Double.NaN) cmdBond.Parameters.AddWithValue("@current_yield_high", current_yield_high);
+            //if (coupon_low != Double.NaN) cmdBond.Parameters.AddWithValue("@coupon_low", coupon_low);
+            //if (coupon_high != Double.NaN) cmdBond.Parameters.AddWithValue("@coupon_high", coupon_high);
+            //if (rating_low != Double.NaN) cmdBond.Parameters.AddWithValue("@rating_low", rating_low);
+            //if (rating_high != Double.NaN) cmdBond.Parameters.AddWithValue("@rating_high", rating_high);
 
             SqlDataAdapter da = new SqlDataAdapter(cmdBond);
 
             DataSet ds = new DataSet();
             da.Fill(ds, "Bonds");
-            conn.Close();
+            //conn.Close();
             return ds;
         }
 
@@ -90,7 +94,7 @@ namespace BuyLocalBonds.BackEnd
             SqlDataAdapter da = new SqlDataAdapter(cmdBond);
             DataSet ds = new DataSet();
             da.Fill(ds, "Bonds");
-            conn.Close();
+            //conn.Close();
             return ds;
         }
     }

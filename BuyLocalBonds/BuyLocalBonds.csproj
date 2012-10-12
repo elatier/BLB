@@ -109,6 +109,7 @@
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="BackEnd\BEnd.cs" />
+    <Compile Include="BackEnd\Bond.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
