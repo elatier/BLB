@@ -30,7 +30,7 @@ namespace BuyLocalBonds.BackEnd
                           ",[rating]" +
                           ",[country_code]" +
                       " FROM [BONDS] WHERE 1=1" + //sanity check fail
-                ((!String.IsNullOrWhiteSpace(b.Name)) ? " AND name = @name" : "") +
+                ((!String.IsNullOrWhiteSpace(b.Name)) ? " AND name LIKE @name" : "") +
                 ((!String.IsNullOrWhiteSpace(b.Cusip)) ? " AND CUSIP = @cusip" : "") +
                       " AND price >= @price_low" +
                       " AND price <= @price_high" +
@@ -55,7 +55,7 @@ namespace BuyLocalBonds.BackEnd
             //    "@Param1", SqlDbType.VarChar, 11);
 
             if (!String.IsNullOrWhiteSpace(b.Name)) 
-                cmdBond.Parameters.AddWithValue("@name", b.Name);
+                cmdBond.Parameters.AddWithValue("@name","%"+b.Name+"%");
             if (!String.IsNullOrWhiteSpace(b.Cusip)) 
                 cmdBond.Parameters.AddWithValue("@cusip", b.Cusip);
             cmdBond.Parameters.AddWithValue("@price_low", b.Price_low);

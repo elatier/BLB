@@ -56,7 +56,6 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
-    <Content Include="SearchBonds.aspx" />
     <Content Include="SelectBond.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
@@ -71,6 +70,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">
@@ -122,13 +122,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SearchBonds.aspx.cs">
-      <DependentUpon>SearchBonds.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SearchBonds.aspx.designer.cs">
-      <DependentUpon>SearchBonds.aspx</DependentUpon>
-    </Compile>
     <Compile Include="SelectBond.aspx.cs">
       <DependentUpon>SelectBond.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -144,6 +137,13 @@
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="BackEnd\SQLBean.cs" />
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
