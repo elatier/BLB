@@ -1,3 +1,5 @@
+
+
 DROP TABLE AVAILABLE_BONDS
 DROP TABLE OWNED_BONDS
 DROP TABLE TRANSACTIONS
@@ -6,6 +8,15 @@ DROP TABLE TRADER_GROUPS
 DROP TABLE CLIENT
 DROP TABLE TRADER
 DROP TABLE COUNTRY_INFO
+DROP TABLE RATINGS
+
+use BLBData
+go
+CREATE TABLE RATINGS
+(
+rating smallint PRIMARY KEY,
+rating_sp nchar(5) not null,
+)
 
 use BLBData
 go
@@ -30,7 +41,8 @@ current_yield float not null,
 coupon float not null,
 rating smallint not null,
 country_code nchar(5) not null,
-FOREIGN KEY (country_code) REFERENCES COUNTRY_INFO(country_code)
+FOREIGN KEY (country_code) REFERENCES COUNTRY_INFO(country_code),
+FOREIGN KEY (rating) REFERENCES RATINGS(rating)
 )
 
 use BLBData
@@ -97,14 +109,20 @@ FOREIGN KEY (trader_id) REFERENCES TRADER(trader_id)
 )
 
 
+INSERT INTO RATINGS (rating, rating_sp) VALUES (1,'AAA')
+INSERT INTO RATINGS (rating, rating_sp) VALUES (2,'AA+')
+INSERT INTO RATINGS (rating, rating_sp) VALUES (3,'AA')
+INSERT INTO RATINGS (rating, rating_sp) VALUES (4,'AA-')
+INSERT INTO RATINGS (rating, rating_sp) VALUES (5,'A')
+
 INSERT INTO COUNTRY_INFO (country_code, settlement_time, calender) VALUES ('USA', 3, 'URL1')
 INSERT INTO COUNTRY_INFO (country_code, settlement_time, calender) VALUES ('SIN', 2, 'URL2')
 INSERT INTO COUNTRY_INFO (country_code, settlement_time, calender) VALUES ('AUS', 3, 'URL2')
 
 
-INSERT INTO BONDS (cusip, name, price, par_value, maturity_date, yield_to_maturity, current_yield, coupon, rating, country_code) VALUES (123456789, 'American Government Bond', 22, 33, '2013-05-11', 11, 12, 5, 'AAA', 'USA')
-INSERT INTO BONDS (cusip, name, price, par_value, maturity_date, yield_to_maturity, current_yield, coupon, rating, country_code) VALUES (111111111, 'Australian Government Bond', 55, 55, '2013-06-15', 22, 80, 5, 'AAB', 'AUS')
-INSERT INTO BONDS (cusip, name, price, par_value, maturity_date, yield_to_maturity, current_yield, coupon, rating, country_code) VALUES (999999999, 'Singapaore Government Bond', 22, 33, '2013-05-11', 11, 12, 5, 'AAA', 'SIN')
+INSERT INTO BONDS (cusip, name, price, par_value, maturity_date, yield_to_maturity, current_yield, coupon, rating, country_code) VALUES (123456789, 'American Government Bond', 22, 33, '2013-05-11', 11, 12, 5, 1, 'USA')
+INSERT INTO BONDS (cusip, name, price, par_value, maturity_date, yield_to_maturity, current_yield, coupon, rating, country_code) VALUES (111111111, 'Australian Government Bond', 55, 55, '2013-06-15', 22, 80, 5, 2, 'AUS')
+INSERT INTO BONDS (cusip, name, price, par_value, maturity_date, yield_to_maturity, current_yield, coupon, rating, country_code) VALUES (999999999, 'Singapaore Government Bond', 22, 33, '2013-05-11', 11, 12, 5, 1, 'SIN')
 
 
 INSERT INTO AVAILABLE_BONDS (cusip, quantity_available) VALUES (123456789, 500)
