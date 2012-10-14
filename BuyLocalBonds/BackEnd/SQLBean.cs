@@ -27,9 +27,9 @@ namespace BuyLocalBonds.BackEnd
                           ",[yield_to_maturity]" +
                           ",[current_yield]" +
                           ",[coupon]" +
-                          ",[rating]" +
+                          ",[rating_sp]" +
                           ",[country_code]" +
-                      " FROM [BONDS] WHERE 1=1" + //sanity check fail
+                      " FROM BONDS JOIN RATINGS ON (BONDS.rating = RATINGS.rating) WHERE 1=1" + //sanity check fail
                 ((!String.IsNullOrWhiteSpace(b.Name)) ? " AND name LIKE @name" : "") +
                 ((!String.IsNullOrWhiteSpace(b.Cusip)) ? " AND CUSIP = @cusip" : "") +
                       " AND price >= @price_low" +
@@ -44,19 +44,19 @@ namespace BuyLocalBonds.BackEnd
                       " AND current_yield <= @current_yield_high" +
                       " AND coupon >= @coupon_low" +
                       " AND coupon <= @coupon_high" +
-                      " AND rating <= @rating_low" +
-                      " AND rating >= @rating_high"
+                      " AND BONDS.rating <= @rating_low" +
+                      " AND BONDS.rating >= @rating_high"
                       ;
 
 
             SqlCommand cmdBond = new SqlCommand(sql, conn);
 
-           // SqlParameter myParam = new SqlParameter(
+            // SqlParameter myParam = new SqlParameter(
             //    "@Param1", SqlDbType.VarChar, 11);
 
-            if (!String.IsNullOrWhiteSpace(b.Name)) 
-                cmdBond.Parameters.AddWithValue("@name","%"+b.Name+"%");
-            if (!String.IsNullOrWhiteSpace(b.Cusip)) 
+            if (!String.IsNullOrWhiteSpace(b.Name))
+                cmdBond.Parameters.AddWithValue("@name", "%" + b.Name + "%");
+            if (!String.IsNullOrWhiteSpace(b.Cusip))
                 cmdBond.Parameters.AddWithValue("@cusip", b.Cusip);
             cmdBond.Parameters.AddWithValue("@price_low", b.Price_low);
             cmdBond.Parameters.AddWithValue("@price_high", b.Price_high);

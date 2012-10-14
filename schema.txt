@@ -95,6 +95,8 @@ CREATE TABLE TRADER
 (
 trader_id integer PRIMARY KEY,
 trader_name nchar(255) not null,
+trader_username nchar(255) not null,
+trader_password nchar(255) not null
 )
 
 use BLBData
@@ -141,8 +143,8 @@ INSERT INTO AVAILABLE_BONDS (cusip, quantity_available) VALUES (999999999, 1000)
 INSERT INTO CLIENT (client_id, client_name, address, company, contact_no) VALUES (1,'Robert Fujiwara', '34 Long Lane', 'Unemployed', '0434928152')
 INSERT INTO CLIENT (client_id, client_name, address, company, contact_no) VALUES (2,'Aomi', '34 Long Lane', 'Unemployed', '08124928152')
 
-INSERT INTO TRADER (trader_id, trader_name) VALUES (1,'A. DAVIS')
-INSERT INTO TRADER (trader_id, trader_name) VALUES (2,'B. JOHNS')
+INSERT INTO TRADER (trader_id, trader_name, trader_username, trader_password) VALUES (1,'A. DAVIS','trader1','password')
+INSERT INTO TRADER (trader_id, trader_name, trader_username, trader_password) VALUES (2,'B. JOHNS','trader2','password')
 
 INSERT INTO TRADER_GROUPS (trader_group_id, client_id, trader_id) VALUES (1,1,1)
 INSERT INTO TRADER_GROUPS (trader_group_id, client_id, trader_id) VALUES (1,2,1)
