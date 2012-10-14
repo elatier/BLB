@@ -1,13 +1,13 @@
-﻿<%@ Page Title="About Us" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+﻿<%@ Page Title="Buy Bond" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeBehind="BuyBond.aspx.cs" Inherits="BuyLocalBonds.BuyBond" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <h2>
-        About
+        Buy Bond
     </h2>
     <p>
-        Put content here.
+        
     </p>
 </asp:Content>
