@@ -16,6 +16,7 @@ namespace BuyLocalBonds.BackEnd
         {
            db = new SQLBean();             
         }
+
         public DataSet SearchBonds(string cusip, double low, double high)
         {
             if (cusip == null)
@@ -29,5 +30,10 @@ namespace BuyLocalBonds.BackEnd
         
         }
 
+
+        internal DataSet SelectBond(string cusip)
+        {
+            return db.SelectBondQuery(cusip);
+        }
     }
 }
