@@ -43,9 +43,9 @@ namespace BuyLocalBonds.BackEnd
                       " AND current_yield >= @current_yield_low" +
                       " AND current_yield <= @current_yield_high" +
                       " AND coupon >= @coupon_low" +
-                      " AND coupon <= @coupon_high" //+
-                      //" AND rating >= @rating_low" +
-                      //" AND rating <= @rating_high"
+                      " AND coupon <= @coupon_high" +
+                      " AND rating <= @rating_low" +
+                      " AND rating >= @rating_high"
                       ;
 
 
@@ -70,8 +70,8 @@ namespace BuyLocalBonds.BackEnd
             cmdBond.Parameters.AddWithValue("@current_yield_high", b.Current_yield_high);
             cmdBond.Parameters.AddWithValue("@coupon_low", b.Coupon_low);
             cmdBond.Parameters.AddWithValue("@coupon_high", b.Coupon_high);
-            //cmdBond.Parameters.AddWithValue("@rating_low", b.Rating_low);
-            //cmdBond.Parameters.AddWithValue("@rating_high", b.Rating_high);
+            cmdBond.Parameters.AddWithValue("@rating_low", b.Rating_low);
+            cmdBond.Parameters.AddWithValue("@rating_high", b.Rating_high);
 
             SqlDataAdapter da = new SqlDataAdapter(cmdBond);
             DataSet ds = new DataSet();

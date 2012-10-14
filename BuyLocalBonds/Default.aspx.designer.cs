@@ -67,22 +67,22 @@ namespace BuyLocalBonds {
         protected global::System.Web.UI.WebControls.Label Label12;
         
         /// <summary>
-        /// RatingLow control.
+        /// RatingLow1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox RatingLow;
+        protected global::System.Web.UI.WebControls.DropDownList RatingLow1;
         
         /// <summary>
-        /// ParValue_v8 control.
+        /// RatingDbConnection control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator ParValue_v8;
+        protected global::System.Web.UI.WebControls.SqlDataSource RatingDbConnection;
         
         /// <summary>
         /// Label21 control.
@@ -94,22 +94,13 @@ namespace BuyLocalBonds {
         protected global::System.Web.UI.WebControls.Label Label21;
         
         /// <summary>
-        /// RatingHigh control.
+        /// RatingHigh1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox RatingHigh;
-        
-        /// <summary>
-        /// ParValue_v9 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator ParValue_v9;
+        protected global::System.Web.UI.WebControls.DropDownList RatingHigh1;
         
         /// <summary>
         /// Label4 control.
@@ -497,5 +488,14 @@ namespace BuyLocalBonds {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView BondGrid;
+        
+        /// <summary>
+        /// ErrorBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ErrorBox;
     }
 }

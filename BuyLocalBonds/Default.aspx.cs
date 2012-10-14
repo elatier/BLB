@@ -15,7 +15,7 @@ namespace BuyLocalBonds
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            RatingLow1.SelectedIndex = 12;
         }
 
         protected void SearchButton_Click(object sender, EventArgs e)
@@ -25,10 +25,13 @@ namespace BuyLocalBonds
             Bond b = new Bond();
 
             //Regex numRegex = new Regex("/^\\d+\\.?\\d*$/");
+            
 
             b.Name = Util.Filter(Name.Text);
             b.Cusip = Util.Filter(CUSIP.Text);
-            // rating
+            b.Rating_low = RatingLow1.SelectedIndex + 1;
+            b.Rating_high = RatingHigh1.SelectedIndex + 1;
+            
             //
             b.Coupon_low = Util.Parse(b.Coupon_low, CouponLow.Text);
             b.Coupon_high = Util.Parse(b.Coupon_high, CouponHigh.Text);
@@ -42,6 +45,8 @@ namespace BuyLocalBonds
             b.Price_high = Util.Parse(b.Price_high,PriceHigh.Text);
             b.Par_value_low = Util.Parse(b.Par_value_low, ParValueLow.Text);
             b.Par_value_high= Util.Parse(b.Par_value_high, ParValueHigh.Text);
+
+            ErrorBox.Text = Convert.ToString(b.Rating_low); 
 
             DataSet ds = bend.SearchBonds(b);
             BondGrid.DataSource = ds.Tables[0];

@@ -146,24 +146,28 @@
                     <asp:Label ID="Label12" runat="server" Text="low"></asp:Label>
                 </td>
                 <td class="style5">
-                    <asp:TextBox ID="RatingLow" runat="server" ></asp:TextBox>
+                    <asp:DropDownList ID="RatingLow1" runat="server" 
+                        DataSourceID="RatingDbConnection" DataTextField="rating_sp" 
+                        DataValueField="rating_sp">
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="RatingDbConnection" runat="server" 
+                        ConnectionString="<%$ ConnectionStrings:BLBDataConnectionString %>" 
+                        SelectCommand="SELECT [rating_sp] FROM [RATINGS] ORDER BY [rating]">
+                    </asp:SqlDataSource>
                 </td>
                 <td class="style15">
-                    <asp:RegularExpressionValidator ID="ParValue_v8" runat="server" 
-                        ControlToValidate="RatingLow" ErrorMessage="Invalid Rating Low" 
-                        SetFocusOnError="True" ValidationExpression="^(\-)?\d*(\.\d+)?$"></asp:RegularExpressionValidator>
-                </td>
+                    &nbsp;</td>
                 <td>
                     <asp:Label ID="Label21" runat="server" Text="high"></asp:Label>
                     </td>
                 <td class="style7">
-                    <asp:TextBox ID="RatingHigh" runat="server"></asp:TextBox>
+                    <asp:DropDownList ID="RatingHigh1" runat="server" 
+                        DataSourceID="RatingDbConnection" DataTextField="rating_sp" 
+                        DataValueField="rating_sp">
+                    </asp:DropDownList>
                 </td>
                 <td class="style11">
-                    <asp:RegularExpressionValidator ID="ParValue_v9" runat="server" 
-                        ControlToValidate="CurrentYieldLow" ErrorMessage="Invalid Rating High" 
-                        SetFocusOnError="True" ValidationExpression="^(\-)?\d*(\.\d+)?$"></asp:RegularExpressionValidator>
-                </td>
+                    &nbsp;</td>
                 <td>
                     &nbsp;</td>
                 <td>
@@ -407,6 +411,7 @@
             </table>
         <asp:GridView ID="BondGrid" runat="server">
         </asp:GridView>
+        <asp:TextBox ID="ErrorBox" runat="server"></asp:TextBox>
     </div>
     <p>
         &nbsp;&nbsp; &nbsp;</p>

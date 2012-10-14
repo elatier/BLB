@@ -21,8 +21,8 @@ namespace BuyLocalBonds.BackEnd
         public double Current_yield_high { get; set; }
         public double Coupon_low { get; set; }
         public double Coupon_high { get; set; }
-        public String Rating_low { get; set; }
-        public String Rating_high { get; set; }
+        public double Rating_low { get; set; }
+        public double Rating_high { get; set; }
 
         public Bond()
         {
@@ -40,8 +40,8 @@ namespace BuyLocalBonds.BackEnd
             Current_yield_high = Double.MaxValue;
             Coupon_low = Double.MinValue;
             Coupon_high = Double.MaxValue;
-            Rating_low = String.Empty;
-            Rating_high = String.Empty;
+            Rating_low = double.MinValue;
+            Rating_high = double.MaxValue;
         }
 
     }
