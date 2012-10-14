@@ -46,7 +46,7 @@ namespace BuyLocalBonds
             b.Par_value_low = Util.Parse(b.Par_value_low, ParValueLow.Text);
             b.Par_value_high= Util.Parse(b.Par_value_high, ParValueHigh.Text);
 
-            ErrorBox.Text = Convert.ToString(b.Rating_low); 
+            //ErrorBox.Text = Convert.ToString(b.Rating_low); 
 
             DataSet ds = bend.SearchBonds(b);
             BondGrid.DataSource = ds.Tables[0];

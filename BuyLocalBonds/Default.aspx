@@ -141,7 +141,8 @@
             </tr>
             <tr>
                 <td class="style2">
-                    S&amp;P Rating:</td>
+                    <asp:Label ID="Label28" runat="server" Text="S&amp;P Rating:"></asp:Label>
+                </td>
                 <td>
                     <asp:Label ID="Label12" runat="server" Text="low"></asp:Label>
                 </td>
@@ -411,7 +412,6 @@
             </table>
         <asp:GridView ID="BondGrid" runat="server">
         </asp:GridView>
-        <asp:TextBox ID="ErrorBox" runat="server"></asp:TextBox>
     </div>
     <p>
         &nbsp;&nbsp; &nbsp;</p>
