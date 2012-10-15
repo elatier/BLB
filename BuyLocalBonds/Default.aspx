@@ -456,7 +456,7 @@
             </tr>
             </table>
         <asp:GridView ID="BondGrid" onrowcommand="BondGrid_RowCommand" 
-            runat="server" meta:resourcekey="BondGridResource1" >
+            runat="server" meta:resourcekey="BondGridResource1" AutoGenerateSelectButton="true">
             <columns>        
               <asp:hyperlinkfield datatextfield="cusip"
                 datatextformatstring="{0}"
@@ -468,9 +468,12 @@
                 commandname="SelectBond"
                 headertext="Buy Bond" 
                 text="Buy" meta:resourcekey="ButtonFieldResource1"/>
-
               
         </columns>
+
+            <selectedrowstyle backcolor="LightCyan"
+            forecolor="DarkBlue"
+            font-bold="true"/> 
         </asp:GridView>
     </div>
     <p>

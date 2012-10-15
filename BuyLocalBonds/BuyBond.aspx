@@ -29,6 +29,20 @@
         {
             width: 173px;
         }
+        .style9
+        {
+            width: 173px;
+            height: 26px;
+        }
+        .style10
+        {
+            width: 166px;
+            height: 26px;
+        }
+        .style11
+        {
+            height: 26px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
@@ -51,7 +65,7 @@
                     <asp:Label ID="Label2" runat="server" Text="Name:"></asp:Label>
                 </td>
             <td class="style6">
-                    <asp:TextBox ID="Name" runat="server" Enabled="false"></asp:TextBox>
+                    <asp:TextBox ID="Name" runat="server" Enabled="false" Width="197px"></asp:TextBox>
                 </td>
             <td>
                 &nbsp;</td>
@@ -130,22 +144,30 @@
             <td class="style8">
                     Quantity Available:</td>
             <td class="style6">
-                    <asp:TextBox ID="QuantityAvailable" runat="server" Enabled="false"></asp:TextBox>
+                    <asp:TextBox ID="QuantityAvailable" runat="server" ></asp:TextBox>
                 </td>
             <td>
                 &nbsp;</td>
         </tr>
-        <tr maximumvalue="20">
-            <td class="style8">
+        <tr>
+            <td class="style9">
                     <asp:Label ID="Label29" runat="server" Text="Quantity:"></asp:Label>
                 </td>
-            <td class="style6">
+            <td class="style10">
                     <asp:TextBox ID="Quantity" runat="server"></asp:TextBox>
                 </td>
-            <td>
+            <td class="style11">
+
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ErrorMessage="Quantity Required" ControlToValidate="Quantity" Display="Dynamic"></asp:RequiredFieldValidator>
+
                 <asp:RangeValidator ID="RangeValidator1" runat="server" 
-                    ErrorMessage="Invalid Quantity" ControlToValidate="Quantity" 
-                    SetFocusOnError="True" MinimumValue="1" MaximumValue="20"></asp:RangeValidator>
+                    ErrorMessage="Incorrect Range" ControlToValidate="Quantity" MinimumValue="1"
+                     MaximumValue='100' Type="Integer" Display="Dynamic"></asp:RangeValidator>
+                <asp:CustomValidator runat="server" id="ageByDateCheck"
+                ControlToValidate="Quantity"
+                OnServerValidate="QuantityValidate"
+                ErrorMessage="You are not between the ages of 5 and 22." />
             </td>
         </tr>
         <tr>
@@ -153,7 +175,7 @@
                 <asp:Button ID="Back" runat="server" Text="Back" onclick="Back_Click" />
             </td>
             <td class="style6">
-                <asp:Button ID="Buy" runat="server" Text="Buy" />
+                <asp:Button ID="Buy" runat="server" Text="Buy" onclick="Buy_Click" />
             </td>
             <td>
                 &nbsp;</td>
@@ -162,8 +184,9 @@
             <td class="style8">
                 &nbsp;</td>
             <td class="style6">
-                <asp:GridView ID="GridView1" runat="server">
-                </asp:GridView>
+                <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px">
+
+                </asp:DetailsView>
             </td>
             <td>
                 &nbsp;</td>

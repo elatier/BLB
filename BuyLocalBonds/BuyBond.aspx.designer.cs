@@ -202,6 +202,15 @@ namespace BuyLocalBonds {
         protected global::System.Web.UI.WebControls.TextBox Quantity;
         
         /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        
+        /// <summary>
         /// RangeValidator1 control.
         /// </summary>
         /// <remarks>
@@ -229,12 +238,12 @@ namespace BuyLocalBonds {
         protected global::System.Web.UI.WebControls.Button Buy;
         
         /// <summary>
-        /// GridView1 control.
+        /// DetailsView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.DetailsView DetailsView1;
     }
 }
