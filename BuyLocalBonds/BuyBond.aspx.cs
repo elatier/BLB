@@ -61,11 +61,5 @@ namespace BuyLocalBonds
             
         }
 
-        protected void QuantityValidate(object source, ServerValidateEventArgs args)
-        {
-            int value = Convert.ToInt32(args.Value);
-            if (value <= Convert.ToInt32(QuantityAvailable.Text)) args.IsValid = true;
-            else args.IsValid = false;
-        }
     }
 }
