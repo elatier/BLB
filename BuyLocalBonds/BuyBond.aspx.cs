@@ -12,7 +12,7 @@ namespace BuyLocalBonds
     public partial class BuyBond : System.Web.UI.Page
     {
         BEnd bend;
-        int unitPrice;
+        double unitPrice;
         protected void Page_Load(object sender, EventArgs e)
         {
             Response.BufferOutput = true;
@@ -35,7 +35,7 @@ namespace BuyLocalBonds
                 CUSIP.Text = dt.Rows[0][0].ToString();
                 Name.Text = dt.Rows[0][1].ToString();
 
-                //unitPrice = (int)dt.Rows[0][2];
+                unitPrice = String.IsNullOrWhiteSpace(dt.Rows[0][2].ToString()) ? 0 : Convert.ToDouble(dt.Rows[0][2]);
 
                 Price.Text = dt.Rows[0][2].ToString();
                 ParValue.Text = dt.Rows[0][3].ToString();
@@ -83,20 +83,27 @@ namespace BuyLocalBonds
         protected void Buy_Click(object sender, EventArgs e)
         {
             Buy.Visible = false;
+            Cancel.Visible = true;
             Quantity.Enabled = false;
-            Confirm.Visible = true;
+            Confirm.Enabled = true;
+            TotalAmount.Text = "" + (Convert.ToDouble(Quantity.Text) * unitPrice);
         }
 
         protected void Confirm_Click(object sender, EventArgs e)
         {
             String TraderId = "1";
             bend.InsertBuyTransaction(TraderId, CUSIP.Text, Quantity.Text);
+
            
         }
 
-        protected void Quantity_TextChanged(object sender, EventArgs e)
+        protected void Cancel_Click(object sender, EventArgs e)
         {
-            //TotalAmount.Text = ""+(Convert.ToInt32(Quantity.Text) * unitPrice);
+            Cancel.Visible = false;
+            Buy.Visible = true;
+            Quantity.Enabled = true;
+            Confirm.Enabled = false;
+            TotalAmount.Text = "";
         }
 
     }
