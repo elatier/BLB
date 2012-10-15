@@ -41,14 +41,13 @@ namespace BuyLocalBonds
             b.Yield_to_maturity_high = Util.Parse(b.Yield_to_maturity_high, YieldToMaturityHigh.Text);
             // maturity date
         
-            DateTime TempDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day);
-            if (DateTime.Compare(MaturityDateHigh.SelectedDate,TempDate)>0  || DateTime.Compare(MaturityDateHigh.SelectedDate,TempDate)<0)
-            {
-                b.Maturity_date_low = MaturityDateLow.SelectedDate;
-            }
-            TempDate = new DateTime(9999, 12, 31);
-            if (DateTime.Compare(MaturityDateHigh.SelectedDate,TempDate)>0  || DateTime.Compare(MaturityDateHigh.SelectedDate,TempDate)<0)
-                b.Maturity_date_high = MaturityDateHigh.SelectedDate;
+         
+
+            DateTime TempDate = new DateTime(0001, 1, 1);
+
+            b.Maturity_date_high = MaturityDateHigh.SelectedDate;
+            if (DateTime.Compare(MaturityDateHigh.SelectedDate,TempDate) ==0)
+                b.Maturity_date_high = new DateTime(9999, 12, 31);
 
             //
             b.Price_low = Util.Parse(b.Price_low,PriceLow.Text);
