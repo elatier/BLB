@@ -16,12 +16,30 @@ namespace BuyLocalBonds.BackEnd
         {
             conn = new SqlConnection("Server=.;Database=BLBData;Integrated Security=SSPI;");             
         }
-
-        ~SQLBean()
+        
+        public DataSet LoginQuery(String UserName, String Password)
         {
-            conn.Close();
-        }
 
+            string sql = "SELECT [cusip]" +
+                          ",[name]" +
+                          ",[price]" +
+                          ",[par_value]" +
+                          ",[maturity_date]" +
+                       
+
+
+            SqlCommand cmdBond = new SqlCommand(sql, conn);
+
+            
+            cmdBond.Parameters.AddWithValue("@price_low", b.Price_low);
+            cmdBond.Parameters.AddWithValue("@price_high", b.Price_high);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmdBond);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "Bonds");
+            //conn.Close();
+            return ds;
+        }
         public DataSet SearchBondsQuery(Bond b)
         {
 
@@ -57,12 +75,12 @@ namespace BuyLocalBonds.BackEnd
 
             SqlCommand cmdBond = new SqlCommand(sql, conn);
 
-            // SqlParameter myParam = new SqlParameter(
+           // SqlParameter myParam = new SqlParameter(
             //    "@Param1", SqlDbType.VarChar, 11);
 
-            if (!String.IsNullOrWhiteSpace(b.Name))
-                cmdBond.Parameters.AddWithValue("@name", "%" + b.Name + "%");
-            if (!String.IsNullOrWhiteSpace(b.Cusip))
+            if (!String.IsNullOrWhiteSpace(b.Name)) 
+                cmdBond.Parameters.AddWithValue("@name","%"+b.Name+"%");
+            if (!String.IsNullOrWhiteSpace(b.Cusip)) 
                 cmdBond.Parameters.AddWithValue("@cusip", b.Cusip);
             cmdBond.Parameters.AddWithValue("@price_low", b.Price_low);
             cmdBond.Parameters.AddWithValue("@price_high", b.Price_high);
@@ -89,8 +107,8 @@ namespace BuyLocalBonds.BackEnd
         public DataSet GetBonds(string cusip, double low, double high)
         {
             conn = new SqlConnection("Server=.;Database=BLBData;Integrated Security=SSPI;");
-            
-            string sql = "SELECT * FROM Bonds WHERE ";
+
+            string sql = "SELECT cusip, name, price, par_value, maturity_date, yield_to_maturity, current_yield, coupon, rating_sp, country_code FROM BONDS JOIN RATINGS ON (BONDS.rating = RATINGS.rating) WHERE ";
            // if (low != null && high != null) 
             sql += "Price between @low and @high";
             //if (cusip != null) 
@@ -105,32 +123,6 @@ namespace BuyLocalBonds.BackEnd
             DataSet ds = new DataSet();
             da.Fill(ds, "Bonds");
             //conn.Close();
-            return ds;
-        }
-
-        internal DataSet SelectBondQuery(string cusip)
-        {
-            string sql = "SELECT [cusip]" +
-                          ",[name]" +
-                          ",[price]" +
-                          ",[par_value]" +
-                          ",[maturity_date]" +
-                          ",[yield_to_maturity]" +
-                          ",[current_yield]" +
-                          ",[coupon]" +
-                          ",[rating_sp]" +
-                          ",[country_code]" +
-                          ",[quantity_available]"+
-                      " FROM BondQuantity "+
-                        " WHERE CUSIP = @cusip";
-
-            SqlCommand cmdBond = new SqlCommand(sql, conn);
-
-            cmdBond.Parameters.AddWithValue("@cusip", cusip);
-
-            SqlDataAdapter da = new SqlDataAdapter(cmdBond);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "Bonds");
             return ds;
         }
     }
