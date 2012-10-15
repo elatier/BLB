@@ -145,9 +145,19 @@ namespace BuyLocalBonds.BackEnd
             return ds;
         }
 
-        internal void InsertBuyTransactionQuery(string traderId, string cusip, string quantity) 
+        internal DataSet InsertBuyTransactionQuery(string traderId, string cusip, string quantity) 
         {
+            string sql = "INSERT INTO [TRANSACTIONS] ([client_id],[cusip],[quantity]) VALUES (@clientId, @cusip ,@quantity)";
 
+            SqlCommand cmdBond = new SqlCommand(sql, conn);
+            cmdBond.Parameters.AddWithValue("@clientId", traderId);
+            cmdBond.Parameters.AddWithValue("@cusip", cusip);
+            cmdBond.Parameters.AddWithValue("@quantity", quantity);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmdBond);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "Bonds");
+            return ds;
         }
     }
 }
