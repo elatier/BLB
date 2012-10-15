@@ -34,7 +34,10 @@ namespace BuyLocalBonds.BackEnd
             return db.LoginQuery(UserName, Password);
 
         }
-
-
+        
+        internal DataSet SelectBond(string cusip)
+        {
+            return db.SelectBondQuery(cusip);
+        }
     }
 }
