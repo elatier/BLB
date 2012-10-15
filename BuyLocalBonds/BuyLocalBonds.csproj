@@ -72,6 +72,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="WebForm1.aspx" />
+    <Content Include="ClientPortfolio.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BuyBond.aspx.cs">
@@ -151,6 +152,13 @@
     </Compile>
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientPortfolio.aspx.cs">
+      <DependentUpon>ClientPortfolio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientPortfolio.aspx.designer.cs">
+      <DependentUpon>ClientPortfolio.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

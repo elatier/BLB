@@ -32,6 +32,12 @@ namespace BuyLocalBonds.BackEnd
             return true;
         }
 
+        public DataSet GetPortfolio(Int64 client_id)
+        {
+            return new DataSet();
+        }
+
+
         public DataSet SearchBondsQuery(Bond b)
         {
 
