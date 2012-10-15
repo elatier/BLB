@@ -8,8 +8,7 @@
         Login</h2>
     <p>
         Username:
-        <asp:TextBox ID="UserName1" runat="server" 
-            ontextchanged="UserName1_TextChanged"></asp:TextBox>
+        <asp:TextBox ID="UserName1" runat="server"></asp:TextBox>
     </p>
     <p>
         Password: <asp:TextBox ID="Password1" TextMode="password" runat="server"></asp:TextBox>
