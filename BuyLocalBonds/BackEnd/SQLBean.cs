@@ -18,13 +18,14 @@ namespace BuyLocalBonds.BackEnd
         }
         public Boolean LoginQuery(String UserName, String Password)
         {
-            string sql = "SELECT * FROM TRADER WHERE trader_username = \'" +UserName+ "\' AND trader_password = \'" + Password +"\'";
+            string sql = "SELECT * FROM TRADER WHERE trader_username = @UserName AND trader_password = @Password";
             SqlCommand cmdBond = new SqlCommand(sql, conn);
-         
+            cmdBond.Parameters.AddWithValue("@UserName", UserName);
+            cmdBond.Parameters.AddWithValue("@Password", Password);
+
             SqlDataAdapter da = new SqlDataAdapter(cmdBond);
             DataSet ds = new DataSet();
             da.Fill(ds, "Trader");
-            //conn.Close();
             if (ds.Tables[0].Rows.Count == 0)
                 return false;
 
