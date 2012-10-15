@@ -29,6 +29,12 @@ namespace BuyLocalBonds.BackEnd
         
         }
 
+        public DataSet CreatePortfolio(Int64 clientID)
+        {
+            return db.GetPortfolio(clientID);
+
+        }
+
         public Boolean LoginQuery(String UserName, String Password)
         {
             return db.LoginQuery(UserName, Password);
