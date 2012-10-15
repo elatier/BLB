@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using BuyLocalBonds.BackEnd;
 using System.Text.RegularExpressions;
 
+
 namespace BuyLocalBonds
 {
     public partial class LoginPage : System.Web.UI.Page
@@ -35,6 +36,7 @@ namespace BuyLocalBonds
                 if (bend.LoginQuery(UserName, Password))
                 {
                     InvalidInputBox.Text = "successful login";
+                    HttpContext.Current.Session["UserName"] = UserName;
                     Response.Redirect("Default.aspx");
                 }
                 else
