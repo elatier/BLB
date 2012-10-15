@@ -29,7 +29,7 @@ namespace BuyLocalBonds.BackEnd
         
         }
 
-        public DataSet CreatePortfolio(Int64 clientID)
+        public DataTable CreatePortfolio(Int64 clientID)
         {
             return db.GetPortfolio(clientID);
 

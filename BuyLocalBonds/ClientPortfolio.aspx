@@ -11,4 +11,6 @@
         ConnectionString="<%$ ConnectionStrings:BLBDataConnectionString %>" 
         SelectCommand="SELECT [client_id], [client_name] FROM [CLIENT]">
     </asp:SqlDataSource>
+    <asp:GridView ID="GV_portfolio" runat="server">
+    </asp:GridView>
 </asp:Content>

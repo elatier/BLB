@@ -32,24 +32,20 @@ namespace BuyLocalBonds.BackEnd
             return true;
         }
 
-        public DataSet GetPortfolio(Int64 client_id)
+        public DataTable GetPortfolio(Int64 client_id)
         {
-            string sql = "select BONDS.name, TRANSACTIONS.cusip, quantity from TRANSACTIONS JOIN BONDS ON (TRANSACTIONS.cusip = BONDS.cusip) where TRANSACTIONS.client_id = @client_id;";
+            string sql = "SELECT BONDS.name, TRANSACTIONS.cusip,SUM(TRANSACTIONS.quantity) FROM BONDS JOIN TRANSACTIONS  ON (BONDS.cusip = TRANSACTIONS.cusip) WHERE TRANSACTIONS.client_id = @client_id GROUP BY TRANSACTIONS.cusip, BONDS.name";
+            
             SqlCommand cmdBond = new SqlCommand(sql, conn);
             cmdBond.Parameters.AddWithValue("@client_id", client_id);
 
             SqlDataAdapter da = new SqlDataAdapter(cmdBond);
             DataSet ds = new DataSet();
             da.Fill(ds, "Transactions");
-            
-            for (int i = 1; i <= 5; i++)
-        {
-                ds.Tables[0].Rows[i] == 
-            }
-            
+            DataTable dt = ds.Tables[0];
 
             //conn.Close();
-            return ds;
+            return dt;
 
 
             

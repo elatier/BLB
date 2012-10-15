@@ -25,7 +25,8 @@ namespace BuyLocalBonds
             client_id = Convert.ToInt64(DDLClientID.SelectedValue);
 
             // Call the function which uses the client_id to get all the stocks. Returns a table with [stock, q]
-            bend.CreatePortfolio(client_id);
+           GV_portfolio.DataSource = bend.CreatePortfolio(client_id);
+           GV_portfolio.DataBind();
         }
     }
 }
