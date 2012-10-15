@@ -80,8 +80,8 @@ use BLBData
 go
 CREATE TABLE TRANSACTIONS
 (
-trasaction_id integer PRIMARY KEY,
-date_time datetime not null,
+trasaction_id integer PRIMARY KEY IDENTITY(1,1),
+date_time datetime not null DEFAULT GETDATE(),
 client_id integer not null,
 cusip nchar(9) not null,
 quantity int not null,
