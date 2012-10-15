@@ -12,7 +12,7 @@ namespace BuyLocalBonds.BackEnd
     {
     SqlConnection conn;
 
-        public SQLBean()
+        internal SQLBean()
         {
             conn = new SqlConnection("Server=.;Database=BLBData;Integrated Security=SSPI;");             
         }
@@ -132,6 +132,11 @@ namespace BuyLocalBonds.BackEnd
             DataSet ds = new DataSet();
             da.Fill(ds, "Bonds");
             return ds;
+        }
+
+        internal void InsertBuyTransactionQuery(string traderId, string cusip, string quantity) 
+        {
+
         }
     }
 }

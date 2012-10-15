@@ -67,7 +67,8 @@ namespace BuyLocalBonds
 
         protected void Confirm_Click(object sender, EventArgs e)
         {
-
+            String TraderId = "123";
+            bend.InsertBuyTransaction(TraderId, CUSIP.Text, Quantity.Text);
         }
 
     }
