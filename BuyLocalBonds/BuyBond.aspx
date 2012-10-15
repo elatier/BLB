@@ -154,7 +154,7 @@
                     <asp:Label ID="Label29" runat="server" Text="Quantity:"></asp:Label>
                 </td>
             <td class="style10">
-                    <asp:TextBox ID="Quantity" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="Quantity" runat="server" ontextchanged="Quantity_TextChanged"></asp:TextBox>
                 </td>
             <td class="style11">
 
@@ -168,9 +168,11 @@
         </tr>
         <tr>
             <td class="style8">
-                &nbsp;</td>
+                    <asp:Label ID="Label30" runat="server" Text="Total Amount ($):"></asp:Label>
+                </td>
             <td class="style6">
-                &nbsp;</td>
+                    <asp:TextBox ID="TotalAmount" runat="server"></asp:TextBox>
+                </td>
             <td>
                 &nbsp;</td>
         </tr>
@@ -192,10 +194,7 @@
             <td class="style6">
                 &nbsp;</td>
             <td>
-                <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px">
-
-                </asp:DetailsView>
-            </td>
+                &nbsp;</td>
         </tr>
     </table>
 </asp:Content>

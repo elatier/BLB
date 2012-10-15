@@ -306,7 +306,8 @@
                         meta:resourcekey="ParValue_v2Resource1"></asp:RegularExpressionValidator>
                   </td>
                 <td>
-                    &nbsp;</td>
+                    <asp:Label ID="NoResults" runat="server" Text="No Results" Visible="false"> </asp:Label>
+                </td>
                 <td>
                     &nbsp;</td>
                 <td>
@@ -456,14 +457,8 @@
             </tr>
             </table>
         <asp:GridView ID="BondGrid" onrowcommand="BondGrid_RowCommand" 
-            runat="server" meta:resourcekey="BondGridResource1" AutoGenerateSelectButton="true">
+            runat="server" meta:resourcekey="BondGridResource1">
             <columns>        
-              <asp:hyperlinkfield datatextfield="cusip"
-                datatextformatstring="{0}"
-                datanavigateurlfields="cusip"
-                datanavigateurlformatstring="~\BuyBond.aspx?CUSIP={0}"          
-                headertext="cusip" meta:resourcekey="HyperLinkFieldResource1"
-               />
                 <asp:buttonfield buttontype="Button" 
                 commandname="SelectBond"
                 headertext="Buy Bond" 

@@ -18,13 +18,23 @@ namespace BuyLocalBonds.Account
         {
             bool Authenticated = false;
             Authenticated = SiteSpecificAuthenticationMethod(LoginUser.UserName, LoginUser.Password);
+            if (Authenticated)
+            {
+                Session["UserName"] = LoginUser.UserName;
 
+            }
+            else
+            {
+                Session.Abandon();
+            }
             e.Authenticated = Authenticated;
+
         }
 
         private bool SiteSpecificAuthenticationMethod(string UserName, string Password)
         {
             BackEnd.BEnd bend = new BackEnd.BEnd();
+
             return bend.LoginQuery(UserName, Password);
 
         }
