@@ -154,7 +154,7 @@
                     <asp:Label ID="Label29" runat="server" Text="Quantity:"></asp:Label>
                 </td>
             <td class="style10">
-                    <asp:TextBox ID="Quantity" runat="server" ontextchanged="Quantity_TextChanged"></asp:TextBox>
+                    <asp:TextBox ID="Quantity" runat="server" ></asp:TextBox>
                 </td>
             <td class="style11">
 
@@ -171,22 +171,25 @@
                     <asp:Label ID="Label30" runat="server" Text="Total Amount ($):"></asp:Label>
                 </td>
             <td class="style6">
-                    <asp:TextBox ID="TotalAmount" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TotalAmount" runat="server" Enabled="false"></asp:TextBox>
                 </td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
             <td class="style8">
-                <asp:Button ID="Back" runat="server" Text="Back" onclick="Back_Click" />
+                <asp:Button ID="Back" runat="server" Text="Return" onclick="Back_Click" />
             </td>
             <td class="style6">
-                <asp:Button ID="Buy" runat="server" Text="Buy" onclick="Buy_Click" />
-                <asp:Button ID="Confirm" runat="server" Text="Confirm" 
-                    onclick="Confirm_Click" Visible="false" />
+                <asp:Button ID="Buy" runat="server" Text="Buy" onclick="Buy_Click" 
+                     />
+                <asp:Button ID="Cancel" runat="server" Text="Cancel" onclick="Cancel_Click" 
+                    Visible="false"/>
             </td>
             <td>
-                &nbsp;</td>
+                <asp:Button ID="Confirm" runat="server" Text="Confirm" 
+                    onclick="Confirm_Click" Enabled="false" />
+            </td>
         </tr>
         <tr>
             <td class="style8">
