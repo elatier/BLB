@@ -138,6 +138,7 @@
                     <asp:TextBox ID="Price" runat="server" Enabled="false"></asp:TextBox>
                 </td>
             <td class="style2">
+               <asp:RangeValidator ID="ValidatorQuantity" runat="server" ErrorMessage="RangeValidator" Type="Integer" ></asp:RangeValidator>
             </td>
         </tr>
         <tr>
@@ -160,16 +161,9 @@
 
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                     ErrorMessage="Quantity Required" ControlToValidate="Quantity" Display="Dynamic"></asp:RequiredFieldValidator>
-
-                <asp:RangeValidator ID="RangeValidator1" runat="server" 
-                    ErrorMessage="Incorrect Range" ControlToValidate="Quantity" MinimumValue="1"
-                     MaximumValue='100' Type="Integer" Display="Dynamic"></asp:RangeValidator>
-                <asp:CustomValidator runat="server" id="ageByDateCheck"
-                ControlToValidate="Quantity"
-                OnServerValidate="QuantityValidate"
-                ErrorMessage="You are not between the ages of 5 and 22." />
             </td>
         </tr>
+
         <tr>
             <td class="style8">
                 <asp:Button ID="Back" runat="server" Text="Back" onclick="Back_Click" />

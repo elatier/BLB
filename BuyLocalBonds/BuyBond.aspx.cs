@@ -12,6 +12,10 @@ namespace BuyLocalBonds
     public partial class BuyBond : System.Web.UI.Page
     {
         BEnd bend;
+        DataTable dt;
+        int quantityAvailable;
+        string cusip_var;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Response.BufferOutput = true;
@@ -20,17 +24,13 @@ namespace BuyLocalBonds
             if (!String.IsNullOrWhiteSpace(cusip))
             {
                 bend = new BEnd();
-                    
                 DataSet ds = bend.SelectBond(cusip);
-
-
 
                 DetailsView1.DataSource = ds.Tables[0];
                 DetailsView1.DataBind();
 
                 DataTable dt = ds.Tables[0];
                 
-                //Todo also load values into textboxes
                 CUSIP.Text = dt.Rows[0][0].ToString();
                 Name.Text = dt.Rows[0][1].ToString();
                 Price.Text = dt.Rows[0][2].ToString();
@@ -41,6 +41,10 @@ namespace BuyLocalBonds
                 Coupon.Text = dt.Rows[0][7].ToString();
                 Rating.Text = dt.Rows[0][8].ToString();
                 QuantityAvailable.Text = dt.Rows[0][10].ToString();
+
+                quantityAvailable = Convert.ToInt32(dt.Rows[0][10].ToString());
+                cusip_var = dt.Rows[0][0].ToString();
+
 
             }
             else
@@ -58,14 +62,18 @@ namespace BuyLocalBonds
 
         protected void Buy_Click(object sender, EventArgs e)
         {
-            
+            int quantity = Convert.ToInt32(Quantity.Text);
+            if (quantity > quantityAvailable)
+            {
+                quantity = quantityAvailable;
+            }
+            //bend.InsertBuyTransaction(cusip,quantity);
         }
 
-        protected void QuantityValidate(object source, ServerValidateEventArgs args)
+        protected void UpdateValidator()
         {
-            int value = Convert.ToInt32(args.Value);
-            if (value <= Convert.ToInt32(QuantityAvailable.Text)) args.IsValid = true;
-            else args.IsValid = false;
+            //Validators.
+            //CUS
         }
     }
 }
