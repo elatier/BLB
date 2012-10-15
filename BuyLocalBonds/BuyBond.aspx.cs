@@ -42,6 +42,8 @@ namespace BuyLocalBonds
                 Rating.Text = dt.Rows[0][8].ToString();
                 QuantityAvailable.Text = dt.Rows[0][10].ToString();
 
+                RangeValidator1.MaximumValue = dt.Rows[0][10].ToString();
+
             }
             else
             {
@@ -58,7 +60,14 @@ namespace BuyLocalBonds
 
         protected void Buy_Click(object sender, EventArgs e)
         {
-            
+            Buy.Visible = false;
+            Quantity.Enabled = false;
+            Confirm.Visible = true;
+        }
+
+        protected void Confirm_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

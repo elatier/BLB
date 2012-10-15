@@ -144,7 +144,7 @@
             <td class="style8">
                     Quantity Available:</td>
             <td class="style6">
-                    <asp:TextBox ID="QuantityAvailable" runat="server" ></asp:TextBox>
+                    <asp:TextBox ID="QuantityAvailable" runat="server" Enabled="false" ></asp:TextBox>
                 </td>
             <td>
                 &nbsp;</td>
@@ -162,13 +162,17 @@
                     ErrorMessage="Quantity Required" ControlToValidate="Quantity" Display="Dynamic"></asp:RequiredFieldValidator>
 
                 <asp:RangeValidator ID="RangeValidator1" runat="server" 
-                    ErrorMessage="Incorrect Range" ControlToValidate="Quantity" MinimumValue="1"
-                     MaximumValue='100' Type="Integer" Display="Dynamic"></asp:RangeValidator>
-                <asp:CustomValidator runat="server" id="ageByDateCheck"
-                ControlToValidate="Quantity"
-                OnServerValidate="QuantityValidate"
-                ErrorMessage="You are not between the ages of 5 and 22." />
+                    ErrorMessage="Invalid Amount Specified" ControlToValidate="Quantity" MinimumValue="1"
+                     Type="Integer" Display="Dynamic"></asp:RangeValidator>
             </td>
+        </tr>
+        <tr>
+            <td class="style8">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="style8">
@@ -176,6 +180,8 @@
             </td>
             <td class="style6">
                 <asp:Button ID="Buy" runat="server" Text="Buy" onclick="Buy_Click" />
+                <asp:Button ID="Confirm" runat="server" Text="Confirm" 
+                    onclick="Confirm_Click" Visible="false" />
             </td>
             <td>
                 &nbsp;</td>
@@ -184,12 +190,12 @@
             <td class="style8">
                 &nbsp;</td>
             <td class="style6">
+                &nbsp;</td>
+            <td>
                 <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px">
 
                 </asp:DetailsView>
             </td>
-            <td>
-                &nbsp;</td>
         </tr>
     </table>
 </asp:Content>
