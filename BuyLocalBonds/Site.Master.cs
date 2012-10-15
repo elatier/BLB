@@ -13,5 +13,10 @@ namespace BuyLocalBonds
         {
 
         }
+
+        protected void HeadLoginView_ViewChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

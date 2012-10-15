@@ -55,9 +55,15 @@ namespace BuyLocalBonds
             b.Par_value_low = Util.Parse(b.Par_value_low, ParValueLow.Text);
             b.Par_value_high= Util.Parse(b.Par_value_high, ParValueHigh.Text);
 
-            //ErrorBox.Text = Convert.ToString(b.Rating_low); 
-
             DataSet ds = bend.SearchBonds(b);
+            if (ds.Tables[0].Rows.Count == 0)
+            {
+                NoResults.Visible = true;
+            }
+            else
+            {
+                NoResults.Visible = false;
+            }
             BondGrid.DataSource = ds.Tables[0];
             BondGrid.DataBind();
         }
@@ -75,7 +81,7 @@ namespace BuyLocalBonds
                 // Get the last name of the selected author from the appropriate
                 // cell in the GridView control.
                 GridViewRow selectedRow = BondGrid.Rows[index];
-                TableCell cusipCell = selectedRow.Cells[2];
+                TableCell cusipCell = selectedRow.Cells[1];
                 string cusip = cusipCell.Text;
                 Response.Redirect("~/BuyBond.aspx?CUSIP="+cusip, false);
                 //Name.Text = cusipCell.Text;
