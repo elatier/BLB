@@ -81,12 +81,19 @@ namespace BuyLocalBonds
                 // Get the last name of the selected author from the appropriate
                 // cell in the GridView control.
                 GridViewRow selectedRow = BondGrid.Rows[index];
-                TableCell cusipCell = selectedRow.Cells[1];
+                TableCell cusipCell = selectedRow.Cells[2];
                 string cusip = cusipCell.Text;
                 Response.Redirect("~/BuyBond.aspx?CUSIP="+cusip, false);
                 //Name.Text = cusipCell.Text;
             }
 
+        }
+
+        protected void BuySelected_Click(object sender, EventArgs e)
+        {
+            string cusip = Request.Form["SelectBondRadio"];
+            Name.Text = cusip;
+            //Response.Redirect("~/BuyBond.aspx?CUSIP=" + cusip, false);
         }
 
     }

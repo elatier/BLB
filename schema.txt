@@ -140,8 +140,8 @@ INSERT INTO AVAILABLE_BONDS (cusip, quantity_available) VALUES (123456789, 500)
 INSERT INTO AVAILABLE_BONDS (cusip, quantity_available) VALUES (111111111, 250)
 INSERT INTO AVAILABLE_BONDS (cusip, quantity_available) VALUES (999999999, 1000)
 
-INSERT INTO CLIENT (client_id, client_name, address, company, contact_no) VALUES (1,'Robert Fujiwara', '34 Long Lane', 'Unemployed', '0434928152')
-INSERT INTO CLIENT (client_id, client_name, address, company, contact_no) VALUES (2,'Aomi', '34 Long Lane', 'Unemployed', '08124928152')
+INSERT INTO CLIENT (client_id, client_name, address, company, contact_no) VALUES (1,'Robert Fujiwara', '34 Long Lane', 'SuperCorp', '0434928152')
+INSERT INTO CLIENT (client_id, client_name, address, company, contact_no) VALUES (2,'Aomi', '34 Long Lane', 'United Steel', '08124928152')
 
 INSERT INTO TRADER (trader_id, trader_name, trader_username, trader_password) VALUES (1,'A. DAVIS','trader1','password')
 INSERT INTO TRADER (trader_id, trader_name, trader_username, trader_password) VALUES (2,'B. JOHNS','trader2','password')

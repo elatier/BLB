@@ -195,7 +195,7 @@
         </tr>
         <tr>
             <td class="style8">
-                <asp:Button ID="Back" runat="server" Text="Return" onclick="Back_Click" />
+                <asp:Button ID="Back" runat="server" Text="Back" onclick="Back_Click" ValidationGroup="None" />
             </td>
             <td class="style6">
                 <asp:Button ID="Buy" runat="server" Text="Buy" onclick="Buy_Click" 

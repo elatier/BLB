@@ -456,20 +456,40 @@
                     &nbsp;</td>
             </tr>
             </table>
+        <br />
+        <table class="style1">
+            <tr>
+                <td>
         <asp:GridView ID="BondGrid" onrowcommand="BondGrid_RowCommand" 
-            runat="server" meta:resourcekey="BondGridResource1">
+            runat="server" meta:resourcekey="BondGridResource1" >
             <columns>        
                 <asp:buttonfield buttontype="Button" 
-                commandname="SelectBond"
-                headertext="Buy Bond" 
-                text="Buy" meta:resourcekey="ButtonFieldResource1"/>
+                    commandname="SelectBond"
+                    headertext="Buy Bond" 
+                    text="Buy" meta:resourcekey="ButtonFieldResource1"/>
+                <asp:TemplateField HeaderText="Select Bond">
+                <ItemTemplate>
+                        <asp:RadioButton ID="SelectBondRadio" runat="server" 
+                        value='<%# Eval("CUSIP") %>' />
+                </ItemTemplate>
+            </asp:TemplateField>
               
         </columns>
-
             <selectedrowstyle backcolor="LightCyan"
             forecolor="DarkBlue"
             font-bold="true"/> 
         </asp:GridView>
+                </td>
+                <td>
+                    <asp:Button ID="BuySelected" runat="server" Text="Buy" 
+                        onclick="BuySelected_Click" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+            </tr>
+        </table>
     </div>
     <p>
                 
