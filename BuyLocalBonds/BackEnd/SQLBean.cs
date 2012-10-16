@@ -137,9 +137,10 @@ namespace BuyLocalBonds.BackEnd
                           ",[current_yield]" +
                           ",[coupon]" +
                           ",[rating_sp]" +
-                          ",[country_code]" +
                           ",[quantity_available]"+
-                      " FROM BondQuantity "+
+                          ",[settlement_time]"+
+                          ",ci.country_code"+
+                      " FROM BondQuantity b JOIN COUNTRY_INFO ci ON ci.country_code= b.country_code " +
                         " WHERE CUSIP = @cusip";
 
             SqlCommand cmdBond = new SqlCommand(sql, conn);
