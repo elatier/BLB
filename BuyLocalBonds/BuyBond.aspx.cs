@@ -77,7 +77,7 @@ namespace BuyLocalBonds
 
         protected void Back_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Default.aspx", true);
+            Response.Redirect("~/Search.aspx", true);
         }
 
         protected void Buy_Click(object sender, EventArgs e)

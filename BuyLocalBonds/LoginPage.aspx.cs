@@ -43,5 +43,10 @@ namespace BuyLocalBonds
                     InvalidInputBox.Text = "login fail";
             }
         }
+
+        protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
+        {
+
+        }
     }
 }

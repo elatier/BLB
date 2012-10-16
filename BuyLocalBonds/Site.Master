@@ -11,6 +11,7 @@
         .style1
         {
             width: 100%;
+            height: 80px;
         }
         .style2
         {
@@ -41,33 +42,22 @@
                         </td>
                         <td>
                             &nbsp;</td>
-                    </tr>
-                    <tr>
+                    </tr><tr>
                         <td class="style2">
-                            &nbsp;</td>
-                        <td style="color: #000099">
-                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
-                    <AnonymousTemplate>
-                        [ <a href="LoginPage.aspx" ID="HeadLoginStatus0" runat="server" >Log In</a> ]
-                    </AnonymousTemplate>
-                    <LoggedInTemplate>
-                        Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>
-                        &nbsp;[ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
-                    </LoggedInTemplate>
-                </asp:LoginView>
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" 
+                                IncludeStyleBlock="false" Orientation="Horizontal" onmenuitemclick="NavigationMenu_MenuItemClick" 
+                                >
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Search.aspx" Text="Buy"/>
+                        <asp:MenuItem NavigateUrl="~/ClientPortfolio.aspx" Text="Client Portfolio"/>
+                        <asp:MenuItem Text="Log Out"/>
+                    </Items>
+                </asp:Menu>
                         </td>
-                        <td>
-                            &nbsp;</td>
                     </tr>
                 </table>
             </div>
             <div class="clear hideSkiplink">
-                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
-                    <Items>
-                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Buy"/>
-                        <asp:MenuItem NavigateUrl="~/ClientPortfolio.aspx" Text="ClientPortfolio"/>
-                    </Items>
-                </asp:Menu>
                 <hr />
             </div>
         </div>
@@ -79,18 +69,6 @@
     </div>
     <div class="footer">
         <hh7>Disclaimer: Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, 
-        Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, 
-        Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, 
-        Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, 
-        Disclaimer, Disclaimer, Disclaimer,
-        Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, 
-        Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, 
-        Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, 
-        Disclaimer, Disclaimer, Disclaimer,
-        Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, 
-        Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, 
-        Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, 
-        Disclaimer, Disclaimer, Disclaimer,
         Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, 
         Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, 
         Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, Disclaimer, 

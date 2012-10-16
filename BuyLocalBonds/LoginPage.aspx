@@ -18,4 +18,6 @@
                         onclick="LoginButton_Click" />
                     &nbsp;<asp:TextBox ID="InvalidInputBox" runat="server"></asp:TextBox>
     </p>
+<p>
+                    &nbsp;</p>
 </asp:Content>

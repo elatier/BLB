@@ -11,7 +11,34 @@ namespace BuyLocalBonds
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["UserName"] == null)
+            {
+                if ("/default.aspx" == Request.Path.ToLower())
+                {
+                    NavigationMenu.Visible = false;
+                }
+                else
+                {
+                    //send to login screen
+                    Response.Redirect("~/", true);
+                }
+            }
+        }
 
+
+        protected void LogOut_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("~/", true);
+        }
+
+        protected void NavigationMenu_MenuItemClick(object sender, MenuEventArgs e)
+        {
+            if (e.Item.Text == "Log Out")
+            {
+                Session.Clear();
+                Response.Redirect("~/", true);
+            }
         }
 
         
