@@ -1,0 +1,30 @@
+To do List:
+------------
+-confirmation screen, using a query
+	-link back to home
+	-show the pie chart?
+-fix the calendar
+
+-display money fields in buybond as money
+	
+-show other client information when confirming
+
+-integrate login
+-sell bonds
+-make return button javascript back, to save state
+
+-add radio button to default view and make it work
+-tests
+	-
+-improve quality of the data
+
++select client name
+	+when buying bonds
+		+display dropdown box
+		+populate dropdown box
+		+get correct query for the box
+	+add to transcation correct client id
+
++fix return button in buy bonds
++fix names from db in default view
++do not display bonds with no quantity available

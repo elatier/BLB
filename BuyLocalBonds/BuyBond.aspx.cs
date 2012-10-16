@@ -94,6 +94,8 @@ namespace BuyLocalBonds
             String client_id = ClientDropdown.SelectedValue;
             GridView1.DataSource = bend.InsertBuyTransaction(client_id, CUSIP.Text, Quantity.Text).Tables[0];
             GridView1.DataBind();
+            Cancel.Enabled = false;
+            Confirm.Enabled = false;
            
         }
 
