@@ -48,8 +48,9 @@ namespace BuyLocalBonds.BackEnd
 
         internal DataSet InsertBuyTransaction(string client_id, string cusip, string quantity)
         {
+            db.UpdateAvailableBonds(cusip, quantity);
             return db.InsertBuyTransactionQuery(client_id, cusip, quantity);
-            return db.UpdateAvailableBonds(cusip, quantity);
+           
         }
     }
 }
