@@ -7,36 +7,68 @@
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+        .style2
+        {
+            width: 381px;
+        }
+        .style3
+        {
+            font-size: 1.73533e-039;
+        }
+    </style>
 </head>
 <body>
     <form runat="server">
     <div class="page">
         <div class="header">
-            <div class="title">
-                <h1>
-                    Buy Local Bonds
-                </h1>
-            </div>
             <div class="loginDisplay">
-                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false" 
-                    onviewchanged="HeadLoginView_ViewChanged">
+                <table class="style1">
+                    <tr>
+                        <td class="style2">
+                            &nbsp;</td>
+                        <td>
+            <div class="title">
+                <h1 class="style3">
+                    dbBLB</h1>
+            </div>
+                            <asp:Image ID="Image1" runat="server" ImageUrl="images/db_logo.jpg" 
+                                Width="10%" />
+                        </td>
+                        <td>
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="style2">
+                            &nbsp;</td>
+                        <td style="color: #000099">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                     <AnonymousTemplate>
-                        [ <a href="LoginPage.aspx" ID="HeadLoginStatus" runat="server">Log In</a> ]
+                        [ <a href="LoginPage.aspx" ID="HeadLoginStatus0" runat="server" >Log In</a> ]
                     </AnonymousTemplate>
                     <LoggedInTemplate>
                         Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>
                         &nbsp;[ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
                     </LoggedInTemplate>
                 </asp:LoginView>
+                        </td>
+                        <td>
+                            &nbsp;</td>
+                    </tr>
+                </table>
             </div>
             <div class="clear hideSkiplink">
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Buy"/>
-                        <asp:MenuItem NavigateUrl="~/BuyBond.aspx" Text="BuyBond"/>
                         <asp:MenuItem NavigateUrl="~/ClientPortfolio.aspx" Text="ClientPortfolio"/>
                     </Items>
                 </asp:Menu>
+                <hr />
             </div>
         </div>
         <div class="main">
