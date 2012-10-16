@@ -65,7 +65,7 @@
                     <asp:Label ID="Label2" runat="server" Text="Name:"></asp:Label>
                 </td>
             <td class="style6">
-                    <asp:TextBox ID="Name" runat="server" Enabled="false" Width="197px"></asp:TextBox>
+                    <asp:TextBox ID="Name" runat="server" Enabled="false"></asp:TextBox>
                 </td>
             <td>
                 &nbsp;</td>
@@ -139,6 +139,23 @@
                 </td>
             <td class="style2">
             </td>
+        </tr>
+        <tr>
+            <td class="style7">
+                    <asp:Label ID="Label31" runat="server" Text="Client Name:"></asp:Label>
+                </td>
+            <td class="style5">
+                    <asp:DropDownList ID="ClientDropdown" runat="server" 
+                        DataSourceID="ClientNameDbConnection" DataTextField="client_name" 
+                        DataValueField="client_id" >
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="ClientNameDbConnection" runat="server" 
+                        ConnectionString="<%$ ConnectionStrings:BLBDataConnectionString %>" 
+                        SelectCommand="SELECT [client_id],[client_name] FROM [CLIENT] ORDER BY [client_name]">
+                    </asp:SqlDataSource>
+            </td>
+            <td class="style2">
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="style8">

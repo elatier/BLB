@@ -40,9 +40,9 @@ namespace BuyLocalBonds.BackEnd
             return db.SelectBondQuery(cusip);
         }
 
-        internal DataSet InsertBuyTransaction(string traderId, string cusip, string quantity)
+        internal DataSet InsertBuyTransaction(string client_id, string cusip, string quantity)
         {
-            return db.InsertBuyTransactionQuery(traderId, cusip, quantity);
+            return db.InsertBuyTransactionQuery(client_id, cusip, quantity);
         }
     }
 }

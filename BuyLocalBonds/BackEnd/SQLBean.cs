@@ -65,7 +65,8 @@ namespace BuyLocalBonds.BackEnd
                           ",[coupon]" +
                           ",[rating_sp]" +
                           ",[country_code]" +
-                      " FROM BONDS JOIN RATINGS ON (BONDS.rating = RATINGS.rating) WHERE 1=1" + //sanity check fail
+                      " FROM BondQuantity WHERE 1=1" + //sanity check fail
+                      " AND quantity_available > 0 "+
                 ((!String.IsNullOrWhiteSpace(b.Name)) ? " AND name LIKE @name" : "") +
                 ((!String.IsNullOrWhiteSpace(b.Cusip)) ? " AND CUSIP = @cusip" : "") +
                       " AND price >= @price_low" +
@@ -80,8 +81,8 @@ namespace BuyLocalBonds.BackEnd
                       " AND current_yield <= @current_yield_high" +
                       " AND coupon >= @coupon_low" +
                       " AND coupon <= @coupon_high" +
-                      " AND BONDS.rating <= @rating_low" +
-                      " AND BONDS.rating >= @rating_high"
+                      " AND rating <= @rating_low" +
+                      " AND rating >= @rating_high"
                       ;
 
 
@@ -144,12 +145,12 @@ namespace BuyLocalBonds.BackEnd
             return ds;
         }
 
-        internal DataSet InsertBuyTransactionQuery(string traderId, string cusip, string quantity) 
+        internal DataSet InsertBuyTransactionQuery(string client_id, string cusip, string quantity) 
         {
             string sql = "INSERT INTO [TRANSACTIONS] ([client_id],[cusip],[quantity]) VALUES (@clientId, @cusip ,@quantity)";
 
             SqlCommand cmdBond = new SqlCommand(sql, conn);
-            cmdBond.Parameters.AddWithValue("@clientId", traderId);
+            cmdBond.Parameters.AddWithValue("@clientId", client_id);
             cmdBond.Parameters.AddWithValue("@cusip", cusip);
             cmdBond.Parameters.AddWithValue("@quantity", quantity);
 

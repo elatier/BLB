@@ -85,14 +85,15 @@ namespace BuyLocalBonds
             Buy.Visible = false;
             Cancel.Visible = true;
             Quantity.Enabled = false;
+            ClientDropdown.Enabled = false;
             Confirm.Enabled = true;
             TotalAmount.Text = "" + (Convert.ToDouble(Quantity.Text) * unitPrice);
         }
 
         protected void Confirm_Click(object sender, EventArgs e)
         {
-            String TraderId = "1";
-            bend.InsertBuyTransaction(TraderId, CUSIP.Text, Quantity.Text);
+            String client_id = ClientDropdown.SelectedValue;
+            bend.InsertBuyTransaction(client_id, CUSIP.Text, Quantity.Text);
 
            
         }
@@ -103,6 +104,7 @@ namespace BuyLocalBonds
             Buy.Visible = true;
             Quantity.Enabled = true;
             Confirm.Enabled = false;
+            ClientDropdown.Enabled = true;
             TotalAmount.Text = "";
         }
 
