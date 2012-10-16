@@ -85,7 +85,7 @@ namespace BuyLocalBonds
             Cancel.Visible = true;
             Quantity.Enabled = false;
             ClientDropdown.Enabled = false;
-            Confirm.Enabled = true;
+            Confirm.Visible = true;
             TotalAmount.Text = "" + (Convert.ToDouble(Quantity.Text) * unitPrice);
         }
 
@@ -106,7 +106,7 @@ namespace BuyLocalBonds
             Cancel.Visible = false;
             Buy.Visible = true;
             Quantity.Enabled = true;
-            Confirm.Enabled = false;
+            Confirm.Visible = false;
             ClientDropdown.Enabled = true;
             TotalAmount.Text = "";
         }

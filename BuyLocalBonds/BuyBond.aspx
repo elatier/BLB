@@ -246,12 +246,12 @@
             <td class="style6">
                 <asp:Button ID="Buy" runat="server" Text="Buy" onclick="Buy_Click" 
                      />
-                <asp:Button ID="Cancel" runat="server" Text="Cancel" onclick="Cancel_Click" 
+                <asp:Button ID="Cancel" runat="server" Text="Amend" onclick="Cancel_Click" 
                     Visible="false"/>
             </td>
             <td class="style13">
                 <asp:Button ID="Confirm" runat="server" Text="Confirm" 
-                    onclick="Confirm_Click" Enabled="false" />
+                    onclick="Confirm_Click" Visible="false" />
                 <asp:Button ID="PortfolioButton" runat="server" Text="View Client Portfolio" 
                     Visible="false" onclick="PortfolioButton_Click"/>
             </td>

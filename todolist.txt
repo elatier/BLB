@@ -1,7 +1,7 @@
 To do List:
 ------------
--confirmation screen, using a query
-	-link back to home
++confirmation screen, using a query
+	+link back to home
 	-show the pie chart?
 -fix the calendar
 
