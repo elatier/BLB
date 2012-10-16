@@ -212,10 +212,10 @@
             <td class="style14">
 
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                    ErrorMessage="Quantity Required" ControlToValidate="Quantity" Display="Dynamic"></asp:RequiredFieldValidator>
+                    ErrorMessage="Quantity is required." ControlToValidate="Quantity" Display="Dynamic"></asp:RequiredFieldValidator>
 
                 <asp:RangeValidator ID="RangeValidator1" runat="server" 
-                    ErrorMessage="Invalid Amount Specified" ControlToValidate="Quantity" MinimumValue="1"
+                    ErrorMessage="Quantity specified is invalid." ControlToValidate="Quantity" MinimumValue="1"
                      Type="Integer" Display="Dynamic"></asp:RangeValidator>
             </td>
             <td class="style11">
@@ -246,12 +246,12 @@
             <td class="style6">
                 <asp:Button ID="Buy" runat="server" Text="Buy" onclick="Buy_Click" 
                      />
-                <asp:Button ID="Cancel" runat="server" Text="Cancel" onclick="Cancel_Click" 
+                <asp:Button ID="Cancel" runat="server" Text="Amend" onclick="Cancel_Click" 
                     Visible="false"/>
             </td>
             <td class="style13">
                 <asp:Button ID="Confirm" runat="server" Text="Confirm" 
-                    onclick="Confirm_Click" Enabled="false" />
+                    onclick="Confirm_Click" Visible="false" />
                 <asp:Button ID="PortfolioButton" runat="server" Text="View Client Portfolio" 
                     Visible="false" onclick="PortfolioButton_Click"/>
             </td>
