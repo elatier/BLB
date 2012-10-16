@@ -7,15 +7,6 @@
         {
             width: 100%;
         }
-        .style2
-        {
-            width: 188px;
-        }
-        .style3
-        {
-            width: 188px;
-            height: 20px;
-        }
         .style4
         {
             height: 20px;
@@ -51,6 +42,24 @@
         {
             width: 145px;
         }
+        .style16
+        {
+            width: 115px;
+        }
+        .style17
+        {
+            width: 115px;
+            height: 20px;
+        }
+        .style18
+        {
+            width: 22px;
+        }
+        .style19
+        {
+            height: 20px;
+            width: 22px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
@@ -61,9 +70,9 @@
 
         <table class="style1">
             <tr>
-                <td class="style2">
+                <td class="style16">
                     &nbsp;</td>
-                <td>
+                <td class="style18">
                     &nbsp;</td>
                 <td class="style5">
                     &nbsp;</td>
@@ -85,11 +94,10 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td class="style3">
-                    <asp:Label ID="Label1" runat="server" Text="CUSIP:" 
-                        meta:resourcekey="Label1Resource1"></asp:Label>
+                <td class="style17">
+                    <asp:Label ID="Label29" runat="server" Text="CUSIP:"></asp:Label>
                 </td>
-                <td class="style4">
+                <td class="style19">
                     &nbsp;</td>
                 <td class="style5">
                     <asp:TextBox ID="CUSIP" runat="server" meta:resourcekey="CUSIPResource1" ></asp:TextBox>
@@ -116,11 +124,11 @@
                     </td>
             </tr>
             <tr>
-                <td class="style2">
+                <td class="style16">
                     <asp:Label ID="Label2" runat="server" Text="Bond Name:" 
                         meta:resourcekey="Label2Resource1"></asp:Label>
                 </td>
-                <td>
+                <td class="style18">
                     &nbsp;</td>
                 <td class="style5">
                     <asp:TextBox ID="Name" runat="server" meta:resourcekey="NameResource1" ></asp:TextBox>
@@ -143,11 +151,11 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td class="style2">
+                <td class="style16">
                     <asp:Label ID="Label28" runat="server" Text="S&amp;P Rating:" 
                         meta:resourcekey="Label28Resource1"></asp:Label>
                 </td>
-                <td>
+                <td class="style18">
                     <asp:Label ID="Label12" runat="server" Text="low" 
                         meta:resourcekey="Label12Resource1"></asp:Label>
                 </td>
@@ -185,11 +193,10 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td class="style2">
-                    <asp:Label ID="Label4" runat="server" Text="Coupon:" 
-                        meta:resourcekey="Label4Resource1"></asp:Label>
+                <td class="style16">
+                    <asp:Label ID="Label4" runat="server" Text="Coupon (%):"></asp:Label>
                 </td>
-                <td>
+                <td class="style18">
                     <asp:Label ID="Label13" runat="server" Text="low" 
                         meta:resourcekey="Label13Resource1"></asp:Label>
                 </td>
@@ -227,11 +234,11 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td class="style2">
+                <td class="style16">
                     <asp:Label ID="Label5" runat="server" Text="Current Yield (%):" 
                         meta:resourcekey="Label5Resource1"></asp:Label>
                 </td>
-                <td>
+                <td class="style18">
                     <asp:Label ID="Label14" runat="server" Text="low" 
                         meta:resourcekey="Label14Resource1"></asp:Label>
                 </td>
@@ -273,11 +280,11 @@
                     </td>
             </tr>
             <tr>
-                <td class="style2">
+                <td class="style16">
                     <asp:Label ID="Label6" runat="server" Text="Yield To Maturity (%):" 
                         meta:resourcekey="Label6Resource1"></asp:Label>
                 </td>
-                <td>
+                <td class="style18">
                     <asp:Label ID="Label15" runat="server" Text="low" 
                         meta:resourcekey="Label15Resource1"></asp:Label>
                 </td>
@@ -316,11 +323,11 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td class="style2">
+                <td class="style16">
                     <asp:Label ID="Label7" runat="server" Text="Maturity Date:" 
                         meta:resourcekey="Label7Resource1"></asp:Label>
                 </td>
-                <td>
+                <td class="style18">
                     <asp:Label ID="Label16" runat="server" Text="low" 
                         meta:resourcekey="Label16Resource1"></asp:Label>
                 </td>
@@ -350,11 +357,11 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td class="style2">
+                <td class="style16">
                     <asp:Label ID="Label8" runat="server" Text="Par Value ($):" 
                         meta:resourcekey="Label8Resource1"></asp:Label>
                 </td>
-                <td>
+                <td class="style18">
                     <asp:Label ID="Label17" runat="server" Text="low" 
                         meta:resourcekey="Label17Resource1"></asp:Label>
                 </td>
@@ -392,11 +399,11 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td class="style2">
+                <td class="style16">
                     <asp:Label ID="Label9" runat="server" Text="Price ($):" 
                         meta:resourcekey="Label9Resource1"></asp:Label>
                 </td>
-                <td>
+                <td class="style18">
                     <asp:Label ID="Label18" runat="server" Text="low" 
                         meta:resourcekey="Label18Resource1"></asp:Label>
                 </td>
@@ -432,9 +439,9 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td class="style2">
+                <td class="style16">
                     &nbsp;</td>
-                <td>
+                <td class="style18">
                     &nbsp;</td>
                 <td class="style5">
                     &nbsp;</td>

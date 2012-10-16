@@ -37,15 +37,16 @@ namespace BuyLocalBonds
 
                 unitPrice = String.IsNullOrWhiteSpace(dt.Rows[0][2].ToString()) ? 0 : Convert.ToDouble(dt.Rows[0][2]);
 
-                Price.Text = dt.Rows[0][2].ToString();
-                ParValue.Text = dt.Rows[0][3].ToString();
+                Price.Text = (Convert.ToDouble(dt.Rows[0][2])).ToString("c");
+                ParValue.Text = (Convert.ToDouble(dt.Rows[0][3])).ToString("c");
                 MaturityDate.Text = dt.Rows[0][4].ToString();
                 YieldToMaturity.Text = dt.Rows[0][5].ToString();
                 CurrentYield.Text = dt.Rows[0][6].ToString();
                 Coupon.Text = dt.Rows[0][7].ToString();
                 Rating.Text = dt.Rows[0][8].ToString();
+                SettleTime.Text = dt.Rows[0][10].ToString();
 
-                String quantityAvail = dt.Rows[0][10].ToString();
+                String quantityAvail = dt.Rows[0][9].ToString();
                 
 
                 if (!String.IsNullOrWhiteSpace(quantityAvail))
