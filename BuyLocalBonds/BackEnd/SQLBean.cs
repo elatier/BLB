@@ -64,14 +64,14 @@ namespace BuyLocalBonds.BackEnd
 
             string sql = "SELECT [cusip] AS 'CUSIP'" +
                           ",[name] AS 'Bond Name'" +
-                          ",[maturity_date] AS 'Maturity Date'" +
+                          ",CONVERT(varchar(12),maturity_date, 13) AS 'Maturity Date'" +
                           ",[yield_to_maturity] AS 'Yield To Maturity (%)'" +
                           ",[current_yield] AS 'Current Yield (%)'" +
-                          ",[coupon] AS 'Coupon'" +
+                          ",[coupon] AS 'Coupon (%)'" +
                           ",[rating_sp] AS 'S&P Rating'" +
                           //",[country_code]" +
-                          ",[price]AS 'Price'" +
-                          ",[par_value] AS 'Par Value'" +
+                          ",'$'+CONVERT(varchar(12), price, 1) AS 'Price'" +
+                          ",'$'+CONVERT(varchar(12), par_value, 1) AS 'Par Value'" +
                       " FROM BondQuantity WHERE 1=1" + //sanity check fail
                       " AND quantity_available > 0 "+
                 ((!String.IsNullOrWhiteSpace(b.Name)) ? " AND name LIKE @name" : "") +
@@ -132,7 +132,7 @@ namespace BuyLocalBonds.BackEnd
                           ",[name]" +
                           ",[price]" +
                           ",[par_value]" +
-                          ",[maturity_date]" +
+                          ",CONVERT(varchar(12),maturity_date, 13) AS 'maturity_date'" +
                           ",[yield_to_maturity]" +
                           ",[current_yield]" +
                           ",[coupon]" +

@@ -52,7 +52,7 @@ namespace BuyLocalBonds
                 if (!String.IsNullOrWhiteSpace(quantityAvail))
                 {
                     QuantityAvailable.Text = quantityAvail;
-                    RangeValidator1.MaximumValue = quantityAvail;
+                    QuantityRangeValidator.MaximumValue = quantityAvail;
                 }
                 else
                 {
@@ -61,8 +61,8 @@ namespace BuyLocalBonds
                     Quantity.Text = "0";
                     Buy.Visible = false;
                     QuantityAvailable.Text = "0";
-                    RangeValidator1.MaximumValue = "0";
-                    RangeValidator1.MinimumValue = "0";
+                    QuantityRangeValidator.MaximumValue = "0";
+                    QuantityRangeValidator.MinimumValue = "0";
                     
                 }
 
@@ -87,7 +87,7 @@ namespace BuyLocalBonds
             Quantity.Enabled = false;
             ClientDropdown.Enabled = false;
             Confirm.Visible = true;
-            TotalAmount.Text = "" + (Convert.ToDouble(Quantity.Text) * unitPrice);
+            TotalAmount.Text = (Convert.ToDouble(Quantity.Text) * unitPrice).ToString("c");
         }
 
         protected void Confirm_Click(object sender, EventArgs e)

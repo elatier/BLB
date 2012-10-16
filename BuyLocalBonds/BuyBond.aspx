@@ -57,6 +57,20 @@
             height: 26px;
             width: 248px;
         }
+        .style15
+        {
+            height: 20px;
+            width: 122px;
+        }
+        .style16
+        {
+            width: 122px;
+        }
+        .style17
+        {
+            width: 122px;
+            height: 26px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
@@ -71,7 +85,7 @@
             <td class="style5">
                     <asp:TextBox ID="CUSIP" runat="server" Enabled="false"></asp:TextBox>
                 </td>
-            <td class="style5">
+            <td class="style15">
                     <asp:Label ID="Label32" runat="server" Text="Settlement Time (t+)"></asp:Label>
                 </td>
             <td class="style12">
@@ -87,7 +101,7 @@
             <td class="style6">
                     <asp:TextBox ID="Name" runat="server" Enabled="false"></asp:TextBox>
                 </td>
-            <td class="style6">
+            <td class="style16">
                     &nbsp;</td>
             <td class="style13">
                 &nbsp;</td>
@@ -101,7 +115,7 @@
             <td class="style6">
                     <asp:TextBox ID="Rating" runat="server" Enabled="false"></asp:TextBox>
                 </td>
-            <td class="style6">
+            <td class="style16">
                     &nbsp;</td>
             <td class="style13">
                 &nbsp;</td>
@@ -115,7 +129,7 @@
             <td class="style5">
                     <asp:TextBox ID="Coupon" runat="server" Enabled="false"></asp:TextBox>
                 </td>
-            <td class="style5">
+            <td class="style15">
                     &nbsp;</td>
             <td class="style12">
             </td>
@@ -129,7 +143,7 @@
             <td class="style5">
                     <asp:TextBox ID="CurrentYield" runat="server" Enabled="false"></asp:TextBox>
                 </td>
-            <td class="style5">
+            <td class="style15">
                     &nbsp;</td>
             <td class="style12">
                 &nbsp;</td>
@@ -143,7 +157,7 @@
             <td class="style5">
                     <asp:TextBox ID="YieldToMaturity" runat="server" Enabled="false"></asp:TextBox>
                 </td>
-            <td class="style5">
+            <td class="style15">
                     &nbsp;</td>
             <td class="style12">
             </td>
@@ -157,7 +171,7 @@
             <td class="style6">
                     <asp:TextBox ID="MaturityDate" runat="server" Enabled="false"></asp:TextBox>
                 </td>
-            <td class="style6">
+            <td class="style16">
                     &nbsp;</td>
             <td class="style13">
                 &nbsp;</td>
@@ -171,7 +185,7 @@
             <td class="style6">
                     <asp:TextBox ID="ParValue" runat="server" Enabled="false"></asp:TextBox>
                 </td>
-            <td class="style6">
+            <td class="style16">
                     &nbsp;</td>
             <td class="style13">
                 &nbsp;</td>
@@ -185,7 +199,7 @@
             <td class="style5">
                     <asp:TextBox ID="Price" runat="server" Enabled="false"></asp:TextBox>
                 </td>
-            <td class="style5">
+            <td class="style15">
                     &nbsp;</td>
             <td class="style12">
             </td>
@@ -206,7 +220,7 @@
                         SelectCommand="SELECT [client_id],[client_name] FROM [CLIENT] ORDER BY [client_name]">
                     </asp:SqlDataSource>
             </td>
-            <td class="style5">
+            <td class="style15">
                     &nbsp;</td>
             <td class="style12">
                 &nbsp;</td>
@@ -219,7 +233,7 @@
             <td class="style6">
                     <asp:TextBox ID="QuantityAvailable" runat="server" Enabled="false" ></asp:TextBox>
                 </td>
-            <td class="style6">
+            <td class="style16">
                     &nbsp;</td>
             <td class="style13">
                 &nbsp;</td>
@@ -231,16 +245,16 @@
                     <asp:Label ID="Label29" runat="server" Text="Quantity:"></asp:Label>
                 </td>
             <td class="style10">
-                    <asp:TextBox ID="Quantity" runat="server" ></asp:TextBox>
+                    <asp:TextBox ID="Quantity" runat="server"  ></asp:TextBox>
                 </td>
-            <td class="style10">
+            <td class="style17">
                     &nbsp;</td>
             <td class="style14">
 
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                <asp:RequiredFieldValidator ID="RequiredQuantityValidator" runat="server" 
                     ErrorMessage="Quantity is required." ControlToValidate="Quantity" Display="Dynamic"></asp:RequiredFieldValidator>
 
-                <asp:RangeValidator ID="RangeValidator1" runat="server" 
+                <asp:RangeValidator ID="QuantityRangeValidator" runat="server" 
                     ErrorMessage="Quantity specified is invalid." ControlToValidate="Quantity" MinimumValue="1"
                      Type="Integer" Display="Dynamic"></asp:RangeValidator>
             </td>
@@ -253,9 +267,10 @@
                     <asp:Label ID="Label30" runat="server" Text="Total Amount ($):"></asp:Label>
                 </td>
             <td class="style6">
-                    <asp:TextBox ID="TotalAmount" runat="server" Enabled="false"></asp:TextBox>
+                    <asp:TextBox ID="TotalAmount" runat="server" Enabled="false" 
+                        ></asp:TextBox>
                 </td>
-            <td class="style6">
+            <td class="style16">
                     &nbsp;</td>
             <td class="style13">
             <b>
@@ -277,7 +292,7 @@
                 <asp:Button ID="Cancel" runat="server" Text="Amend" onclick="Cancel_Click" 
                     Visible="false"/>
             </td>
-            <td class="style6">
+            <td class="style16">
                 &nbsp;</td>
             <td class="style13">
                 <asp:Button ID="Confirm" runat="server" Text="Confirm" 
@@ -293,7 +308,7 @@
                 &nbsp;</td>
             <td class="style6">
                 &nbsp;</td>
-            <td class="style6">
+            <td class="style16">
                 &nbsp;</td>
             <td class="style13">
                 &nbsp;</td>

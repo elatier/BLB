@@ -247,22 +247,22 @@ namespace BuyLocalBonds {
         protected global::System.Web.UI.WebControls.TextBox Quantity;
         
         /// <summary>
-        /// RequiredFieldValidator1 control.
+        /// RequiredQuantityValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredQuantityValidator;
         
         /// <summary>
-        /// RangeValidator1 control.
+        /// QuantityRangeValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator1;
+        protected global::System.Web.UI.WebControls.RangeValidator QuantityRangeValidator;
         
         /// <summary>
         /// Label30 control.

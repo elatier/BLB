@@ -37,7 +37,7 @@
                     dbBLB</h1>
             </div>
                             <asp:Image ID="Image1" runat="server" ImageUrl="images/db_logo.jpg" 
-                                Width="10%" />
+                               />
                         </td>
                         <td>
                             &nbsp;</td>

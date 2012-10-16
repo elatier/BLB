@@ -1,11 +1,12 @@
 To do List:
 ------------
-+confirmation screen, using a query
-	+link back to home
-	-show the pie chart?
+
+
+-fix buy screen - two columns
+
 -fix the calendar
 
--display money fields in buybond as money
++display money fields in buybond as money
 	
 -show other client information when confirming
 
@@ -13,10 +14,16 @@ To do List:
 -sell bonds
 -make return button javascript back, to save state
 
--add radio button to default view and make it work
 -tests
-	-
+	+add tests stuff
+	+
+
 -improve quality of the data
+
+
++confirmation screen, using a query
+	+link back to home
+	-show the pie chart?
 
 +select client name
 	+when buying bonds
