@@ -467,13 +467,7 @@
                     commandname="SelectBond"
                     headertext="Buy Bond" 
                     text="Buy" meta:resourcekey="ButtonFieldResource1"/>
-                <asp:TemplateField HeaderText="Select Bond">
-                <ItemTemplate>
-                        <asp:RadioButton ID="SelectBondRadio" runat="server" 
-                        value='<%# Eval("CUSIP") %>' />
-                </ItemTemplate>
-            </asp:TemplateField>
-              
+           
         </columns>
             <selectedrowstyle backcolor="LightCyan"
             forecolor="DarkBlue"
@@ -481,9 +475,7 @@
         </asp:GridView>
                 </td>
                 <td>
-                    <asp:Button ID="BuySelected" runat="server" Text="Buy" 
-                        onclick="BuySelected_Click" />
-                </td>
+                    &nbsp;</td>
             </tr>
             <tr>
                 <td>

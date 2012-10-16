@@ -212,10 +212,10 @@
             <td class="style14">
 
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                    ErrorMessage="Quantity Required" ControlToValidate="Quantity" Display="Dynamic"></asp:RequiredFieldValidator>
+                    ErrorMessage="Quantity is required." ControlToValidate="Quantity" Display="Dynamic"></asp:RequiredFieldValidator>
 
                 <asp:RangeValidator ID="RangeValidator1" runat="server" 
-                    ErrorMessage="Invalid Amount Specified" ControlToValidate="Quantity" MinimumValue="1"
+                    ErrorMessage="Quantity specified is invalid." ControlToValidate="Quantity" MinimumValue="1"
                      Type="Integer" Display="Dynamic"></asp:RangeValidator>
             </td>
             <td class="style11">
