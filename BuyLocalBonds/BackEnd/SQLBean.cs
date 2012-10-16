@@ -167,5 +167,19 @@ namespace BuyLocalBonds.BackEnd
             da.Fill(ds, "Bonds");
             return ds;
         }
+
+        internal DataSet UpdateAvailableBonds(string cusip, string quantity)
+        {
+            string sql = "UPDATE [AVAILABLE_BONDS] SET [quantity_available] = [quantity_available] - ( @quantity ) WHERE cusip = @cusip;";
+
+            SqlCommand cmdBond = new SqlCommand(sql, conn);
+            cmdBond.Parameters.AddWithValue("@cusip", cusip);
+            cmdBond.Parameters.AddWithValue("@quantity", quantity);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmdBond);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "Bonds");
+            return ds;
+        }
     }
 }
