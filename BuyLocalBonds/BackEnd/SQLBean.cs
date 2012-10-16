@@ -34,7 +34,7 @@ namespace BuyLocalBonds.BackEnd
 
         public DataTable GetPortfolio(Int64 client_id)
         {
-            string sql = "SELECT BONDS.name, TRANSACTIONS.cusip,SUM(TRANSACTIONS.quantity) FROM BONDS JOIN TRANSACTIONS  ON (BONDS.cusip = TRANSACTIONS.cusip) WHERE TRANSACTIONS.client_id = @client_id GROUP BY TRANSACTIONS.cusip, BONDS.name";
+            string sql = "SELECT BONDS.name, TRANSACTIONS.cusip,SUM(TRANSACTIONS.quantity) AS quantity FROM BONDS JOIN TRANSACTIONS  ON (BONDS.cusip = TRANSACTIONS.cusip) WHERE TRANSACTIONS.client_id = @client_id GROUP BY TRANSACTIONS.cusip, BONDS.name";
             
             SqlCommand cmdBond = new SqlCommand(sql, conn);
             cmdBond.Parameters.AddWithValue("@client_id", client_id);
@@ -110,28 +110,6 @@ namespace BuyLocalBonds.BackEnd
             cmdBond.Parameters.AddWithValue("@coupon_high", b.Coupon_high);
             cmdBond.Parameters.AddWithValue("@rating_low", b.Rating_low);
             cmdBond.Parameters.AddWithValue("@rating_high", b.Rating_high);
-
-            SqlDataAdapter da = new SqlDataAdapter(cmdBond);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "Bonds");
-            //conn.Close();
-            return ds;
-        }
-
-        public DataSet GetBonds(string cusip, double low, double high)
-        {
-            conn = new SqlConnection("Server=.;Database=BLBData;Integrated Security=SSPI;");
-            
-            string sql = "SELECT * FROM Bonds WHERE ";
-           // if (low != null && high != null) 
-            sql += "Price between @low and @high";
-            //if (cusip != null) 
-            sql += " AND CUSIP = @cusip";
-            SqlCommand cmdBond = new SqlCommand(sql, conn);
-
-            cmdBond.Parameters.AddWithValue("@low", low);
-            cmdBond.Parameters.AddWithValue("@high", high);
-            cmdBond.Parameters.AddWithValue("@cusip", cusip);
 
             SqlDataAdapter da = new SqlDataAdapter(cmdBond);
             DataSet ds = new DataSet();

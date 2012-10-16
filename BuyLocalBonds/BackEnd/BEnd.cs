@@ -16,12 +16,6 @@ namespace BuyLocalBonds.BackEnd
         {
            db = new SQLBean();             
         }
-        public DataSet SearchBonds(string cusip, double low, double high)
-        {
-            if (cusip == null)
-                return db.GetBonds(null, low, high);
-            else return db.GetBonds(cusip, low, high);
-        }
 
         public DataSet SearchBonds(Bond b)
         {
