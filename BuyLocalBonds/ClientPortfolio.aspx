@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:DropDownList ID="DDLClientID" runat="server" DataSourceID="getClient" 
-        DataTextField="client_name" DataValueField="client_id">
+        DataTextField="client_name" DataValueField="client_id" >
     </asp:DropDownList>
     <asp:Button ID="ButtonGo" runat="server" Text="Get Portfolio" 
         onclick="ButtonGo_Click" />

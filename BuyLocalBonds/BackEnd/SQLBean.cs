@@ -32,7 +32,7 @@ namespace BuyLocalBonds.BackEnd
             return true;
         }
 
-        public DataTable GetPortfolio(Int64 client_id)
+        public DataTable GetPortfolio(string client_id)
         {
 
             string sql = "SELECT BONDS.name as 'Bond Name', TRANSACTIONS.cusip as 'CUSIP',SUM(TRANSACTIONS.quantity) as 'Quantity Owned' FROM BONDS JOIN TRANSACTIONS  ON (BONDS.cusip = TRANSACTIONS.cusip) WHERE TRANSACTIONS.client_id = @client_id GROUP BY TRANSACTIONS.cusip, BONDS.name";
