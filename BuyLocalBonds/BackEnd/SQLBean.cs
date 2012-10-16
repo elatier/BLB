@@ -154,7 +154,7 @@ namespace BuyLocalBonds.BackEnd
 
         internal DataSet InsertBuyTransactionQuery(string client_id, string cusip, string quantity) 
         {
-            string sql = "INSERT INTO [TRANSACTIONS] ([client_id],[cusip],[quantity])VALUES (@clientId, @cusip ,@quantity) SELECT SCOPE_IDENTITY();";
+            string sql = "INSERT INTO [TRANSACTIONS] ([client_id],[cusip],[quantity])VALUES (@clientId, @cusip ,@quantity) SELECT SCOPE_IDENTITY() AS 'Transaction ID';";
 
             SqlCommand cmdBond = new SqlCommand(sql, conn);
             cmdBond.Parameters.AddWithValue("@clientId", client_id);

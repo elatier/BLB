@@ -43,6 +43,20 @@
         {
             height: 26px;
         }
+        .style12
+        {
+            height: 20px;
+            width: 248px;
+        }
+        .style13
+        {
+            width: 248px;
+        }
+        .style14
+        {
+            height: 26px;
+            width: 248px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
@@ -57,8 +71,10 @@
             <td class="style5">
                     <asp:TextBox ID="CUSIP" runat="server" Enabled="false"></asp:TextBox>
                 </td>
-            <td class="style2">
+            <td class="style12">
             </td>
+            <td class="style2">
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="style8">
@@ -67,6 +83,8 @@
             <td class="style6">
                     <asp:TextBox ID="Name" runat="server" Enabled="false"></asp:TextBox>
                 </td>
+            <td class="style13">
+                &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>
@@ -77,6 +95,8 @@
             <td class="style6">
                     <asp:TextBox ID="Rating" runat="server" Enabled="false"></asp:TextBox>
                 </td>
+            <td class="style13">
+                &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>
@@ -87,8 +107,10 @@
             <td class="style5">
                     <asp:TextBox ID="Coupon" runat="server" Enabled="false"></asp:TextBox>
                 </td>
-            <td class="style2">
+            <td class="style12">
             </td>
+            <td class="style2">
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="style7">
@@ -97,8 +119,10 @@
             <td class="style5">
                     <asp:TextBox ID="CurrentYield" runat="server" Enabled="false"></asp:TextBox>
                 </td>
+            <td class="style12">
+                &nbsp;</td>
             <td class="style2">
-            </td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="style7">
@@ -107,8 +131,10 @@
             <td class="style5">
                     <asp:TextBox ID="YieldToMaturity" runat="server" Enabled="false"></asp:TextBox>
                 </td>
-            <td class="style2">
+            <td class="style12">
             </td>
+            <td class="style2">
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="style8">
@@ -117,6 +143,8 @@
             <td class="style6">
                     <asp:TextBox ID="MaturityDate" runat="server" Enabled="false"></asp:TextBox>
                 </td>
+            <td class="style13">
+                &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>
@@ -127,6 +155,8 @@
             <td class="style6">
                     <asp:TextBox ID="ParValue" runat="server" Enabled="false"></asp:TextBox>
                 </td>
+            <td class="style13">
+                &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>
@@ -137,8 +167,10 @@
             <td class="style5">
                     <asp:TextBox ID="Price" runat="server" Enabled="false"></asp:TextBox>
                 </td>
-            <td class="style2">
+            <td class="style12">
             </td>
+            <td class="style2">
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="style7">
@@ -154,6 +186,8 @@
                         SelectCommand="SELECT [client_id],[client_name] FROM [CLIENT] ORDER BY [client_name]">
                     </asp:SqlDataSource>
             </td>
+            <td class="style12">
+                &nbsp;</td>
             <td class="style2">
                 &nbsp;</td>
         </tr>
@@ -163,6 +197,8 @@
             <td class="style6">
                     <asp:TextBox ID="QuantityAvailable" runat="server" Enabled="false" ></asp:TextBox>
                 </td>
+            <td class="style13">
+                &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>
@@ -173,7 +209,7 @@
             <td class="style10">
                     <asp:TextBox ID="Quantity" runat="server" ></asp:TextBox>
                 </td>
-            <td class="style11">
+            <td class="style14">
 
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                     ErrorMessage="Quantity Required" ControlToValidate="Quantity" Display="Dynamic"></asp:RequiredFieldValidator>
@@ -182,6 +218,9 @@
                     ErrorMessage="Invalid Amount Specified" ControlToValidate="Quantity" MinimumValue="1"
                      Type="Integer" Display="Dynamic"></asp:RangeValidator>
             </td>
+            <td class="style11">
+
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="style8">
@@ -190,12 +229,19 @@
             <td class="style6">
                     <asp:TextBox ID="TotalAmount" runat="server" Enabled="false"></asp:TextBox>
                 </td>
+            <td class="style13">
+            <b>
+                <asp:Label ID="ConfirmationLabel" runat="server" Text="Your transaction has been submitted:" Visible="false"></asp:Label>
+                </b>
+            </td>
             <td>
-                &nbsp;</td>
+                <asp:DetailsView ID="DetailsView1" runat="server" Height="16px" Width="125px">
+                </asp:DetailsView>
+            </td>
         </tr>
         <tr>
             <td class="style8">
-                <asp:Button ID="Back" runat="server" Text="Back" onclick="Back_Click" ValidationGroup="None" />
+                <asp:Button ID="Back" runat="server" Text="Return to Search" onclick="Back_Click" ValidationGroup="None" />
             </td>
             <td class="style6">
                 <asp:Button ID="Buy" runat="server" Text="Buy" onclick="Buy_Click" 
@@ -203,18 +249,22 @@
                 <asp:Button ID="Cancel" runat="server" Text="Cancel" onclick="Cancel_Click" 
                     Visible="false"/>
             </td>
-            <td>
+            <td class="style13">
                 <asp:Button ID="Confirm" runat="server" Text="Confirm" 
                     onclick="Confirm_Click" Enabled="false" />
+                <asp:Button ID="PortfolioButton" runat="server" Text="View Client Portfolio" 
+                    Visible="false" onclick="PortfolioButton_Click"/>
             </td>
+            <td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="style8">
                 &nbsp;</td>
             <td class="style6">
-                <asp:GridView ID="GridView1" runat="server">
-                </asp:GridView>
-            </td>
+                &nbsp;</td>
+            <td class="style13">
+                &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>
