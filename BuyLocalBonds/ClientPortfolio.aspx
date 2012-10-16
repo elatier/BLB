@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ClientPortfolio.aspx.cs" Inherits="BuyLocalBonds.ClientPortfolio" %>
+<%@ Register assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" namespace="System.Web.UI.DataVisualization.Charting" tagprefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -13,4 +14,14 @@
     </asp:SqlDataSource>
     <asp:GridView ID="GV_portfolio" runat="server">
     </asp:GridView>
+    <asp:Chart ID="Chart1" runat="server">
+        <series>
+            <asp:Series ChartType="Pie" Name="Series1">
+            </asp:Series>
+        </series>
+        <chartareas>
+            <asp:ChartArea Name="ChartArea1">
+            </asp:ChartArea>
+        </chartareas>
+    </asp:Chart>
 </asp:Content>
