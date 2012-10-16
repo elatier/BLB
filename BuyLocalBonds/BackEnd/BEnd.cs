@@ -17,6 +17,12 @@ namespace BuyLocalBonds.BackEnd
            db = new SQLBean();             
         }
 
+
+        ~BEnd()
+        {
+            db = null;
+        }
+
         public DataSet SearchBonds(Bond b)
         {
             return db.SearchBondsQuery(b);

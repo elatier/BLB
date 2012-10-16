@@ -69,9 +69,8 @@ namespace BuyLocalBonds
             }
             else
             {
-                //Server.Transfer("Default.aspx", true);
-                Response.Redirect("~/Default.aspx", true);
-                //Response.Redirect("~/BuyBond.aspx?CUSIP=123456789", true);
+                //Response.Redirect("~/Default.aspx", true);
+                Response.Redirect("~/BuyBond.aspx?CUSIP=123456789", true);
             }
         }
 
@@ -93,8 +92,8 @@ namespace BuyLocalBonds
         protected void Confirm_Click(object sender, EventArgs e)
         {
             String client_id = ClientDropdown.SelectedValue;
-            bend.InsertBuyTransaction(client_id, CUSIP.Text, Quantity.Text);
-
+            GridView1.DataSource = bend.InsertBuyTransaction(client_id, CUSIP.Text, Quantity.Text).Tables[0];
+            GridView1.DataBind();
            
         }
 

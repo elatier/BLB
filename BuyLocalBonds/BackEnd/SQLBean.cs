@@ -16,6 +16,12 @@ namespace BuyLocalBonds.BackEnd
         {
             conn = new SqlConnection("Server=.;Database=BLBData;Integrated Security=SSPI;");             
         }
+
+         ~SQLBean()
+        {
+            conn.Close();
+        }
+
         public Boolean LoginQuery(String UserName, String Password)
         {
             string sql = "SELECT trader_id FROM TRADER WHERE trader_username = @UserName AND trader_password = @Password";
@@ -26,10 +32,10 @@ namespace BuyLocalBonds.BackEnd
             SqlDataAdapter da = new SqlDataAdapter(cmdBond);
             DataSet ds = new DataSet();
             da.Fill(ds, "Trader");
-            if (ds.Tables[0].Rows.Count == 0)
-                return false;
+            if (ds.Tables[0].Rows.Count == 1)
+                return true;
 
-            return true;
+            return false;
         }
 
         public DataTable GetPortfolio(string client_id)
@@ -148,7 +154,7 @@ namespace BuyLocalBonds.BackEnd
 
         internal DataSet InsertBuyTransactionQuery(string client_id, string cusip, string quantity) 
         {
-            string sql = "INSERT INTO [TRANSACTIONS] ([client_id],[cusip],[quantity]) VALUES (@clientId, @cusip ,@quantity)";
+            string sql = "INSERT INTO [TRANSACTIONS] ([client_id],[cusip],[quantity])VALUES (@clientId, @cusip ,@quantity) SELECT SCOPE_IDENTITY();";
 
             SqlCommand cmdBond = new SqlCommand(sql, conn);
             cmdBond.Parameters.AddWithValue("@clientId", client_id);

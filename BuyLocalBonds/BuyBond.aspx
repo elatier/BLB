@@ -212,7 +212,9 @@
             <td class="style8">
                 &nbsp;</td>
             <td class="style6">
-                &nbsp;</td>
+                <asp:GridView ID="GridView1" runat="server">
+                </asp:GridView>
+            </td>
             <td>
                 &nbsp;</td>
         </tr>
