@@ -92,11 +92,13 @@ namespace BuyLocalBonds
         protected void Confirm_Click(object sender, EventArgs e)
         {
             String client_id = ClientDropdown.SelectedValue;
-            GridView1.DataSource = bend.InsertBuyTransaction(client_id, CUSIP.Text, Quantity.Text).Tables[0];
-            GridView1.DataBind();
+            DetailsView1.DataSource = bend.InsertBuyTransaction(client_id, CUSIP.Text, Quantity.Text).Tables[0];
+            DetailsView1.DataBind();
             Cancel.Enabled = false;
-            Confirm.Enabled = false;
-           
+            Confirm.Visible = false;
+            PortfolioButton.Visible = true;
+            ConfirmationLabel.Visible = true;
+          
         }
 
         protected void Cancel_Click(object sender, EventArgs e)
@@ -107,6 +109,13 @@ namespace BuyLocalBonds
             Confirm.Enabled = false;
             ClientDropdown.Enabled = true;
             TotalAmount.Text = "";
+        }
+
+        protected void PortfolioButton_Click(object sender, EventArgs e)
+        {
+            String client_id = ClientDropdown.SelectedValue;
+            Session["ClientID"] = client_id;
+            Response.Redirect("~/ClientPortfolio.aspx?client_id=" + client_id, false);
         }
 
     }
