@@ -56,16 +56,16 @@ namespace BuyLocalBonds.BackEnd
         public DataSet SearchBondsQuery(Bond b)
         {
 
-            string sql = "SELECT [cusip]" +
-                          ",[name]" +
-                          ",[price]" +
-                          ",[par_value]" +
-                          ",[maturity_date]" +
-                          ",[yield_to_maturity]" +
-                          ",[current_yield]" +
-                          ",[coupon]" +
-                          ",[rating_sp]" +
-                          ",[country_code]" +
+            string sql = "SELECT [cusip] AS 'CUSIP'" +
+                          ",[name] AS 'Bond Name'" +
+                          ",[maturity_date] AS 'Maturity Date'" +
+                          ",[yield_to_maturity] AS 'Yield To Maturity (%)'" +
+                          ",[current_yield] AS 'Current Yield (%)'" +
+                          ",[coupon] AS 'Coupon'" +
+                          ",[rating_sp] AS 'S&P Rating'" +
+                          //",[country_code]" +
+                          ",[price]AS 'Price'" +
+                          ",[par_value] AS 'Par Value'" +
                       " FROM BondQuantity WHERE 1=1" + //sanity check fail
                       " AND quantity_available > 0 "+
                 ((!String.IsNullOrWhiteSpace(b.Name)) ? " AND name LIKE @name" : "") +

@@ -62,7 +62,7 @@
         </tr>
         <tr>
             <td class="style8">
-                    <asp:Label ID="Label2" runat="server" Text="Name:"></asp:Label>
+                    <asp:Label ID="Label2" runat="server" Text="Bond Name:"></asp:Label>
                 </td>
             <td class="style6">
                     <asp:TextBox ID="Name" runat="server" Enabled="false"></asp:TextBox>

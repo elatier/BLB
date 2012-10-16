@@ -117,7 +117,7 @@
             </tr>
             <tr>
                 <td class="style2">
-                    <asp:Label ID="Label2" runat="server" Text="Name:" 
+                    <asp:Label ID="Label2" runat="server" Text="Bond Name:" 
                         meta:resourcekey="Label2Resource1"></asp:Label>
                 </td>
                 <td>
