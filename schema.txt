@@ -147,8 +147,14 @@ INSERT INTO TRADER (trader_id, trader_name, trader_username, trader_password) VA
 INSERT INTO TRADER (trader_id, trader_name, trader_username, trader_password) VALUES (2,'B. JOHNS','trader2','password')
 
 INSERT INTO TRADER_GROUPS (trader_group_id, client_id, trader_id) VALUES (1,1,1)
-INSERT INTO TRADER_GROUPS (trader_group_id, client_id, trader_id) VALUES (1,2,1)
-INSERT INTO TRADER_GROUPS (trader_group_id, client_id, trader_id) VALUES (1,1,2)
+INSERT INTO TRADER_GROUPS (trader_group_id, client_id, trader_id) VALUES (2,2,1)
+INSERT INTO TRADER_GROUPS (trader_group_id, client_id, trader_id) VALUES (3,1,2)
+/*
+INSERT INTO TRANSACTIONS (transaction_id, date_time, client_id, cusip, quantity) VALUES (1,,1,111111111,50)
+INSERT INTO TRANSACTIONS (transaction_id, date_time, client_id, cusip, quantity) VALUES (2,,2,111111111,50)
+INSERT INTO TRANSACTIONS (transaction_id, date_time, client_id, cusip, quantity) VALUES (3,,1,111111111,50)
+INSERT INTO TRANSACTIONS (transaction_id, date_time, client_id, cusip, quantity) VALUES (3,,1,999999999,50)
+*/
 
 USE [BLBData]
 GO
