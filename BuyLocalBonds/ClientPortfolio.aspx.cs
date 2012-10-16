@@ -21,12 +21,20 @@ namespace BuyLocalBonds
         {
             BEnd bend = new BEnd();
             Int64 client_id = new Int64();
+            DataTable dt = new DataTable();
 
             client_id = Convert.ToInt64(DDLClientID.SelectedValue);
 
             // Call the function which uses the client_id to get all the stocks. Returns a table with [stock, q]
-           GV_portfolio.DataSource = bend.CreatePortfolio(client_id);
+            dt = bend.CreatePortfolio(client_id);
+            GV_portfolio.DataSource = dt;
            GV_portfolio.DataBind();
+        
+           Chart1.DataSource = dt;
+           Chart1.Series["Series1"].XValueMember = "CUSIP";
+           Chart1.Series["Series1"].YValueMembers = "Quantity owned";
+           Chart1.DataBind();
+
         }
     }
 }
