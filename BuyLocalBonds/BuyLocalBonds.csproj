@@ -70,6 +70,7 @@
     </Content>
     <Content Include="WebForm1.aspx" />
     <Content Include="ClientPortfolio.aspx" />
+    <Content Include="UserGuide.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BuyBond.aspx.cs">
@@ -128,6 +129,13 @@
     </Compile>
     <Compile Include="ClientPortfolio.aspx.designer.cs">
       <DependentUpon>ClientPortfolio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserGuide.aspx.cs">
+      <DependentUpon>UserGuide.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserGuide.aspx.designer.cs">
+      <DependentUpon>UserGuide.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
