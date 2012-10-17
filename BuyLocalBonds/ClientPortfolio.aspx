@@ -28,7 +28,15 @@
     </tr>
     <tr>
         <td>
-    <asp:GridView ID="GV_portfolio" runat="server">
+    <asp:GridView ID="GV_portfolio" runat="server" onrowcommand="GV_portfolio_RowCommand"
+                         >
+            <columns>        
+                <asp:buttonfield buttontype="Button" 
+                    commandname="SelectBond"
+                    headertext="Sell Bond" 
+                    text="Sell" meta:resourcekey="ButtonFieldResource1"/>
+           
+        </columns>
     </asp:GridView>
         </td>
         <td>

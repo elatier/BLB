@@ -34,5 +34,23 @@ namespace BuyLocalBonds
            Chart1.DataBind();
 
         }
+
+        protected void GV_portfolio_RowCommand(Object sender, GridViewCommandEventArgs e)
+        {
+
+            if (e.CommandName == "SelectBond")
+            {
+
+                int index = Convert.ToInt32(e.CommandArgument);
+
+                GridViewRow selectedRow = GV_portfolio.Rows[index];
+                TableCell cusipCell = selectedRow.Cells[2];
+                string cusip = cusipCell.Text;
+                Response.Redirect("~/BuyBond.aspx?CUSIP=" + cusip + "&CLIENTID="+DDLClientID.SelectedValue, false);
+            }
+
+        }
+
+
     }
 }

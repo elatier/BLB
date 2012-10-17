@@ -29,8 +29,8 @@ namespace BuyLocalBonds
             {
                  
                 bend = new BEnd();
-               // try
-               // {
+                try
+                {
                    DataSet ds = bend.SelectBond(cusip);
                 
                    DataTable dt = ds.Tables[0];
@@ -77,11 +77,11 @@ namespace BuyLocalBonds
                     
                     }
 
-                //}
-               // catch (Exception)
-               // {
-               //     Response.Redirect("~/Default.aspx", true);
-               // }  
+                }
+                catch (Exception)
+                {
+                    Response.Redirect("~/Default.aspx", true);
+                }  
 
 
             }
