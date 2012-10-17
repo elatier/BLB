@@ -95,9 +95,6 @@ namespace BuyLocalBonds.BackEnd
 
             SqlCommand cmdBond = new SqlCommand(sql, conn);
 
-            // SqlParameter myParam = new SqlParameter(
-            //    "@Param1", SqlDbType.VarChar, 11);
-
             if (!String.IsNullOrWhiteSpace(b.Name))
                 cmdBond.Parameters.AddWithValue("@name", "%" + b.Name + "%");
             if (!String.IsNullOrWhiteSpace(b.Cusip))

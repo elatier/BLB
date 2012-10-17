@@ -61,6 +61,14 @@
             width: 22px;
         }
     </style>
+    <script language="javascript" type="text/javascript">
+// <![CDATA[
+
+        function MatLowDatepicker_onclick() {
+        }
+
+// ]]>
+    </script>
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <h2>
@@ -134,7 +142,8 @@
                     <asp:TextBox ID="Name" runat="server" meta:resourcekey="NameResource1" ></asp:TextBox>
                 </td>
                 <td class="style15">
-                    &nbsp;</td>
+                    </asp:TextBox>
+                &nbsp;</td>
                 <td>
                     &nbsp;</td>
                 <td class="style7">
@@ -273,9 +282,7 @@
                 <td>
                     </td>
                 <td>
-                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" Height="16px" 
-                        meta:resourcekey="ValidationSummary1Resource1" />
-                </td>
+                    &nbsp;</td>
                 <td>
                     </td>
             </tr>
@@ -332,27 +339,38 @@
                         meta:resourcekey="Label16Resource1"></asp:Label>
                 </td>
                 <td class="style5">
-                    <asp:Calendar ID="MaturityDateLow" runat="server" 
-                        meta:resourcekey="MaturityDateLowResource1"></asp:Calendar>
-                </td>
+                    <asp:TextBox type="text" id="MaturityLow" runat="server" 
+                        ></asp:TextBox>
+                <script>
+                    $(function () {
+                        $("#<%= MaturityLow.ClientID %>").datepicker();
+                        $("#<%= MaturityHigh.ClientID %>").datepicker();
+                    });
+                </script>
                 <td class="style15">
-                    &nbsp;</td>
+                    <asp:RegularExpressionValidator ID="MatDateLowVal" runat="server" 
+                        ControlToValidate="CUSIP" ErrorMessage="Invalid Maturity Date Low" 
+                        ValidationExpression="(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d" 
+                        meta:resourcekey="CUSIP_ValidatorResource1"></asp:RegularExpressionValidator>
+                </td>
                 <td>
                     <asp:Label ID="Label25" runat="server" Text="high" 
                         meta:resourcekey="Label25Resource1"></asp:Label>
                     </td>
                 <td class="style7">
-                    <asp:Calendar ID="MaturityDateHigh" runat="server" 
-                        meta:resourcekey="MaturityDateHighResource1"></asp:Calendar>
+                    <asp:TextBox type="text" id="MaturityHigh" runat="server" 
+                        ></asp:TextBox>
                 </td>
                 <td class="style11">
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
+                    <asp:RegularExpressionValidator ID="MatDateHighVal" runat="server" 
+                        ControlToValidate="MaturityHigh" ErrorMessage="Invalid Maturity Date High" 
+                        ValidationExpression="(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d" 
+                        meta:resourcekey="CUSIP_ValidatorResource1"></asp:RegularExpressionValidator>
+                </td>
+                <td colspan="3" rowspan="2">
+                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" Height="16px" 
+                        meta:resourcekey="ValidationSummary1Resource1" />
+                </td>
                 <td>
                     &nbsp;</td>
             </tr>
@@ -389,12 +407,6 @@
                         SetFocusOnError="True" ValidationExpression="^(\-)?\d*(\.\d+)?$" 
                         meta:resourcekey="ParValue_v1Resource1"></asp:RegularExpressionValidator>
                 </td>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
                 <td>
                     &nbsp;</td>
             </tr>

@@ -247,15 +247,6 @@ namespace BuyLocalBonds {
         protected global::System.Web.UI.WebControls.Button SearchButton;
         
         /// <summary>
-        /// ValidationSummary1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
-        
-        /// <summary>
         /// Label6 control.
         /// </summary>
         /// <remarks>
@@ -346,13 +337,22 @@ namespace BuyLocalBonds {
         protected global::System.Web.UI.WebControls.Label Label16;
         
         /// <summary>
-        /// MaturityDateLow control.
+        /// MaturityLow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar MaturityDateLow;
+        protected global::System.Web.UI.WebControls.TextBox MaturityLow;
+        
+        /// <summary>
+        /// MatDateLowVal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator MatDateLowVal;
         
         /// <summary>
         /// Label25 control.
@@ -364,13 +364,31 @@ namespace BuyLocalBonds {
         protected global::System.Web.UI.WebControls.Label Label25;
         
         /// <summary>
-        /// MaturityDateHigh control.
+        /// MaturityHigh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar MaturityDateHigh;
+        protected global::System.Web.UI.WebControls.TextBox MaturityHigh;
+        
+        /// <summary>
+        /// MatDateHighVal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator MatDateHighVal;
+        
+        /// <summary>
+        /// ValidationSummary1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
         
         /// <summary>
         /// Label8 control.
