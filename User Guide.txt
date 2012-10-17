@@ -1,0 +1,22 @@
+dbBLB User Guide
+----------------
+
+1. Login
+----------------
+The user must be logged in to access any of the dbBLB facilities.
+1. Enter a username and password. (Example valid account: Username: [trader1 or trader2] Password: password.)
+
+2. Buying Bond
+----------------
+1. Enter the CUSIP code if known, else enter any valid parameter to for an appropriate bond.
+2. Click the Search button.
+3. If there is results returned, matching your criteria, press the corresponding 'buy' button.
+4. Review that this is the bond you want and select the client and enter your quantity desired. Note quantitity desired must be less than quantity available.
+5. Press the 'buy' button.
+6. Check the settlement time is appropriate and confirm. Note: This will purchase the share, BSR will need to be contacted to cancel this transaction after this confirmation is made.
+
+3. View Client Portfolio
+----------------
+1. Press 'View client portfolio' to view the clients currently owned portfolio.
+2. Select the client whose portfolio you want to see and then  select 'Get Portfolio'.
+3. Portfolio is displayed in both pie chart and list form.

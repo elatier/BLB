@@ -15,7 +15,7 @@
         }
         .style2
         {
-            width: 381px;
+            width: 458px;
         }
         .style3
         {
@@ -53,6 +53,7 @@
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Search.aspx" Text="Buy"/>
                         <asp:MenuItem NavigateUrl="~/ClientPortfolio.aspx" Text="Client Portfolio"/>
+                        <asp:MenuItem NavigateUrl="~/UserGuide.aspx" Text="User Guide"/>
                         <asp:MenuItem Text="Log Out"/>
                     </Items>
                 </asp:Menu>
