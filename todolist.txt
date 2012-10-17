@@ -9,7 +9,8 @@ To do List:
 	
 -show other client information when confirming
 
-
+-align the columns
+-do not show dollar sign in all fields
 
 
 -tests
