@@ -15,7 +15,6 @@ namespace BuyLocalBonds
         protected void Page_Load(object sender, EventArgs e)
         {
             bend = new BEnd();
-            //ButtonGo_Click(null, null);
         }
 
      
@@ -25,10 +24,9 @@ namespace BuyLocalBonds
 
             string client_id = DDLClientID.SelectedValue;
 
-            // Call the function which uses the client_id to get all the stocks. Returns a table with [stock, q]
             dt = bend.CreatePortfolio(client_id);
             GV_portfolio.DataSource = dt;
-           GV_portfolio.DataBind();
+            GV_portfolio.DataBind();
         
            Chart1.DataSource = dt;
            Chart1.Series["Series1"].XValueMember = "CUSIP";

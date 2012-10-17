@@ -51,7 +51,6 @@ namespace BuyLocalBonds.BackEnd
             da.Fill(ds, "Transactions");
             DataTable dt = ds.Tables[0];
 
-            //conn.Close();
             return dt;
 
 
@@ -72,7 +71,7 @@ namespace BuyLocalBonds.BackEnd
                           //",[country_code]" +
                           ",'$'+CONVERT(varchar(12), price, 1) AS 'Price'" +
                           ",'$'+CONVERT(varchar(12), par_value, 1) AS 'Par Value'" +
-                      " FROM BondQuantity WHERE 1=1" + //sanity check fail
+                      " FROM BondQuantity WHERE 1=1" + 
                       " AND quantity_available > 0 "+
                 ((!String.IsNullOrWhiteSpace(b.Name)) ? " AND name LIKE @name" : "") +
                 ((!String.IsNullOrWhiteSpace(b.Cusip)) ? " AND CUSIP = @cusip" : "") +
@@ -117,7 +116,6 @@ namespace BuyLocalBonds.BackEnd
             SqlDataAdapter da = new SqlDataAdapter(cmdBond);
             DataSet ds = new DataSet();
             da.Fill(ds, "Bonds");
-            //conn.Close();
             return ds;
         }
 

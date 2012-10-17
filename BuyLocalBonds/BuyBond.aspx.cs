@@ -24,14 +24,8 @@ namespace BuyLocalBonds
                     
                 DataSet ds = bend.SelectBond(cusip);
 
-
-
-                //DetailsView1.DataSource = ds.Tables[0];
-                //DetailsView1.DataBind();
-
                 DataTable dt = ds.Tables[0];
                 
-                //Todo also load values into textboxes
                 CUSIP.Text = dt.Rows[0][0].ToString();
                 Name.Text = dt.Rows[0][1].ToString();
 
@@ -56,7 +50,7 @@ namespace BuyLocalBonds
                 }
                 else
                 {
-                    //Response.Redirect("~/Default.aspx", true);
+                    Response.Redirect("~/Default.aspx", true);
                     Quantity.Enabled = false;
                     Quantity.Text = "0";
                     Buy.Visible = false;
@@ -70,8 +64,8 @@ namespace BuyLocalBonds
             }
             else
             {
-                //Response.Redirect("~/Default.aspx", true);
-                Response.Redirect("~/BuyBond.aspx?CUSIP=123456789", true);
+                Response.Redirect("~/Default.aspx", true);
+                //Response.Redirect("~/BuyBond.aspx?CUSIP=123456789", true);
             }
         }
 
@@ -94,7 +88,7 @@ namespace BuyLocalBonds
             String client_id = ClientDropdown.SelectedValue;
             TransactionId.Text = bend.InsertBuyTransaction(client_id, CUSIP.Text, Quantity.Text)
                                     .Tables[0].Rows[0][0].ToString();
-            Cancel.Enabled = false;
+            Cancel.Visible = false;
             Confirm.Visible = false;
             PortfolioButton.Visible = true;
             ConfirmationLabel.Visible = true;

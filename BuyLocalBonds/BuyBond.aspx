@@ -14,7 +14,7 @@
         .style15
         {
             height: 20px;
-            width: 125px;
+            width: 120px;
         }
         .style16
         {
@@ -45,11 +45,15 @@
         .style25
         {
             height: 20px;
-            width: 150px;
+            width: 125px;
         }
         .style26
         {
-            width: 150px;
+            width: 125px;
+        }
+        .style27
+        {
+            width: 120px;
         }
     </style>
 </asp:Content>
@@ -88,7 +92,7 @@
             <td class="style20">
                     <asp:TextBox ID="Name" runat="server" Enabled="false"></asp:TextBox>
                 </td>
-            <td class="style16">
+            <td class="style27">
                     <asp:Label ID="Label9" runat="server" Text="Price ($):"></asp:Label>
                 </td>
             <td class="style24">
@@ -104,7 +108,7 @@
             <td class="style20">
                     <asp:TextBox ID="Rating" runat="server" Enabled="false"></asp:TextBox>
                 </td>
-            <td class="style16">
+            <td class="style27">
                     <asp:Label ID="Label33" runat="server" Text="Quantity Available:"></asp:Label>
                 </td>
             <td class="style24">
@@ -162,7 +166,7 @@
                     <asp:TextBox ID="YieldToMaturity" runat="server" Enabled="false"></asp:TextBox>
                 </td>
             <td class="style15">
-                    <asp:Label ID="SettleTimeLabel" runat="server" Text="Settlement Time (t+)" Visible="false"></asp:Label>
+                    <asp:Label ID="SettleTimeLabel" runat="server" Text="Settlement (t+):" Visible="false"></asp:Label>
                 </td>
             <td class="style23">
                     <asp:TextBox ID="SettleTime" runat="server" Enabled="false" Visible="false"></asp:TextBox>
@@ -177,7 +181,7 @@
             <td class="style20">
                     <asp:TextBox ID="MaturityDate" runat="server" Enabled="false"></asp:TextBox>
                 </td>
-            <td class="style16">
+            <td class="style27">
                     <asp:Label ID="TransactionIDLabel" runat="server" Text="Transaction ID:" Visible="false" ></asp:Label>
                 </td>
             <td class="style24">
@@ -216,12 +220,12 @@
                      />
                 <asp:Button ID="Cancel" runat="server" Text="Amend" onclick="Cancel_Click" 
                     Visible="false"/>
+                <asp:Button ID="PortfolioButton" runat="server" Text="View Client Portfolio" 
+                    Visible="false" onclick="PortfolioButton_Click"/>
             </td>
             <td class="style2">
                 <asp:Button ID="Confirm" runat="server" Text="Confirm" 
                     onclick="Confirm_Click" Visible="false" />
-                <asp:Button ID="PortfolioButton" runat="server" Text="View Client Portfolio" 
-                    Visible="false" onclick="PortfolioButton_Click"/>
             </td>
         </tr>
         <tr>

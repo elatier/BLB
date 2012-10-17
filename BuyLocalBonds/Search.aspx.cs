@@ -68,12 +68,8 @@ namespace BuyLocalBonds
             if (e.CommandName == "SelectBond")
             {
 
-                // Convert the row index stored in the CommandArgument
-                // property to an Integer.
                 int index = Convert.ToInt32(e.CommandArgument);
 
-                // Get the last name of the selected author from the appropriate
-                // cell in the GridView control.
                 GridViewRow selectedRow = BondGrid.Rows[index];
                 TableCell cusipCell = selectedRow.Cells[1];
                 string cusip = cusipCell.Text;

@@ -129,9 +129,9 @@ INSERT INTO COUNTRY_INFO (country_code, settlement_time, calender) VALUES ('SIN'
 INSERT INTO COUNTRY_INFO (country_code, settlement_time, calender) VALUES ('AUS', 3, 'URL2')
 
 
-INSERT INTO BONDS (cusip, name, price, par_value, maturity_date, yield_to_maturity, current_yield, coupon, rating, country_code) VALUES (123456789, 'American Government Bond', 1, 33, '2013-05-15', 11, 12, 5, 1, 'USA')
-INSERT INTO BONDS (cusip, name, price, par_value, maturity_date, yield_to_maturity, current_yield, coupon, rating, country_code) VALUES (111111111, 'Australian Government Bond', 20, 55, '2013-06-15', 22, 80, 5, 2, 'AUS')
-INSERT INTO BONDS (cusip, name, price, par_value, maturity_date, yield_to_maturity, current_yield, coupon, rating, country_code) VALUES (999999999, 'Singapaore Government Bond', 50, 33, '2013-05-15', 11, 12, 5, 1, 'SIN')
+INSERT INTO BONDS (cusip, name, price, par_value, maturity_date, yield_to_maturity, current_yield, coupon, rating, country_code) VALUES (123456789, 'American Gov Bond', 1, 33, '2013-05-15', 11, 12, 5, 1, 'USA')
+INSERT INTO BONDS (cusip, name, price, par_value, maturity_date, yield_to_maturity, current_yield, coupon, rating, country_code) VALUES (111111111, 'Australian Gov Bond', 20, 55, '2013-06-15', 22, 80, 5, 2, 'AUS')
+INSERT INTO BONDS (cusip, name, price, par_value, maturity_date, yield_to_maturity, current_yield, coupon, rating, country_code) VALUES (999999999, 'Singapaore Gov Bond', 50, 33, '2013-05-15', 11, 12, 5, 1, 'SIN')
 INSERT INTO BONDS (cusip, name, price, par_value, maturity_date, yield_to_maturity, current_yield, coupon, rating, country_code) VALUES (222222222, 'Irish Government Bond', 70, 33, '2013-09-15', 11, 12, 5, 1, 'USA')
 INSERT INTO BONDS (cusip, name, price, par_value, maturity_date, yield_to_maturity, current_yield, coupon, rating, country_code) VALUES (333333333, 'Ford Bond', 90, 55, '2013-08-15', 22, 80, 5, 2, 'AUS')
 INSERT INTO BONDS (cusip, name, price, par_value, maturity_date, yield_to_maturity, current_yield, coupon, rating, country_code) VALUES (444444444, 'Chrysler Bond', 110, 33, '2013-03-15', 11, 12, 5, 1, 'SIN')
