@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuyLocalBonds", "BuyLocalBonds.csproj", "{4BF1D770-FF62-4CE5-A521-6DD91F55E284}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBLB", "..\TestBLB\TestBLB.csproj", "{29F8E9E6-E3B9-46D9-AF36-756F0D326939}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{4BF1D770-FF62-4CE5-A521-6DD91F55E284}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BF1D770-FF62-4CE5-A521-6DD91F55E284}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BF1D770-FF62-4CE5-A521-6DD91F55E284}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29F8E9E6-E3B9-46D9-AF36-756F0D326939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29F8E9E6-E3B9-46D9-AF36-756F0D326939}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29F8E9E6-E3B9-46D9-AF36-756F0D326939}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29F8E9E6-E3B9-46D9-AF36-756F0D326939}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
