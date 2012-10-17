@@ -88,7 +88,7 @@
     </Compile>
     <Compile Include="BackEnd\BEnd.cs" />
     <Compile Include="BackEnd\Bond.cs" />
-    <Compile Include="BackEnd\Utilities.cs" />
+    <Compile Include="BackEnd\Util.cs" />
     <Compile Include="Search.aspx.cs">
       <DependentUpon>Search.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

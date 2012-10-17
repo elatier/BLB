@@ -103,8 +103,8 @@ namespace BuyLocalBonds.BackEnd
             cmdBond.Parameters.AddWithValue("@price_high", b.Price_high);
             cmdBond.Parameters.AddWithValue("@par_value_low", b.Par_value_low);
             cmdBond.Parameters.AddWithValue("@par_value_high", b.Par_value_high);
-           // cmdBond.Parameters.AddWithValue("@maturity_date_low", b.Maturity_date_low);
-           // cmdBond.Parameters.AddWithValue("@maturity_date_high", b.Maturity_date_high);
+            //cmdBond.Parameters.AddWithValue("@maturity_date_low", b.Maturity_date_low);
+            //cmdBond.Parameters.AddWithValue("@maturity_date_high", b.Maturity_date_high);
             cmdBond.Parameters.Add("@maturity_date_low", SqlDbType.Date).Value = b.Maturity_date_low;
             cmdBond.Parameters.Add("@maturity_date_high", SqlDbType.Date).Value = b.Maturity_date_high;
             cmdBond.Parameters.AddWithValue("@yield_to_maturity_low", b.Yield_to_maturity_low);

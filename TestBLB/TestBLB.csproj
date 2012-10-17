@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="TestBond.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BuyLocalBonds\BuyLocalBonds.csproj">

@@ -7,12 +7,9 @@ using BuyLocalBonds.BackEnd;
 
 namespace TestBLB
 {
-
     [TestFixture]
-    public class TestBond
+    class TestUtility
     {
-        private Bond b;
-
         [TestFixtureSetUp]
         public static void overallInit()
         {
@@ -28,28 +25,23 @@ namespace TestBLB
         [SetUp]
         public void setUp()
         {
-            b = new Bond();
+            
         }
 
         [TearDown]
         public void tearDown()
         {
-            b = null;
+           
         }
 
         [Test]
-        public void testNotNull()
+        public void testParseDate()
         {
-            Assert.NotNull(b);
+            DateTime defValue = new DateTime(0001, 1, 1);
+            String input = "22/03/2012";
+            DateTime output = Util.ParseDate(defValue, input);
+            Assert.AreEqual(new DateTime(2012, 03, 22), output);
+
         }
-
-        [Test]
-        public void testDefaultConstructorValues()
-        {
-
-            Assert.AreEqual(new DateTime(1800, 1, 1), b.Maturity_date_low);
-            Assert.AreEqual(new DateTime(9999, 12, 31), b.Maturity_date_high);
-        }
-
     }
 }
