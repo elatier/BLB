@@ -32,7 +32,8 @@ namespace BuyLocalBonds.BackEnd
             Price_high = Double.MaxValue;
             Par_value_low = 0;
             Par_value_high = Double.MaxValue;
-            Maturity_date_low =  new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day);
+            Maturity_date_low = new DateTime(0001, 1, 1);
+            //Maturity_date_low =  new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day);
             Maturity_date_high = new DateTime(9999, 12, 31);
             Yield_to_maturity_low = Double.MinValue;
             Yield_to_maturity_high = Double.MaxValue;

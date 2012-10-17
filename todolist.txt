@@ -22,7 +22,7 @@ To do List:
 -improve quality of the data
 
 
-
+-------------------------------------------------------------
 +fix buy screen - two columns
 +display money fields in buybond as money
 

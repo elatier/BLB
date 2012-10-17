@@ -44,12 +44,11 @@ namespace TestBLB
         }
 
         [Test]
-        public void testConstructor()
+        public void testDefaultConstructorValues()
         {
-           // b = new Bond("123", "name1", 123.123);
-            Assert.AreEqual("123", b.Cusip);
-            Assert.AreEqual("name1", b.Name);
-           // Assert.AreEqual(123.123, b.Price);
+
+            Assert.AreEqual(new DateTime(0001, 1, 1), b.Maturity_date_low);
+            Assert.AreEqual(new DateTime(9999, 12, 31), b.Maturity_date_high);
         }
 
     }

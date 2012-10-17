@@ -54,7 +54,6 @@
   <ItemGroup>
     <Content Include="BuyBond.aspx" />
     <Content Include="Default.aspx" />
-    <Content Include="LoginPage.aspx" />
     <Content Include="SelectBond.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Search.aspx" />
@@ -90,13 +89,6 @@
     <Compile Include="BackEnd\BEnd.cs" />
     <Compile Include="BackEnd\Bond.cs" />
     <Compile Include="BackEnd\Utilities.cs" />
-    <Compile Include="LoginPage.aspx.cs">
-      <DependentUpon>LoginPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LoginPage.aspx.designer.cs">
-      <DependentUpon>LoginPage.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Search.aspx.cs">
       <DependentUpon>Search.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
