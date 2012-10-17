@@ -2,7 +2,7 @@ To do List:
 ------------
 
 
-
++add encrypted passwords
 
 +fix the calendar
 	-fix the date parsing

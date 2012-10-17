@@ -23,32 +23,22 @@ namespace BuyLocalBonds
 
             BEnd bend = new BEnd();
             Bond b = new Bond();
-
-            //Regex numRegex = new Regex("/^\\d+\\.?\\d*$/");
-            
+           
 
             b.Name = Util.Filter(Name.Text);
             b.Cusip = Util.Filter(CUSIP.Text);
             b.Rating_low = RatingLow1.SelectedIndex + 1;
             b.Rating_high = RatingHigh1.SelectedIndex + 1;
             
-            //
+
             b.Coupon_low = Util.Parse(b.Coupon_low, CouponLow.Text);
             b.Coupon_high = Util.Parse(b.Coupon_high, CouponHigh.Text);
             b.Current_yield_low = Util.Parse(b.Current_yield_low, CurrentYieldLow.Text);
             b.Current_yield_high = Util.Parse(b.Current_yield_high, CurrentYieldHigh.Text);
             b.Yield_to_maturity_low = Util.Parse(b.Yield_to_maturity_low, YieldToMaturityLow.Text);
             b.Yield_to_maturity_high = Util.Parse(b.Yield_to_maturity_high, YieldToMaturityHigh.Text);
-            // maturity date
-            //DateTime TempDate = new DateTime(0001, 1, 1);
-            //b.Maturity_date_high = MaturityDateHigh.SelectedDate;
-            //if (DateTime.Compare(MaturityDateHigh.SelectedDate,TempDate) ==0)
-            //  b.Maturity_date_high = new DateTime(9999, 12, 31);
-
-
             b.Maturity_date_low = Util.ParseDate(b.Maturity_date_low, MaturityLow.Text);
             b.Maturity_date_high = Util.ParseDate(b.Maturity_date_high, MaturityHigh.Text);
-            //
             b.Price_low = Util.Parse(b.Price_low,PriceLow.Text);
             b.Price_high = Util.Parse(b.Price_high,PriceHigh.Text);
             b.Par_value_low = Util.Parse(b.Par_value_low, ParValueLow.Text);
@@ -62,9 +52,14 @@ namespace BuyLocalBonds
             else
             {
                 NoResults.Visible = false;
+                BondGrid.DataSource = ds.Tables[0];
+                SearchTable.Visible = false;
+                BondGrid.Visible = true;
+                BackButton.Visible = true;
+                BondGrid.DataBind();
             }
-            BondGrid.DataSource = ds.Tables[0];
-            BondGrid.DataBind();
+            
+            
         }
 
         protected void BondGrid_RowCommand(Object sender, GridViewCommandEventArgs e)
@@ -83,16 +78,20 @@ namespace BuyLocalBonds
                 TableCell cusipCell = selectedRow.Cells[1];
                 string cusip = cusipCell.Text;
                 Response.Redirect("~/BuyBond.aspx?CUSIP="+cusip, false);
-                //Name.Text = cusipCell.Text;
             }
 
         }
 
-        protected void BuySelected_Click(object sender, EventArgs e)
+        protected void BackButton_Click(object sender, EventArgs e)
         {
-            string cusip = Request.Form["SelectBondRadio"];
-            Name.Text = cusip;
-            //Response.Redirect("~/BuyBond.aspx?CUSIP=" + cusip, false);
+            SearchTable.Visible = true;
+            BackButton.Visible = false;
+            BondGrid.Visible = false;
+        }
+
+        protected void BondGrid_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
     }

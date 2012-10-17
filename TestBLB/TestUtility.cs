@@ -35,12 +35,24 @@ namespace TestBLB
         }
 
         [Test]
-        public void testParseDate()
+        public void testParseDateCorrect()
         {
+
             DateTime defValue = new DateTime(0001, 1, 1);
-            String input = "22/03/2012";
-            DateTime output = Util.ParseDate(defValue, input);
-            Assert.AreEqual(new DateTime(2012, 03, 22), output);
+            String input = "22/12/2344";
+            DateTime out1 = Util.ParseDate(defValue, input);
+            Assert.AreEqual(out1, new DateTime(2344, 12, 22));
+
+        }
+
+        [Test]
+        public void testParseDateNotCorrect()
+        {
+
+            DateTime defValue = new DateTime(0001, 1, 1);
+            String input = "22/13/2344";
+            DateTime out1 = Util.ParseDate(defValue, input);
+            Assert.AreEqual(out1, defValue);
 
         }
     }

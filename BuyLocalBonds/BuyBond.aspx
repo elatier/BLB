@@ -206,7 +206,8 @@
             <td class="style25">
                     &nbsp;</td>
             <td class="style19">
-                <asp:Button ID="Back" runat="server" Text="Cancel" onclick="Back_Click" ValidationGroup="None" />
+                <asp:button id="Back" runat="server" text="Back" 
+                    ValidationGroup="None" onclick="Back_Click1" />
                 </td>
             <td class="style15">
                     &nbsp;</td>

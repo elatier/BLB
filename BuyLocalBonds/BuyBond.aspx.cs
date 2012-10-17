@@ -75,11 +75,6 @@ namespace BuyLocalBonds
             }
         }
 
-        protected void Back_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Search.aspx", true);
-        }
-
         protected void Buy_Click(object sender, EventArgs e)
         {
             Buy.Visible = false;
@@ -128,6 +123,11 @@ namespace BuyLocalBonds
             String client_id = ClientDropdown.SelectedValue;
             Session["ClientID"] = client_id;
             Response.Redirect("~/ClientPortfolio.aspx?client_id=" + client_id, false);
+        }
+
+        protected void Back_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Search.aspx", true);
         }
 
 

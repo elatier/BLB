@@ -60,17 +60,38 @@
             height: 20px;
             width: 22px;
         }
+        .style20
+        {
+            width: 100%;
+        }
+        .style21
+        {
+            width: 845px;
+        }
     </style>
-    <script language="javascript" type="text/javascript">
-    </script>
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
+    <script>
+        $(function () {
+            $("#<%= MaturityLow.ClientID %>").datepicker({ dateFormat: 'dd/mm/yy' });
+            $("#<%= MaturityHigh.ClientID %>").datepicker({ dateFormat: 'dd/mm/yy' });
+        });
+    </script>
     <h2>
-        Bond Search
+        <table class="style20">
+            <tr>
+                <td class="style21">
+        Bond Search</td>
+                <td>
+                    <asp:Button ID="BackButton" runat="server" Text="Back" Visible="false" 
+                        onclick="BackButton_Click"/>
+                </td>
+            </tr>
+        </table>
     </h2>
     <div>
 
-        <table class="style1">
+        <table class="style1" ID="SearchTable" runat="server">
             <tr>
                 <td class="style16">
                     &nbsp;</td>
@@ -337,12 +358,7 @@
                 <td class="style5">
                     <asp:TextBox type="text" id="MaturityLow" runat="server" 
                         ></asp:TextBox>
-                <script>
-                    $(function () {
-                        $("#<%= MaturityLow.ClientID %>").datepicker({ dateFormat: 'dd/mm/yy' });
-                        $("#<%= MaturityHigh.ClientID %>").datepicker({ dateFormat: 'dd/mm/yy' });
-                    });
-                </script>
+                </td>
                 <td class="style15">
                     <asp:RegularExpressionValidator ID="MatDateLowVal" runat="server" 
                         ControlToValidate="MaturityLow" ErrorMessage="Invalid Maturity Date Low" 
@@ -473,8 +489,15 @@
         <table class="style1">
             <tr>
                 <td>
-        <asp:GridView ID="BondGrid" onrowcommand="BondGrid_RowCommand" 
-            runat="server" meta:resourcekey="BondGridResource1" >
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+        <asp:GridView ID="BondGrid" 
+            runat="server" meta:resourcekey="BondGridResource1" onrowcommand="BondGrid_RowCommand"
+                         >
             <columns>        
                 <asp:buttonfield buttontype="Button" 
                     commandname="SelectBond"
