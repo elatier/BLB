@@ -62,12 +62,6 @@
         }
     </style>
     <script language="javascript" type="text/javascript">
-// <![CDATA[
-
-        function MatLowDatepicker_onclick() {
-        }
-
-// ]]>
     </script>
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
@@ -320,6 +314,8 @@
                         meta:resourcekey="ParValue_v2Resource1"></asp:RegularExpressionValidator>
                   </td>
                 <td>
+                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" Height="16px" 
+                        meta:resourcekey="ValidationSummary1Resource1" />
                     <asp:Label ID="NoResults" runat="server" Text="No Results" Visible="false"> </asp:Label>
                 </td>
                 <td>
@@ -343,14 +339,14 @@
                         ></asp:TextBox>
                 <script>
                     $(function () {
-                        $("#<%= MaturityLow.ClientID %>").datepicker();
-                        $("#<%= MaturityHigh.ClientID %>").datepicker();
+                        $("#<%= MaturityLow.ClientID %>").datepicker({ dateFormat: 'dd/mm/yy' });
+                        $("#<%= MaturityHigh.ClientID %>").datepicker({ dateFormat: 'dd/mm/yy' });
                     });
                 </script>
                 <td class="style15">
                     <asp:RegularExpressionValidator ID="MatDateLowVal" runat="server" 
-                        ControlToValidate="CUSIP" ErrorMessage="Invalid Maturity Date Low" 
-                        ValidationExpression="(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d" 
+                        ControlToValidate="MaturityLow" ErrorMessage="Invalid Maturity Date Low" 
+                        ValidationExpression="^(((((0[1-9])|(1\d)|(2[0-8]))\/((0[1-9])|(1[0-2])))|((31\/((0[13578])|(1[02])))|((29|30)\/((0[1,3-9])|(1[0-2])))))\/((20[0-9][0-9])|(19[0-9][0-9])))|((29\/02\/(19|20)(([02468][048])|([13579][26]))))$" 
                         meta:resourcekey="CUSIP_ValidatorResource1"></asp:RegularExpressionValidator>
                 </td>
                 <td>
@@ -364,13 +360,11 @@
                 <td class="style11">
                     <asp:RegularExpressionValidator ID="MatDateHighVal" runat="server" 
                         ControlToValidate="MaturityHigh" ErrorMessage="Invalid Maturity Date High" 
-                        ValidationExpression="(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d" 
+                        ValidationExpression="^(((((0[1-9])|(1\d)|(2[0-8]))\/((0[1-9])|(1[0-2])))|((31\/((0[13578])|(1[02])))|((29|30)\/((0[1,3-9])|(1[0-2])))))\/((20[0-9][0-9])|(19[0-9][0-9])))|((29\/02\/(19|20)(([02468][048])|([13579][26]))))$" 
                         meta:resourcekey="CUSIP_ValidatorResource1"></asp:RegularExpressionValidator>
                 </td>
                 <td colspan="3" rowspan="2">
-                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" Height="16px" 
-                        meta:resourcekey="ValidationSummary1Resource1" />
-                </td>
+                    &nbsp;</td>
                 <td>
                     &nbsp;</td>
             </tr>
