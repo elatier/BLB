@@ -2,18 +2,15 @@ To do List:
 ------------
 
 
-+add encrypted passwords
+-add encrypted passwords
 
-+fix the calendar
-	-fix the date parsing
 
 
 	
 -show other client information when confirming
 
 
--sell bonds
--make return button javascript back, to save state
+
 
 -tests
 	+add tests stuff
@@ -23,6 +20,11 @@ To do List:
 
 
 -------------------------------------------------------------
++sell bonds
+
++fix the calendar
+	+fix the date parsing
+
 +fix buy screen - two columns
 +display money fields in buybond as money
 

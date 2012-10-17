@@ -15,6 +15,7 @@ namespace BuyLocalBonds
         protected void Page_Load(object sender, EventArgs e)
         {
             bend = new BEnd();
+            //ButtonGo_Click(this, new System.EventArgs());
         }
 
      
@@ -46,7 +47,9 @@ namespace BuyLocalBonds
                 GridViewRow selectedRow = GV_portfolio.Rows[index];
                 TableCell cusipCell = selectedRow.Cells[2];
                 string cusip = cusipCell.Text;
-                Response.Redirect("~/BuyBond.aspx?CUSIP=" + cusip + "&CLIENTID="+DDLClientID.SelectedValue, false);
+                Session["CUSIP"] = cusip;
+                Session["ClientID"] = DDLClientID.SelectedValue;
+                Response.Redirect("~/BuySellBond.aspx", true);
             }
 
         }

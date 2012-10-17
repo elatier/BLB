@@ -52,7 +52,7 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BuyBond.aspx" />
+    <Content Include="BuySellBond.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Search.aspx" />
@@ -72,12 +72,12 @@
     <Content Include="UserGuide.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BuyBond.aspx.cs">
-      <DependentUpon>BuyBond.aspx</DependentUpon>
+    <Compile Include="BuySellBond.aspx.cs">
+      <DependentUpon>BuySellBond.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="BuyBond.aspx.designer.cs">
-      <DependentUpon>BuyBond.aspx</DependentUpon>
+    <Compile Include="BuySellBond.aspx.designer.cs">
+      <DependentUpon>BuySellBond.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

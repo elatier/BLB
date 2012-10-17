@@ -73,7 +73,8 @@ namespace BuyLocalBonds
                 GridViewRow selectedRow = BondGrid.Rows[index];
                 TableCell cusipCell = selectedRow.Cells[1];
                 string cusip = cusipCell.Text;
-                Response.Redirect("~/BuyBond.aspx?CUSIP="+cusip, false);
+                Session["CUSIP"] = cusip;
+                Response.Redirect("~/BuySellBond.aspx", false);
             }
 
         }

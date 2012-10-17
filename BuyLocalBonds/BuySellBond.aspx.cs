@@ -18,8 +18,8 @@ namespace BuyLocalBonds
         {
             Response.BufferOutput = true;
 
-            String cusip = Request.QueryString["CUSIP"];
-            String clientId = Request.QueryString["CLIENTID"];
+            String cusip = (String)Session["CUSIP"];
+            String clientId = (String)Session["ClientID"];
             if (!String.IsNullOrWhiteSpace(clientId))
             {
                 BuyTran = false;
@@ -87,9 +87,7 @@ namespace BuyLocalBonds
             }
             else
             {
-                Response.Redirect("~/Default.aspx", true);
-                //used for testing:
-                //Response.Redirect("~/BuyBond.aspx?CUSIP=123456789", true);
+                Response.Redirect("~/Search.aspx", true);
             }
         }
 
@@ -109,23 +107,35 @@ namespace BuyLocalBonds
 
         protected void Confirm_Click(object sender, EventArgs e)
         {
-            String client_id = ClientDropdown.SelectedValue;
-            if (BuyTran)
+            try
             {
-                TransactionId.Text = bend.InsertBuyTransaction(client_id, CUSIP.Text, Quantity.Text)
-                                    .Tables[0].Rows[0][0].ToString();
+                String client_id = ClientDropdown.SelectedValue;
+                if (BuyTran)
+                {
+                    TransactionId.Text = bend.InsertBuyTransaction(client_id, CUSIP.Text, Quantity.Text)
+                                        .Tables[0].Rows[0][0].ToString();
+                }
+                else
+                {
+                    TransactionId.Text = bend.InsertSellTransaction(client_id, CUSIP.Text, Quantity.Text)
+                        .Tables[0].Rows[0][0].ToString();
+                }
+                Cancel.Visible = false;
+                Confirm.Visible = false;
+                GoPortfolioButton.Visible = true;
+                ConfirmationLabel.Visible = true;
+                TransactionId.Visible = true;
+                TransactionIDLabel.Visible = true;
+                Session.Remove("CUSIP");
+                Session.Remove("ClientID");
+
             }
-            else
+            catch (Exception)
             {
-                TransactionId.Text = bend.InsertSellTransaction(client_id, CUSIP.Text, Quantity.Text)
-                    .Tables[0].Rows[0][0].ToString();
+
+                ConfirmationLabel.Text = "Transacation not successful.";
             }
-            Cancel.Visible = false;
-            Confirm.Visible = false;
-            PortfolioButton.Visible = true;
-            ConfirmationLabel.Visible = true;
-            TransactionId.Visible = true;
-            TransactionIDLabel.Visible = true;
+            
 
           
         }
@@ -144,19 +154,10 @@ namespace BuyLocalBonds
             SettleTimeLabel.Visible = false;
         }
 
-        protected void PortfolioButton_Click(object sender, EventArgs e)
-        {
-            String client_id = ClientDropdown.SelectedValue;
-            Session["ClientID"] = client_id;
-            Response.Redirect("~/ClientPortfolio.aspx?client_id=" + client_id, false);
-        }
-
         protected void Back_Click1(object sender, EventArgs e)
         {
             Response.Redirect("~/Search.aspx", true);
         }
-
-
 
     }
 }

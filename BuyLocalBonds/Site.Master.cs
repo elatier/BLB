@@ -20,17 +20,11 @@ namespace BuyLocalBonds
                 else
                 {
                     //send to login screen, comment out for bypassing login check
-                    Response.Redirect("~/", true);
+                    //Response.Redirect("~/", true);
                 }
             }
         }
 
-
-        protected void LogOut_Click(object sender, EventArgs e)
-        {
-            Session.Clear();
-            Response.Redirect("~/", true);
-        }
 
         protected void NavigationMenu_MenuItemClick(object sender, MenuEventArgs e)
         {

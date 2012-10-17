@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Buy Bond" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="BuyBond.aspx.cs" Inherits="BuyLocalBonds.BuyBond" %>
+﻿<%@ Page Title="dbBLB" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="BuySellBond.aspx.cs" Inherits="BuyLocalBonds.BuyBond" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
     <style type="text/css">
@@ -219,8 +219,8 @@
                      />
                 <asp:Button ID="Cancel" runat="server" Text="Amend" onclick="Cancel_Click" 
                     Visible="false"/>
-                <asp:Button ID="PortfolioButton" runat="server" Text="View Client Portfolio" 
-                    Visible="false" onclick="PortfolioButton_Click"/>
+                <asp:Button ID="GoPortfolioButton" runat="server" Text="Client Portfolio" 
+                PostBackUrl="~/ClientPortfolio.aspx" Visible="false"/>
             </td>
             <td class="style2">
                 <asp:Button ID="Confirm" runat="server" Text="Confirm" 
