@@ -2,15 +2,16 @@ To do List:
 ------------
 
 
--fix buy screen - two columns
 
--fix the calendar
 
-+display money fields in buybond as money
++fix the calendar
+	-fix the date parsing
+
+
 	
 -show other client information when confirming
 
--integrate login
+
 -sell bonds
 -make return button javascript back, to save state
 
@@ -20,6 +21,12 @@ To do List:
 
 -improve quality of the data
 
+
+
++fix buy screen - two columns
++display money fields in buybond as money
+
++integrate login
 
 +confirmation screen, using a query
 	+link back to home

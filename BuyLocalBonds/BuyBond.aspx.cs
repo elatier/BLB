@@ -88,17 +88,24 @@ namespace BuyLocalBonds
             ClientDropdown.Enabled = false;
             Confirm.Visible = true;
             TotalAmount.Text = (Convert.ToDouble(Quantity.Text) * unitPrice).ToString("c");
+            TotalAmount.Visible = true;
+            TotalAmountLabel.Visible = true;
+            SettleTime.Visible = true;
+            SettleTimeLabel.Visible = true;
         }
 
         protected void Confirm_Click(object sender, EventArgs e)
         {
             String client_id = ClientDropdown.SelectedValue;
-            DetailsView1.DataSource = bend.InsertBuyTransaction(client_id, CUSIP.Text, Quantity.Text).Tables[0];
-            DetailsView1.DataBind();
+            TransactionId.Text = bend.InsertBuyTransaction(client_id, CUSIP.Text, Quantity.Text)
+                                    .Tables[0].Rows[0][0].ToString();
             Cancel.Enabled = false;
             Confirm.Visible = false;
             PortfolioButton.Visible = true;
             ConfirmationLabel.Visible = true;
+            TransactionId.Visible = true;
+            TransactionIDLabel.Visible = true;
+
           
         }
 
@@ -110,6 +117,10 @@ namespace BuyLocalBonds
             Confirm.Visible = false;
             ClientDropdown.Enabled = true;
             TotalAmount.Text = "";
+            TotalAmount.Visible = false;
+            TotalAmountLabel.Visible = false;
+            SettleTime.Visible = false;
+            SettleTimeLabel.Visible = false;
         }
 
         protected void PortfolioButton_Click(object sender, EventArgs e)
@@ -118,6 +129,8 @@ namespace BuyLocalBonds
             Session["ClientID"] = client_id;
             Response.Redirect("~/ClientPortfolio.aspx?client_id=" + client_id, false);
         }
+
+
 
     }
 }
