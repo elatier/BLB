@@ -65,6 +65,7 @@ namespace BuyLocalBonds
             else
             {
                 Response.Redirect("~/Default.aspx", true);
+                //used for testing:
                 //Response.Redirect("~/BuyBond.aspx?CUSIP=123456789", true);
             }
         }

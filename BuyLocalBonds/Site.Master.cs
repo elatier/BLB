@@ -19,7 +19,7 @@ namespace BuyLocalBonds
                 }
                 else
                 {
-                    //send to login screen
+                    //send to login screen, comment out for bypassing login check
                     //Response.Redirect("~/", true);
                 }
             }
