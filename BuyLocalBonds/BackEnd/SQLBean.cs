@@ -12,7 +12,7 @@ namespace BuyLocalBonds.BackEnd
     {
     SqlConnection conn;
 
-        public SQLBean()
+        internal SQLBean()
         {
             conn = new SqlConnection("Server=.;Database=BLBData;Integrated Security=SSPI;");             
         }
@@ -22,7 +22,7 @@ namespace BuyLocalBonds.BackEnd
             conn.Close();
         }
 
-        public Boolean LoginQuery(String UserName, String Password)
+        internal Boolean LoginQuery(String UserName, String Password)
         {
             string sql = "SELECT trader_id FROM TRADER WHERE trader_username = @UserName AND trader_password = @Password";
             SqlCommand cmdBond = new SqlCommand(sql, conn);
@@ -38,7 +38,7 @@ namespace BuyLocalBonds.BackEnd
             return false;
         }
 
-        public DataTable GetPortfolio(string client_id)
+        internal DataTable GetPortfolio(string client_id)
         {
 
             string sql = "SELECT BONDS.name as 'Bond Name', TRANSACTIONS.cusip as 'CUSIP',SUM(TRANSACTIONS.quantity) as 'Quantity Owned' FROM BONDS JOIN TRANSACTIONS  ON (BONDS.cusip = TRANSACTIONS.cusip) WHERE TRANSACTIONS.client_id = @client_id GROUP BY TRANSACTIONS.cusip, BONDS.name";
@@ -52,13 +52,33 @@ namespace BuyLocalBonds.BackEnd
             DataTable dt = ds.Tables[0];
 
             return dt;
-
-
             
         }
 
+        internal string GetClientBondQuantity(string client_id, string cusip)
+        {
 
-        public DataSet SearchBondsQuery(Bond b)
+            string sql = "Select Quantity FROM [BLBData].[dbo].[Client_Bonds] WHERE client_id = @client_id AND CUSIP = @cusip";
+
+            SqlCommand cmdBond = new SqlCommand(sql, conn);
+            cmdBond.Parameters.AddWithValue("@client_id", client_id);
+            cmdBond.Parameters.AddWithValue("@cusip", cusip);
+            SqlDataAdapter da = new SqlDataAdapter(cmdBond);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "Tables");
+            DataTable dt = ds.Tables[0];
+            string quantity = "0";
+            if (dt.Rows.Count == 0)
+            {
+                throw new Exception();
+                
+            }
+            return dt.Rows[0][0].ToString(); ;
+
+        }
+
+
+        internal DataSet SearchBondsQuery(Bond b)
         {
 
             string sql = "SELECT [cusip] AS 'CUSIP'" +
@@ -143,6 +163,10 @@ namespace BuyLocalBonds.BackEnd
             SqlDataAdapter da = new SqlDataAdapter(cmdBond);
             DataSet ds = new DataSet();
             da.Fill(ds, "Bonds");
+            if (ds.Tables[0].Rows.Count == 0)
+            {
+                throw new Exception();
+            }
             return ds;
         }
 

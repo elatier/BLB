@@ -1,5 +1,4 @@
-﻿<%@ Page Title="Buy Bond" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    CodeBehind="BuyBond.aspx.cs" Inherits="BuyLocalBonds.BuyBond" %>
+﻿<%@ Page Title="Buy Bond" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="BuyBond.aspx.cs" Inherits="BuyLocalBonds.BuyBond" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
     <style type="text/css">
@@ -59,7 +58,7 @@
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <h2>
-        Buy Bond
+        &nbsp;<asp:Label ID="HeaderLabel" runat="server" Text="Buy Bond"></asp:Label>
     </h2>
     <table class="style1">
         <tr>
