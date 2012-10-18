@@ -67,7 +67,6 @@ namespace BuyLocalBonds.BackEnd
             DataSet ds = new DataSet();
             da.Fill(ds, "Tables");
             DataTable dt = ds.Tables[0];
-            string quantity = "0";
             if (dt.Rows.Count == 0)
             {
                 throw new Exception();
